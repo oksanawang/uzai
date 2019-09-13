@@ -11,7 +11,7 @@ import "mint-ui/lib/style.css"
 //1.3将mint-ui 注册vue
 Vue.use(MintUI)
 // 1.4引入图标字体晚间
-// import "./font/iconfont.css"
+import "./font/iconfont.css"
 // main.js配置axios-
 //1.5引入axios库
 import axios from "axios"
@@ -31,7 +31,6 @@ import Vuex from "vuex"
 // 1.10：注册实例（先注册，在创建存储对象）
 Vue.use(Vuex)
 // 1.11：创建存储对象
-
 
 
 new Vue({
