@@ -27,36 +27,76 @@
                     <p>注册完成</p>
                 </div>
                 <div class="middle-body-body">
-                    <div>
-                        <div class="middle-body-body1">
-                            <div class="body1-check">
-                                <span>手机号码</span>
-                                <input type="text" placeholder="请输入手机号码">
-                            </div>
-                            <div class="body1-check">
-                                <span>图形验证码</span>
-                                <input type="text" placeholder="请输入验证码">
-                                <span>
-                                    <img src="" alt="">
-                                </span>
-                            </div>
-                            <div class="body1-check">
-                                <span>手机验证码</span>
-                                <input type="text" placeholder="请输入验证码">
-                                <button>获取验证码</button>
-                            </div>
-                            <div class="body1-agree">
-                                <span></span>
-                                <span class="check">我已阅读同意</span>
-                                <a href="javascript:;">《用户使用协议》</a>
-                            </div>
-                            <div class="body1-next">
-                                <button class="body1-next">下一步</button>
-                            </div>
+                    <div class="middle-body-body1">
+                        <div class="body1-check">
+                            <span>&nbsp;&nbsp;&nbsp;手机号码</span>
+                            <input class="input1" type="text" placeholder="请输入手机号码">
+                        </div>
+                        <div class="body1-check">
+                            <span>图形验证码</span>
+                            <input class="input2" type="text" placeholder="请输入验证码">
+                                <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张" />
+                        </div>
+                        <div class="body1-check">
+                            <span>手机验证码</span>
+                            <input class="input2" type="text" placeholder="请输入验证码">
+                            <button>获取验证码</button>
+                        </div>
+                        <div class="body1-agree">
+                            <span>方框</span>
+                            <span class="check">我已阅读同意</span>
+                            <a href="javascript:;">《用户使用协议》</a>
+                        </div>
+                        <button class="body1-next">下一步</button>
+                    </div>
+                    <div class="middle-body-body2">
+                        <div>
+                            <span>账号密码</span>
+                            <input type="password" placeholder="6-16位字母/数字/符号,最少两类组成">
+                        </div>
+                        <div class="getPass">
+                            <span>弱</span>
+                            <span>中</span>
+                            <span>强</span>
+                        </div>
+                        <div>
+                            <span>确认密码</span>
+                            <input type="password" placeholder="请再次输入以上密码">  
+                        </div>
+                        <button>提交</button>                 
+                    </div>
+                    <div class="middle-body-body3">
+                        <div>
+                            <img src="../../../public/images/reg_img/telephone.png" />
+                        </div>
+                        <div>
+                            <p>注册成功!</p>
+                            <p>恭喜成为悠哉网会员</p>
+                            <p>
+                                <span>您可以</span>
+                                <a href="javascript:;">登录首页</a>
+                                <span>或2s后跳转首页</span>
+                            </p>
                         </div>
                     </div>
                 </div>
+
+                <a class="middle-body-buttom" href="javascript:;">立即登录</a>
             </div>
+
+        </div>
+        <div class="foot">
+            <div class="foot_a">
+                <a href="javascript:;">众信旅游</a>
+                <a href="javascript:;">众信历程</a>
+                <a href="javascript:;">众信品牌</a>
+                <a href="javascript:;">营业网点</a>
+                <a href="javascript:;">诚聘英才</a>
+                <a href="javascript:;">商务合作</a>
+            </div>
+            <div class="foot_div">Copyright©2005-2018 Uzai.com&nbsp;&nbsp;&nbsp;&nbsp;许可证编号:L-TJ-CJ00059&nbsp;&nbsp;&nbsp;&nbsp;
+             津ICP备18003064号&nbsp;&nbsp;&nbsp;&nbsp;悠哉呼叫中心来电显示号码为：10109898
+            </div>    
         </div>
     </div> 
 </template>
@@ -72,18 +112,18 @@ export default {
     box-sizing: border-box;
     font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
 }
+a{
+    text-decoration:none;
+}
 .reg_register{
     background: yellow;
     width:1400px;
     height:1000px;
     margin-top:0px;
-    /* margin:0 auto */
-    /* display: flex; */
     display: contents;
 
 }
 .top{
-
     width:1200px;
     height: 126px;
     background: yellowgreen;
@@ -95,8 +135,8 @@ export default {
 }
 .middle{
     background-image: url(../../../public/images/reg_img/main1.jpg);
-    height: 546px;
-    display: flex;
+    height: 550px;
+    padding:75px 0;
 }
 .middle-body{
     width:780px;
@@ -105,6 +145,8 @@ export default {
     padding:30px 39px 0 39px;
     margin:0 auto;
     border-radius: 10px;
+    position: relative;
+    box-shadow:  0 0 10px rgba(0,0,0,.25);
 
 }
 .middle-body-head{
@@ -150,6 +192,7 @@ export default {
     background: #fff;
 
 }
+/* 第一步 */
 .middle-body-body1{
     width:290px;
     height: 212px;
@@ -157,46 +200,60 @@ export default {
     font-size:12px;
     margin:0 auto;
     padding-top:40px;
-
-
+}
+.middle-body-body1:nth-last-of-type(button){
+    text-align: center;
+    background: yellow;
 }
 .body1-check{
+    box-sizing:border-box;
     width:320px;
     height:30px;
+    margin-bottom: 15px;
 }
 .body1-check span:nth-child(1){
-    /* display: inline; */
     font-size: 14px;
-    text-align: center;
-    width:35%;
+    text-align: right;
+    width:70px;
     height: 30px;
-    /* line-height: 30px; */
     background: #ccc;
+}
+.body1-check img{
+    height: 28px;
+    width: 110px;
+    margin-left: 10px;
+    vertical-align: middle;
+    cursor: pointer;
 }
 .body1-check input{
     border-radius: 4px;
     height: 30px;
-
     outline: 0;
     margin-left:10px;
     border: 1px solid #e5e5e5;
     text-indent: 10px;
-    /* border:0; */
+}
+.body1-check .input1{
+    background: #999;
+    width:222px;
+}
+.body1-check .input2{
+    background: #999;
+    width:100px;
 }
 .body1-check button{
     height: 30px;
     color:#666;
     background:#f0f0f0;
     border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 .body1-agree{
     height:30px;
     text-align: center;
-    /* display: inline; */
-    /* vertical-align: middle; */
-    /* padding:auto 0; */
-    margin:auto 0;
-    padding:auto 0;
+    margin-bottom: 10px;
+    padding:6px 0;
 }
 .body1-next{
     border-radius: 30px;
@@ -205,7 +262,98 @@ export default {
     font-size: 14px;
     width: 150px;
     height: 37px;
-    text-align: center;
+    margin:0 70px;
+    cursor: pointer;
+}
+.middle-body-buttom{
+    color:#999;
+    font-size: 14px;
+    text-align: right;
+    display: inline-block;
+    /* margin-left:640px; */
+    position: absolute;
+    right: 30px;
+}
+.middle-body-body1{
+    display: none;
+}
+/* 第二步 */
+.middle-body-body2{
+    display: none;
+    width:320px;
+    height: 107px;
+    text-align: left;
+    font-size:12px;
     margin:0 auto;
+    padding-top:40px;
+    background: yellowgreen;
+}
+.middle-body-body2 input{
+    width:222px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 15px;
+    padding: 4px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.middle-body-body2 span{
+    width:70px; 
+    font-size: 14px;
+}
+.getPass{
+    display: flex;
+    justify-content: space-around;
+    margin:5px 28px 10px 70px;
+    text-align: center;
+}
+.getPass span{
+    font-size:12px;
+    background: #d1d1d1;
+    width:74px;
+}
+
+.middle-body-body2 button{
+    width: 150px;
+    line-height: 34px;
+    background: #fa164b;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 30px;
+    margin:15px 0 0 85px;
+}
+
+
+
+
+
+
+
+
+
+/* 第三步 */
+.foot{
+    width:780px;
+    background:turquoise;
+    margin:0 auto;
+    margin-top: 30px;
+    text-align: center;
+}
+.foot_a{
+    padding:0 auto;
+}
+.foot_a a{
+    color:#333;
+    font-size:14px;
+    margin:0 10px;
+}
+.foot_div{
+    height: 25px;
+    color:#666;
+    font-size:12px;
+    margin-top:10px;
 }
 </style>
