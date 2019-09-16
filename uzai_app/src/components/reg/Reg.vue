@@ -67,9 +67,9 @@
                     </div>
                     <div class="middle-body-body3">
                         <div>
-                            <img src="../../../public/images/reg_img/telephone.png" />
+                            <img src="../../../public/images/reg_img/duihao.png" />
                         </div>
-                        <div>
+                        <div class="body3-text">
                             <p>注册成功!</p>
                             <p>恭喜成为悠哉网会员</p>
                             <p>
@@ -116,7 +116,7 @@ a{
     text-decoration:none;
 }
 .reg_register{
-    background: yellow;
+    background: #fff;
     width:1400px;
     height:1000px;
     margin-top:0px;
@@ -126,7 +126,7 @@ a{
 .top{
     width:1200px;
     height: 126px;
-    background: yellowgreen;
+    /* background: yellowgreen; */
     margin:0px auto;
     padding:40px 0;
 }
@@ -141,7 +141,7 @@ a{
 .middle-body{
     width:780px;
     height: 400px;
-    background: red;
+    background: #fff;
     padding:30px 39px 0 39px;
     margin:0 auto;
     border-radius: 10px;
@@ -153,7 +153,7 @@ a{
     float: left;
     width: 234px;
     height: 60px;
-    background: blueviolet;
+    /* background: blueviolet; */
         /* overflow: hidden; */
     white-space: nowrap;
 }
@@ -174,7 +174,7 @@ a{
     margin-left:0px;
     top:3px;
     left:6px;
-    background: red;
+    /* background: red; */
     text-align: center;
 }
 .middle-body-head p{
@@ -189,7 +189,7 @@ a{
     clear: both;
     width: 100%;
     height: 252px;
-    background: #fff;
+    /* background: #fff; */
 
 }
 /* 第一步 */
@@ -200,10 +200,12 @@ a{
     font-size:12px;
     margin:0 auto;
     padding-top:40px;
+    display: none;
 }
 .middle-body-body1:nth-last-of-type(button){
     text-align: center;
-    background: yellow;
+    /* background: yellow; */
+    border:0;
 }
 .body1-check{
     box-sizing:border-box;
@@ -216,7 +218,7 @@ a{
     text-align: right;
     width:70px;
     height: 30px;
-    background: #ccc;
+    /* background: #ccc; */
 }
 .body1-check img{
     height: 28px;
@@ -234,20 +236,21 @@ a{
     text-indent: 10px;
 }
 .body1-check .input1{
-    background: #999;
+    /* background: #999; */
     width:222px;
 }
 .body1-check .input2{
-    background: #999;
+    /* background: #999; */
     width:100px;
 }
 .body1-check button{
     height: 30px;
     color:#666;
-    background:#f0f0f0;
+    /* background:#f0f0f0; */
     border-radius: 4px;
     margin-left: 10px;
     cursor: pointer;
+    border:0;
 }
 .body1-agree{
     height:30px;
@@ -264,6 +267,7 @@ a{
     height: 37px;
     margin:0 70px;
     cursor: pointer;
+    border:0;
 }
 .middle-body-buttom{
     color:#999;
@@ -273,27 +277,25 @@ a{
     /* margin-left:640px; */
     position: absolute;
     right: 30px;
-}
-.middle-body-body1{
-    display: none;
+
 }
 /* 第二步 */
 .middle-body-body2{
-    display: none;
+    /* display: none; */
     width:320px;
     height: 107px;
     text-align: left;
     font-size:12px;
     margin:0 auto;
     padding-top:40px;
-    background: yellowgreen;
+    /* background: yellowgreen; */
 }
 .middle-body-body2 input{
-    width:222px;
+    width:240px;
     height: 30px;
     line-height: 30px;
     margin-left: 15px;
-    padding: 4px 12px;
+    padding: 4px 10px;
     border: 1px solid #e5e5e5;
     border-radius: 4px;
     font-size: 12px;
@@ -305,13 +307,13 @@ a{
 .getPass{
     display: flex;
     justify-content: space-around;
-    margin:5px 28px 10px 70px;
+    margin:10px 9px 15px 71px;
     text-align: center;
 }
 .getPass span{
     font-size:12px;
     background: #d1d1d1;
-    width:74px;
+    width:100%;
 }
 
 .middle-body-body2 button{
@@ -323,21 +325,53 @@ a{
     cursor: pointer;
     font-size: 14px;
     border-radius: 30px;
-    margin:15px 0 0 85px;
+    margin:20px 0 0 100px;
+    border:0;
 }
 
-
-
-
-
-
-
-
-
 /* 第三步 */
+.middle-body-body3{
+    width:400px;
+    height: 100%;
+    /* background: #fa164b; */
+    margin:0 auto;
+    padding:50px 0;
+    display:none;
+}
+.middle-body-body3 img{
+    float:left;
+    width:100px;
+    height: 100px;
+    margin:auto 0;
+    padding-top:15px;
+}
+.body3-text{
+    float:left;
+    margin-left:10px;
+    /* background: #fff; */
+}
+.body3-text p{
+    padding:0;
+    margin:15px 0;
+}
+.body3-text p:first-child{
+  color: #1e9cf9;
+  font-size:24px;
+}
+.body3-text p:nth-child(2){
+  /* color: #333; */
+  font-size:20px;
+}
+.body3-text p:nth-child(3){
+  color: #333;
+  font-size:16px;
+}
+.body3-text a{
+    color:#fa164b;
+}
 .foot{
     width:780px;
-    background:turquoise;
+    /* background:turquoise; */
     margin:0 auto;
     margin-top: 30px;
     text-align: center;

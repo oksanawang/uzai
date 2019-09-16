@@ -135,16 +135,17 @@ a{
 }
 .login-middle{
     display: block;
-    /* display: none; */
+    display: none;
 }
 .login-middle-dongtai{
     display: none;
-    /* display: block; */
+    display: block;
 }
 .login-left,
 .login-dongtai-left{
     float: left;
     padding-right:34px;
+    margin-top:10px;
 }
 .login-left input,
 .login-dongtai-left input{
@@ -188,6 +189,7 @@ a{
     text-align: center;
     cursor: pointer;
     border-radius: 4px;
+    border:0;
 }
 .login-rember{
     font-size: 12px;
@@ -212,6 +214,7 @@ a{
     border-radius: 18px;
     cursor: pointer;
     margin-bottom: 26px;
+    border:0;
 }
 .login-button-login{
     color: #fff;
@@ -224,6 +227,7 @@ a{
     border-radius: 18px;
     cursor: pointer;
     margin-bottom: 26px;
+    border:0;
 }
 .login-right,
 .login-dongtai-right{
@@ -250,9 +254,6 @@ a{
 .login-dongtai-right p:last-child{
     margin-top:60px;
 }
-
-
-
 
 .foot{
     width:780px;
