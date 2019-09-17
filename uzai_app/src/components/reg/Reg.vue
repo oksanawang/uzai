@@ -30,17 +30,20 @@
                     <div class="middle-body-body1">
                         <div class="body1-check">
                             <span>&nbsp;&nbsp;&nbsp;手机号码</span>
-                            <input class="input1" type="text" placeholder="请输入手机号码">
+                            <input class="input1" type="text" placeholder="请输入手机号码" v-model="loginName" maxlength="11" @blur="regNumber">
+                            <span class="body1-check-text1" ></span>
                         </div>
                         <div class="body1-check">
                             <span>图形验证码</span>
-                            <input class="input2" type="text" placeholder="请输入验证码">
+                            <input class="input2" type="text" placeholder="请输入验证码" maxlength="2" v-on:blur="regNumber">
                                 <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张" />
+                                <span class="body1-check-text2">手机号格式不正确请</span>
                         </div>
                         <div class="body1-check">
                             <span>手机验证码</span>
-                            <input class="input2" type="text" placeholder="请输入验证码">
+                            <input class="input2" type="text" placeholder="请输入验证码" maxlength="6">
                             <button>获取验证码</button>
+                            <span class="body1-check-text3">请输入您的短信验证码！</span>
                         </div>
                         <div class="body1-agree">
                             <span>方框</span>
@@ -52,7 +55,7 @@
                     <div class="middle-body-body2">
                         <div>
                             <span>账号密码</span>
-                            <input type="password" placeholder="6-16位字母/数字/符号,最少两类组成">
+                            <input type="password" placeholder="6-16位字母/数字/符号,最少两类组成" maxlength="16">
                         </div>
                         <div class="getPass">
                             <span>弱</span>
@@ -61,7 +64,7 @@
                         </div>
                         <div>
                             <span>确认密码</span>
-                            <input type="password" placeholder="请再次输入以上密码">  
+                            <input type="password" placeholder="请再次输入以上密码" maxlength="6">  
                         </div>
                         <button>提交</button>                 
                     </div>
@@ -74,14 +77,14 @@
                             <p>恭喜成为悠哉网会员</p>
                             <p>
                                 <span>您可以</span>
-                                <a href="javascript:;">登录首页</a>
+                                <a href="javascript:;" >登录首页</a>
                                 <span>或2s后跳转首页</span>
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <a class="middle-body-buttom" href="javascript:;">立即登录</a>
+                <a class="middle-body-buttom" href="javascript:;"  @click="Login">立即登录</a>
             </div>
 
         </div>
@@ -102,9 +105,39 @@
 </template>
 <script>
 export default {
-  created() {
-      console.log("注册成功")
-  }  
+    data(){
+        return{
+            loginName:"",
+            // upwd:"",
+        }
+            // console.log(loginName,upwd)
+    },
+    methods:{
+        regNumber(){
+            var uname=this.loginName;
+            var reg=/^1[3-9]\d{9}&/;
+            if(uname==""){
+                name.body1-check-text1.innerHTML("请输入您的手机号")
+                return;
+            }
+            if(!reg.test(uname)){
+                name.body1-check-text1.innerHTML("用户名格式不正确")
+            }
+        },
+        Login(){
+            // var uname=this.loginName;
+            // var upwd=this.upwd;
+            // console.log(loginName,upwd);
+            // var reg=/^1[3-9]\d{9}&/;
+            // if(uname==""){
+            //     name.body1-check-text1.innerHTML("请输入您的手机号")
+            //     return;
+            // }
+            // if(!reg.test(uname)){
+            //     name.body1-check-text1.innerHTML("用户名格式不正确")
+            // }
+        },
+    },
 }
 </script>
 <style scoped>
@@ -134,7 +167,8 @@ a{
     float: right;
 }
 .middle{
-    background-image: url(../../../public/images/reg_img/main1.jpg);
+    background: url(../../../public/images/reg_img/main1.jpg) no-repeat center;
+    width:100%;
     height: 550px;
     padding:75px 0;
 }
@@ -200,7 +234,7 @@ a{
     font-size:12px;
     margin:0 auto;
     padding-top:40px;
-    display: none;
+    /* display: none; */
 }
 .middle-body-body1:nth-last-of-type(button){
     text-align: center;
@@ -209,9 +243,21 @@ a{
 }
 .body1-check{
     box-sizing:border-box;
-    width:320px;
+    width:450px;
     height:30px;
     margin-bottom: 15px;
+    background: yellow
+}
+.body1-check-text1,
+.body1-check-text2{
+    background:green;
+    display: inline;
+    margin:0 0 0 20px;
+}
+.body1-check-text3{
+    background:green;
+    display: inline;
+    margin:0 0 0 55px;
 }
 .body1-check span:nth-child(1){
     font-size: 14px;
@@ -281,7 +327,7 @@ a{
 }
 /* 第二步 */
 .middle-body-body2{
-    /* display: none; */
+    display: none;
     width:320px;
     height: 107px;
     text-align: left;

@@ -16,20 +16,21 @@
                 <div class="login-middle">
                     <div class="login-left">
                         <div>
-                            <input placeholder="请输入登录名/手机号/邮箱" type="text">
+                            <input placeholder="请输入登录名/手机号/邮箱" type="text" v-model="loginName" maxlength="11">
                         </div>
                         <div>
-                            <input placeholder="请输入密码" type="password">
+                            <input placeholder="请输入密码" type="password" v-model="upwd" maxlength="16">
                         </div>
                         <div>
-                            <input placeholder="图形验证码" type="text">
+                            <input placeholder="图形验证码" type="text" maxlength="2">
                             <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张"/>
                         </div>
                         <div class="login-rember">
                             <span class="login-rember-span">记住我</span>
                             <a class="login-rember-a" href="javascript:;">忘记密码？</a>
                         </div>
-                        <button class="login-btn-login">登录</button>
+                        <button class="login-btn-login" @click="Login">登录</button>
+                        <!-- <p>1111</p> -->
                     </div>
                     <div class="login-right">
                         <p>还没众信悠哉网账号？</p>
@@ -40,17 +41,19 @@
                 <div class="login-middle-dongtai">
                     <div class="login-dongtai-left">
                         <div>
-                            <input placeholder="请输入登录名/手机号/邮箱" type="text">
+                            <input placeholder="请输入登录名/手机号/邮箱" type="text" maxlength="11">
                         </div>
                         <div class="login-dongtai-input">
-                            <input placeholder="图形验证码" type="text">
+                            <input placeholder="图形验证码" type="text" maxlength="2">
                             <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张"/>
                         </div>
                         <div class="login-dongtai-input">
-                            <input placeholder="请输入验证码" type="text">
+                            <input placeholder="请输入验证码" type="text" maxlength="6">
                             <button class="getYan">获取验证码</button> 
                         </div>
-                        <button class="login-button-login">登录</button>
+                        <button class="login-button-login" @click="Login">登录</button>
+                        <!-- <span>1111111</span> -->
+                        <!-- <p>111111</p> -->
                     </div>
                     <div class="login-dongtai-right">
                         <p>还没众信悠哉网账号？</p>
@@ -78,9 +81,25 @@
 </template>
 <script>
 export default {
-  created() {
-      console.log("注册成功")
-  }  
+    data(){
+        return{
+            loginName:"",
+            upwd:"",
+        }
+            // console.log(loginName,upwd)
+    },
+    methods:{
+        Login(){
+            var loginName=this.loginName;
+            var upwd=this.upwd;
+            console.log(loginName,upwd);
+            var reg=/^1[3-9]\d{9}&/;
+            if(loginName==""){
+
+            }
+        },
+    },
+
 }
 </script>
 <style scoped>
@@ -110,7 +129,7 @@ a{
     float: right;
 }
 .login-body{
-    background-image: url(../../../public/images/reg_img/main.jpg);
+    background: url(../../../public/images/reg_img/main.jpg) no-repeat center;
     height: 548px;
     padding:120px 0;
     position: relative;
@@ -122,7 +141,7 @@ a{
     /* height: 303px; */
     padding:25px 0 10px 32px;
     position:absolute;
-    right:13%;
+    left:53%;
     border-radius: 10px;
     box-shadow:  0 0 10px rgba(0,0,0,.25);
 }
