@@ -16,6 +16,16 @@ app.use(cors({
   origin:["http://127.0.0.1:5500","http://localhost:5050"]//不能用*
 }));//从此所有响应，自动带Access-Control-Allow-Origin:http://127.0.0.1:5500
 //万一客户端浏览器地址发生变化，只改这里origin一处即可！
+
+// 配置session--oksana
+// #session配置一定要在所有的请求之前
+server.use(session({
+  secret:"128位字符串",    //安全字符串
+  resave:true,            //每次请求保存数据
+  saveUninitialized:true  //保存初始化数据
+}));
+
+
 //使用body-parser中间件
 app.use(bodyParser.urlencoded({extended:false}));
 //托管静态资源到public目录下
