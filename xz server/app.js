@@ -1,8 +1,8 @@
 //使用express构建web服务器 --11:25
 const express = require('express');
 const bodyParser = require('body-parser');
-const index=require("./routes/index");
-const details=require("./routes/details");
+const userRouter=require("./routes/user_router.js");
+// const details=require("./routes/details");
 const cors=require("cors");
 /*引入路由模块*/
 
@@ -21,8 +21,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 //托管静态资源到public目录下
 //app.use(express.static('public'));
 /*使用路由器来管理路由*/
-app.use("/index",index);
-app.use("/login",login);
-app.use("/reg",reg);
+app.use("/user",userRouter);
+// app.use("/login",login);
+// app.use("/reg",reg);
 
 
