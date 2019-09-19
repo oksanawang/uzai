@@ -8,19 +8,19 @@
         </div>
         <div class="middle">
             <div class="middle-body">
-                <div class="middle-body-head">
+                <div class="middle-body-head1">
                     <dt>
                         <dd>1</dd>
                     </dt>
                     <p>填写手机号验证</p>
                 </div>
-                <div class="middle-body-head">
+                <div class="middle-body-head2">
                     <dt>
                         <dd>2</dd>
                     </dt>
                     <p>设置密码</p>
                 </div>
-                <div class="middle-body-head">
+                <div class="middle-body-head3">
                     <dt>
                         <dd>3</dd>
                     </dt>
@@ -36,17 +36,22 @@
                         <div class="body1-check">
                             <span>图形验证码</span>
                             <input class="input2" type="text" placeholder="请输入验证码" maxlength="2" v-model="loginNumber" @blur="regNumber">
-                                <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张" />
+                                <!-- <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张" /> -->
+                                <!-- <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张" /> -->
+                                <!-- <span> -->
+                                    <!-- <img src="" alt=""> -->
+                                    <num class="num" title="看不清，换一张"></num>
+                                <!-- </span> -->
                                 <span class="body1-check-text2" ref="input222"></span>
                         </div>
                         <div class="body1-check">
                             <span>手机验证码</span>
-                            <input class="input3" type="Number" placeholder="请输入验证码" maxlength="6" v-model="loginMsg" @blur="regMsg">
+                            <input class="input3" type="text" placeholder="请输入验证码" maxlength="6" v-model="loginMsg" @blur="regMsg">
                             <button>获取验证码</button>
                             <span class="body1-check-text3" ref="input333"></span>
                         </div>
                         <div class="body1-agree">
-                            <input type="radio" >
+                            <input type="checkbox">
                             <span class="check">我已阅读同意</span>
                             <a href="javascript:;">《用户使用协议》</a>
                         </div>
@@ -83,7 +88,6 @@
                         </div>
                     </div>
                 </div>
-
                 <a class="middle-body-buttom" href="javascript:;"  @click="Login">立即登录</a>
             </div>
 
@@ -104,7 +108,11 @@
     </div> 
 </template>
 <script>
+import Number from "./Number.vue"
 export default {
+        components:{
+        "num":Number
+    },
     data(){
         return{
             loginName:"",
@@ -115,7 +123,7 @@ export default {
     },
     methods:{
         regMsg(){
-            var loginMsg=msg;
+            var msg=this.loginMsg;
             var regMsg=/^[0-9]\d{6}$/;
             if(msg==""){
                 this.$refs.input333.innerHTML="请输入您的短信验证码!";
@@ -150,27 +158,8 @@ export default {
                 this.$refs.input111.innerHTML="用户名格式不正确"
                 return;
             }
-            // if(!reg.test(uname)){
-            //     this.body1-checktext1.innerHTML("用户名格式不正确")
-            //     // console.log("用户名格式不正确")
-            //     return;
-            // }
-            //  console.log(uname);
-   
         },
         Login(){
-            // var uname=this.loginName;
-            // var upwd=this.upwd;
-            // console.log(loginName,upwd);
-            // var reg=/^1[3-9]\d{9}&/;
-            // if(uname==""){
-            //     name.body1-checktext1.innerHTML("请输入您的手机号")
-            //     return;
-            // }
-            // if(!reg.test(uname)){
-            //     name.body1-checktext1.innerHTML("用户名格式不正确")
-            // }
-            // console.log(this.loginName);
         },
     },
 }
@@ -218,25 +207,34 @@ a{
     box-shadow:  0 0 10px rgba(0,0,0,.25);
 
 }
-.middle-body-head{
+.middle-body-head1,
+.middle-body-head2,
+.middle-body-head3{
     float: left;
     width: 234px;
     height: 60px;
-    /* background: blueviolet; */
-        /* overflow: hidden; */
     white-space: nowrap;
+    /* background: blueviolet; */
+    /* overflow: hidden; */
 }
-.middle-body-head dt{
+.middle-body-head1 dt,
+.middle-body-head2 dt,
+.middle-body-head3 dt{
     width:24px;
     height: 24px;
     border-radius:50%;
-    /* background:#1f9bf9; */
     background:#d1d1d1;
     margin:0 auto;
     position: relative;
     margin-bottom: 10px;
 }
-.middle-body-head dd{
+.middle-body-head1 dt{
+    background:#1f9bf9;
+
+}
+.middle-body-head1 dd,
+.middle-body-head2 dd,
+.middle-body-head3 dd{
     color:#fff;
     width:10px;
     position: absolute;
@@ -246,13 +244,18 @@ a{
     /* background: red; */
     text-align: center;
 }
-.middle-body-head p{
+.middle-body-head1 p,
+.middle-body-head2 p,
+.middle-body-head3 p{
     text-align: center;
     font-size: 14px;
     margin:0;
     padding: 11px 0 0 0;  
-    /* border-top:1px solid #1f9bf9; */
     border-top:1px solid #d1d1d1;
+}
+.middle-body-head1 p{
+    border-top:3px solid #1f9bf9;
+
 }
 .middle-body-body{
     clear: both;
@@ -281,7 +284,8 @@ a{
     width:450px;
     height:30px;
     margin-bottom: 15px;
-    background: yellow
+    background: yellow;
+    position: relative;
 }
 .body1-checktext1,
 .body1-check-text2{
@@ -308,6 +312,25 @@ a{
     vertical-align: middle;
     cursor: pointer;
 }
+
+
+.body1-check .num{
+    /* display: inline; */
+    float: right;
+    height: 28px;
+    width: 110px;
+    margin-left: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    /* background: #fa164b; */
+    position: absolute;
+    right: 150px;
+    top:0;
+}
+
+
+
+
 .body1-check input{
     border-radius: 4px;
     height: 30px;
@@ -334,6 +357,15 @@ a{
     cursor: pointer;
     border:0;
 }
+/* input[type="checkbox"]{
+    font-size: 20px;
+    color:#1e9cf9;
+    background: #1e9cf9;
+    vertical-align: middle;
+    margin-right:5px;
+    visibility: hidden;
+} */
+
 .body1-agree{
     height:30px;
     text-align: center;
