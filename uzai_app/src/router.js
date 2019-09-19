@@ -5,6 +5,7 @@ import HelloContainer from "./components/HelloWorld.vue"
 import Reg from "./components/reg/Reg.vue"
 import Login from "./components/reg/Login.vue"
 import Number from "./components/reg/Number.vue"
+import order from "./components/order/order.vue"
 
 
 
@@ -16,5 +17,6 @@ export default new Router({
     {path:'/Reg',component:Reg},
     {path:'/Login',component:Login},
     {path:'/Number',component:Number},
+    {path:'/order',component:order},
   ]
 })
