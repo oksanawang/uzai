@@ -1714,6 +1714,7 @@ a {
 .common_nav ul li {
   float: left;
 }
+/* 这里是导航栏需要用js写的地方，现在先用css代写，并没有实现期望的样式，有需要再改 */
 .common_nav ul li .nav_a {
   position: absolute;
   top: 30px;
@@ -1722,6 +1723,11 @@ a {
   text-align: center;
   display: none;
 }
+.common_nav ul li:hover .nav_a{
+  display: block;
+  background:#fff;
+}
+/* 到这里是css代写需要修改的部分 */
 .common_nav ul li .nav_item {
   position: absolute;
   overflow: hidden;

@@ -3,6 +3,18 @@
     <head01></head01>
     <div class="main">
         <main1></main1>
+        <main2></main2>
+        <clear></clear>
+        <banner1></banner1>
+        <main2></main2>
+        <clear></clear>
+        <banner1></banner1>
+        <main2></main2>
+        <clear></clear>
+        <main2></main2>
+        <clear></clear>
+
+
     </div>
     <foot01></foot01>
     </div>
@@ -11,6 +23,9 @@
 import Header from "./header.vue"
 import Footer from "./footer.vue"
 import Main1 from "./main1.vue"
+import Main2 from "./main2.vue"
+import Clear from "./clear.vue"
+import Banner_slide from "./banner_slide.vue"
 export default {
     data() {
         return {
@@ -20,13 +35,20 @@ export default {
     components:{
        "head01":Header,
        "foot01":Footer,
-       "main1":Main1
+       "main1":Main1,
+       "main2":Main2,
+       "clear":Clear,
+       "banner1":Banner_slide
+       
     }
 }
 </script>
 <style>
 .yzly{
     overflow: hidden;
+}
+.clear, .clearfix {
+    clear: both;
 }
 .main{
     
