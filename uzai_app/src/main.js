@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+
 //删除5-6行
 // import'mint-ui/lib/style.css'
 //1.引入第三方组件库mint-ui
@@ -10,7 +11,7 @@ import MintUI from "mint-ui"
 import "mint-ui/lib/style.css"
 //1.3将mint-ui 注册vue
 Vue.use(MintUI)
-// 1.4引入图标字体晚间
+// 1.4引入图标字体文件
 import "./font/iconfont.css"
 // main.js配置axios-
 //1.5引入axios库

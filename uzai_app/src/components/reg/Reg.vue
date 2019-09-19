@@ -30,27 +30,27 @@
                     <div class="middle-body-body1">
                         <div class="body1-check">
                             <span>&nbsp;&nbsp;&nbsp;手机号码</span>
-                            <input class="input1" type="text" placeholder="请输入手机号码" v-model="loginName" maxlength="11" @blur="regNumber">
-                            <span class="body1-check-text1" ></span>
+                            <input class="input1" type="text" placeholder="请输入手机号码" v-model="loginName" maxlength="11" @blur="regPhone">
+                            <span class="body1-checktext1" ref="input111"></span>
                         </div>
                         <div class="body1-check">
                             <span>图形验证码</span>
-                            <input class="input2" type="text" placeholder="请输入验证码" maxlength="2" v-on:blur="regNumber">
+                            <input class="input2" type="text" placeholder="请输入验证码" maxlength="2" v-model="loginNumber" @blur="regNumber">
                                 <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张" />
-                                <span class="body1-check-text2">手机号格式不正确请</span>
+                                <span class="body1-check-text2" ref="input222"></span>
                         </div>
                         <div class="body1-check">
                             <span>手机验证码</span>
-                            <input class="input2" type="text" placeholder="请输入验证码" maxlength="6">
+                            <input class="input3" type="Number" placeholder="请输入验证码" maxlength="6" v-model="loginMsg" @blur="regMsg">
                             <button>获取验证码</button>
-                            <span class="body1-check-text3">请输入您的短信验证码！</span>
+                            <span class="body1-check-text3" ref="input333"></span>
                         </div>
                         <div class="body1-agree">
-                            <span>方框</span>
+                            <input type="radio" >
                             <span class="check">我已阅读同意</span>
                             <a href="javascript:;">《用户使用协议》</a>
                         </div>
-                        <button class="body1-next">下一步</button>
+                        <button class="body1-next" @click="Login">下一步</button>
                     </div>
                     <div class="middle-body-body2">
                         <div>
@@ -108,21 +108,55 @@ export default {
     data(){
         return{
             loginName:"",
-            // upwd:"",
+            loginNumber:"",
+            loginMsg:"",
         }
-            // console.log(loginName,upwd)
+            console.log(loginName,loginNumber,loginMsg)
     },
     methods:{
-        regNumber(){
-            var uname=this.loginName;
-            var reg=/^1[3-9]\d{9}&/;
-            if(uname==""){
-                name.body1-check-text1.innerHTML("请输入您的手机号")
+        regMsg(){
+            var loginMsg=msg;
+            var regMsg=/^[0-9]\d{6}$/;
+            if(msg==""){
+                this.$refs.input333.innerHTML="请输入您的短信验证码!";
                 return;
             }
-            if(!reg.test(uname)){
-                name.body1-check-text1.innerHTML("用户名格式不正确")
+            if(!regMsg.test(msg)){
+                this.$refs.input333.innerHTML="请输入正确的短信验证码!";
+                return;
             }
+        },
+        regNumber(){
+            var number=this.loginNumber;
+            var regNumber=/^[0-9]\d{2}$/;
+
+            if(number==""){
+                this.$refs.input222.innerHTML="请输入您的图形验证码";
+                return;
+            }
+            if(number==""){
+                this.$refs.input222.innerHTML="图形验证码错误!";
+                return;
+            }
+        },
+        regPhone(){
+            var uname=this.loginName;
+            var regUname=/^1[3-9]\d{9}$/;
+            if(uname==""){
+                this.$refs.input111.innerHTML="请输入您的手机号码"
+                return;
+            }
+            if(!regUname.test(uname)){
+                this.$refs.input111.innerHTML="用户名格式不正确"
+                return;
+            }
+            // if(!reg.test(uname)){
+            //     this.body1-checktext1.innerHTML("用户名格式不正确")
+            //     // console.log("用户名格式不正确")
+            //     return;
+            // }
+            //  console.log(uname);
+   
         },
         Login(){
             // var uname=this.loginName;
@@ -130,12 +164,13 @@ export default {
             // console.log(loginName,upwd);
             // var reg=/^1[3-9]\d{9}&/;
             // if(uname==""){
-            //     name.body1-check-text1.innerHTML("请输入您的手机号")
+            //     name.body1-checktext1.innerHTML("请输入您的手机号")
             //     return;
             // }
             // if(!reg.test(uname)){
-            //     name.body1-check-text1.innerHTML("用户名格式不正确")
+            //     name.body1-checktext1.innerHTML("用户名格式不正确")
             // }
+            // console.log(this.loginName);
         },
     },
 }
@@ -248,7 +283,7 @@ a{
     margin-bottom: 15px;
     background: yellow
 }
-.body1-check-text1,
+.body1-checktext1,
 .body1-check-text2{
     background:green;
     display: inline;
@@ -285,7 +320,8 @@ a{
     /* background: #999; */
     width:222px;
 }
-.body1-check .input2{
+.body1-check .input2,
+.body1-check .input3{
     /* background: #999; */
     width:100px;
 }
