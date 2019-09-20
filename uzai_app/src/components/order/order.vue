@@ -97,6 +97,86 @@
               </span>
               <span class="th05">操作</span>
             </li>
+            <li>
+              <div class="notime clear">
+                <span>订单编号：FR19090000002687</span>
+                <span class="time">下单时间：2019-09-19</span>
+              </div>
+              <table class="list_detail">
+                <tbody>
+                  <tr>
+                    <td class="th01">
+                      <div class="fl">
+                        <img
+                          onerror="nofind()"
+                          src="https://img4.uzaicdn.com/ba/sightGallery/鼓浪屿416鼓浪屿夜景18686+视觉中国+RF+VCG21061f0f0f4.jpg?imageView2/2/w/80/h/62"
+                          width="60"
+                          height="45"
+                        />
+                      </div>
+                      <div class="fl title">
+                        <em>
+                          <a
+                            href="00012816.html"
+                            target="_blank"
+                          >&lt;【闲情鼓浪屿】厦门+鼓浪屿+云水谣+土楼+南普陀+曾厝垵+胡里山炮台 双飞5日无购物无自费&gt;【金秋放价 国内游立减400】</a>
+                        </em>
+                      </div>
+                    </td>
+                    <td class="th02">2019-09-27</td>
+                    <td class="th03">¥4199.00</td>
+
+                    <td class="th04">
+                      订单取消
+                      <br />
+                      <div class="sendding">
+                        <a href="#">订单跟踪</a>
+                        <dl class="sendding_info">
+                          <dt>
+                            <div class="arr"></div>
+                            <div class="arr2"></div>
+                          </dt>
+
+                          <dd class="clear">
+                            <em class="dateYMD">
+                              2019-09-19
+                              <br />09:58:55
+                            </em>
+                            <em>您的订单提交成功，我们将在1个工作日内与您联系，请保持电话畅通</em>
+                          </dd>
+                          <dd class="clear">
+                            <em class="dateYMD">
+                              2019-09-19
+                              <br />09:59:49
+                            </em>
+                            <em>您的订单已取消</em>
+                          </dd>
+                        </dl>
+                      </div>
+                    </td>
+                    <td class="th05" servicetype="外采">
+                      <a class="channel" href>已取消</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="order_fz hidden">
+                <div class="arr3"></div>
+                <div class="arr4"></div>
+                <table class="order_fz_table" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <th class="t01">子订单编号</th>
+                      <th class="t02">金额</th>
+                      <th class="t03">支付状态</th>
+                      <th class="t04">款项类型</th>
+                      <th class="t05">操作</th>
+                      <th class="t06"></th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -122,9 +202,9 @@ export default {
       zhgl: ["个人资料", "账户安全"],
       zhongji: [],
       i: 0,
-      is_show:false
+      is_show: false
     };
-  },
+  }, 
   created() {
     this.zhongji = this.myzx.concat(this.myzc, this.zhgl);
     console.log(this.zhongji);
@@ -138,18 +218,18 @@ export default {
 };
 </script>
 <style scoped>
-.jiantou{
-    width: 0px;
-    position: relative;
-    top: -36px;
-    left: 145px;
-    height: 0px;
-    border: 8px solid #fff;
-    border-bottom-color: #fff;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(-135deg);
-    -webkit-box-shadow: 3px 3px;
-    box-shadow: 2px 2px 3px -2px;
+.jiantou {
+  width: 0px;
+  position: relative;
+  top: -36px;
+  left: 145px;
+  height: 0px;
+  border: 8px solid #fff;
+  border-bottom-color: #fff;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(-135deg);
+  -webkit-box-shadow: 3px 3px;
+  box-shadow: 2px 2px 3px -2px;
 }
 li {
   list-style: none;
@@ -157,7 +237,88 @@ li {
 .iconfont {
   font-size: 26px;
 }
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,input,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+input,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -319,9 +480,8 @@ select {
   -webkit-appearance: none;
   padding-left: 10px;
   outline: 0;
-  background: #fafafa
-    url(../../../public/images/order_img/select_sj.png) no-repeat
-    94% center;
+  background: #fafafa url(../../../public/images/order_img/select_sj.png)
+    no-repeat 94% center;
   padding-right: 0\9;
 }
 .add_name-bar select {
@@ -336,8 +496,8 @@ select {
   margin-bottom: 10px;
 }
 .order_list .list_th {
-    background: #f6f6f6;
-    font-size: 14px;
+  background: #f6f6f6;
+  font-size: 14px;
 }
 .order_list span {
   text-align: center;
@@ -370,25 +530,26 @@ select {
   position: relative;
   z-index: 1;
 }
-.order_type{
-    font-size: 12px;
-    color: #666;
-    width: 290px;
-    height: 196px;
-    position: absolute;
-    top: 28px;
-    padding: 30px 30px 0 20px;
-    left: -162px;
-    display: none;
-    z-index: 9;
-    border-radius:3px;
-    box-shadow: 0px 2px 5px;
+.order_type {
+  font-size: 12px;
+  color: #666;
+  width: 290px;
+  height: 196px;
+  position: absolute;
+  top: 28px;
+  padding: 30px 30px 0 20px;
+  left: -162px;
+  display: none;
+  z-index: 9;
+  border-radius: 3px;
+  box-shadow: 0px 2px 5px;
 }
 .order_list .order_type p {
-    margin-bottom: 8px;
-    overflow: hidden;
+  margin-bottom: 8px;
+  overflow: hidden;
 }
-em,i{
+em,
+i {
   font-style: normal;
 }
 .order_list .order_type em {
@@ -404,6 +565,124 @@ em,i{
   float: right;
 }
 .icon-question:hover .order_type {
+  display: block;
+}
+.notime {
+    font-size: 12px;
+    background: #f5f9ff;
+    padding: 0px 10px 0px 10px;
+    border-bottom: 1px dotted #e2e2e2;
+    color: #999;
+}
+.order_list span {
+    text-align: center;
+    border-right: 1px solid #f6f6f6;
+    float: left;
+    line-height: 30px;
+}
+.notime .time {
+    float: right;
+}
+.list_detail {
+    font-size: 14px;
+    position: relative;
+}
+.list_detail tr td {
+    text-align: center;
+    border-right: 1px dotted #e2e2e2;
+    line-height: 25px;
+    padding: 10px 0 10px 0;
+}
+.order_list .th01 {
+    width: 380px;
+}
+.list_detail tr td:first-child {
+    text-align: left;
+    padding: 10px;
+    width: 370px;
+}
+.list_detail tr td:last-child {
+    border: 0;
+}
+.fl, .left {
+    float: left;
+}
+.order_list .th01 .title {
+    width: 290px;
+    line-height: 16px;
     display: block;
+    padding-left: 14px;
+}
+.order_list .th01 .title em {
+    min-height: 32px;
+    display: block;
+    max-height: 52px;
+    overflow: hidden;
+    line-height: 18px;
+}
+.list_detail a {
+    color: #0099d9;
+    margin: 0 5px 0 5px;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+}
+.order_list .th01 .title em a {
+    color: #4a4a4a;
+}
+em, i {
+    font-style: normal;
+}
+.sendding {
+    height: 28px;
+    position: relative;
+}
+.sendding_info {
+    font-size: 12px;
+    width: 250px;
+    position: absolute;
+    z-index: 22;
+    text-align: left;
+    background: #fff;
+    padding: 10px;
+    top: 20px;
+    left: -75px;
+    display: none;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 5px;
+    color: #666;
+}
+.arr {
+    width: 0;
+    height: 0;
+    border-right: 9px dashed transparent;
+    border-bottom: 7px solid #e8e8e8;
+    border-left: 9px dashed transparent;
+    position: absolute;
+    top: -7px;
+    left: 118px;
+}
+.arr2 {
+    width: 0;
+    height: 0;
+    border-right: 9px dashed transparent;
+    border-bottom: 7px solid #fff;
+    border-left: 9px dashed transparent;
+    position: absolute;
+    top: -6px;
+    left: 118px;
+}
+.sendding_info dd {
+    margin: 5px auto 5px auto;
+}
+.sendding_info dd em {
+    display: block;
+    float: left;
+    width: 160px;
+    line-height: 16px;
+}
+.sendding_info dd .dateYMD {
+    width: 80px;
+    text-align: center;
 }
 </style>
