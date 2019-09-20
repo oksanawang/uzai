@@ -36,12 +36,7 @@
                         <div class="body1-check">
                             <span>图形验证码</span>
                             <input class="input2" type="text" placeholder="请输入验证码" maxlength="2" v-model="loginNumber" @blur="regNumber">
-                                <!-- <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张" /> -->
-                                <!-- <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张" /> -->
-                                <!-- <span> -->
-                                    <!-- <img src="" alt=""> -->
-                                    <num class="num" title="看不清，换一张"></num>
-                                <!-- </span> -->
+                                <num class="num" title="看不清，换一张"></num>
                                 <span class="body1-check-text2" ref="input222"></span>
                         </div>
                         <div class="body1-check">
@@ -82,8 +77,8 @@
                             <p>恭喜成为悠哉网会员</p>
                             <p>
                                 <span>您可以</span>
-                                <a href="javascript:;" >登录首页</a>
-                                <span>或2s后跳转首页</span>
+                                <a href="/" >登录首页</a>
+                                <span>或3s后跳转首页</span>
                             </p>
                         </div>
                     </div>
@@ -110,7 +105,7 @@
 <script>
 import Number from "./Number.vue"
 export default {
-        components:{
+    components:{
         "num":Number
     },
     data(){

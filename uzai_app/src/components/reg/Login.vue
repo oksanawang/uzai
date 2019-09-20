@@ -22,42 +22,41 @@
                             <input placeholder="请输入密码" type="password" v-model="upwd" maxlength="16">
                         </div>
                         <div>
-                            <input placeholder="图形验证码" type="text" maxlength="2">
-                            <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张"/>
+                            <input placeholder="图形验证码" type="text" maxlength="2" v-model="umsg">
+                            <num class="num" title="看不清，换一张"></num>
                         </div>
                         <div class="login-rember">
                             <span class="login-rember-span">记住我</span>
                             <a class="login-rember-a" href="javascript:;">忘记密码？</a>
                         </div>
                         <button class="login-btn-login" @click="Login">登录</button>
-                        <!-- <p>1111</p> -->
+                        <p class="tishi" ref="tishi"></p>
                     </div>
                     <div class="login-right">
                         <p>还没众信悠哉网账号？</p>
-                        <a href="javascript:;">立即注册-></a>
+                        <a href="#/reg">立即注册-></a>
                         <p>使用社交账号登录</p>
                     </div>
                 </div>
                 <div class="login-middle-dongtai">
                     <div class="login-dongtai-left">
                         <div>
-                            <input placeholder="请输入登录名/手机号/邮箱" type="text" maxlength="11">
+                            <input placeholder="请输入登录名/手机号/邮箱" type="text" maxlength="11" v-model="loginName">
                         </div>
                         <div class="login-dongtai-input">
-                            <input placeholder="图形验证码" type="text" maxlength="2">
-                            <img src="../../../public/images/reg_img/code.jpeg" title="看不清，换一张"/>
+                            <input placeholder="图形验证码" type="text" maxlength="2" v-model="upwd">
+                            <num class="num" title="看不清，换一张"></num>
                         </div>
                         <div class="login-dongtai-input">
-                            <input placeholder="请输入验证码" type="text" maxlength="6">
+                            <input placeholder="请输入验证码" type="text" maxlength="6" v-model="umsg">
                             <button class="getYan">获取验证码</button> 
                         </div>
                         <button class="login-button-login" @click="Login">登录</button>
-                        <!-- <span>1111111</span> -->
-                        <!-- <p>111111</p> -->
+                        <p class="tishi">111111</p>
                     </div>
                     <div class="login-dongtai-right">
                         <p>还没众信悠哉网账号？</p>
-                        <a href="javascript:;">立即注册-></a>
+                        <a href="#/reg">立即注册-></a>
                         <p>使用社交账号登录</p>
                     </div>
                 </div>
@@ -80,22 +79,37 @@
     </div> 
 </template>
 <script>
+import Number from "./Number.vue"
 export default {
+    components:{
+        "num":Number
+    },
     data(){
         return{
             loginName:"",
             upwd:"",
+            umsg:"",
         }
-            // console.log(loginName,upwd)
     },
     methods:{
         Login(){
             var loginName=this.loginName;
-            var upwd=this.upwd;
-            console.log(loginName,upwd);
-            var reg=/^1[3-9]\d{9}&/;
+            var pwd=this.upwd;
+            var msg=this.umsg;
+            console.log(loginName,pwd,msg);
+            var regName=/^1[3-9]\d{9}&/;
+            var regMsg=/^[0-9]\d{6}$/;
             if(loginName==""){
-
+                this.$refs.tishi.innerHTML="请输入登录名/手机号/邮箱!"
+                return;
+            }
+            if(pwd==""){
+                this.$refs.tishi.innerHTML="请输入您的密码!"
+                return;
+            }
+            if(msg==""){
+                this.$refs.tishi.innerHTML="请输入验证码!"
+                return;
             }
         },
     },
@@ -154,11 +168,11 @@ a{
 }
 .login-middle{
     display: block;
-    display: none;
+    /* display: none; */
 }
 .login-middle-dongtai{
     display: none;
-    display: block;
+    /* display: block; */
 }
 .login-left,
 .login-dongtai-left{
@@ -179,25 +193,26 @@ a{
 
 .login-left div:nth-child(3) input{
     width:105px;
+
     /* background: #333; */
 }
-.login-left div:nth-child(3) img{
+/* .login-left div:nth-child(3) img{
     width:105px;
-    /* background: #333; */
+    background: #333;
     vertical-align:middle;
     height: 28px;
     margin-left:10px;
-}
+} */
 .login-dongtai-input input{
     width:105px;
 }
-.login-dongtai-input img{
+/* .login-dongtai-input img{
     vertical-align:middle;
     width:110px;
     height: 28px;
     margin-left:10px;
-    /* background: #fb284b; */
-}
+    background: #fb284b;
+} */
 .login-dongtai-input .getYan{
     width: 110px;
     line-height: 25px;
@@ -222,6 +237,15 @@ a{
     right: 0;
 
 }
+.tishi{
+    height: 13px;
+    margin:0;
+    padding:0;
+    color:#fb284b;
+    background: yellowgreen;
+    text-align: center;
+    font-size:12px;
+}
 .login-btn-login{
     color: #fff;
     width:250px;
@@ -232,7 +256,7 @@ a{
     margin-top: 10px;
     border-radius: 18px;
     cursor: pointer;
-    margin-bottom: 26px;
+    margin-bottom: 7px;
     border:0;
 }
 .login-button-login{
@@ -245,8 +269,41 @@ a{
     margin-top: 15px;
     border-radius: 18px;
     cursor: pointer;
-    margin-bottom: 26px;
+    margin-bottom: 7px;
     border:0;
+}
+.num{
+    /* display: inline; */
+    float: right;
+    height: 28px;
+    width: 110px;
+    margin-left: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    /* background: #fa164b; */
+    position: absolute;
+    right: 0px;
+    /* top:0; */
+    bottom:0;
+}
+.login-dongtai-input{
+    position: relative;
+} 
+.login-left div{
+    position: relative;
+}
+.num{
+    /* display: inline; */
+    float: right;
+    height: 28px;
+    width: 110px;
+    margin-left: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    /* background: #fa164b; */
+    position: absolute;
+    right: 26px;
+    top:10px;
 }
 .login-right,
 .login-dongtai-right{
@@ -260,6 +317,7 @@ a{
     padding-left: 29px;
     padding-top: 48px;
     padding-bottom: 14px;
+    margin-top:10px;
 }
 .login-right a,
 .login-dongtai-right a{

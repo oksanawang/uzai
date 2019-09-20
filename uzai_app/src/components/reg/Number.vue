@@ -2,7 +2,7 @@
     <div>
         <div class="txyzm" v-show="change" @click="change" ref="yanzheng">
         <!-- <div class="txyzm" @loadstart="change" ref="yanzheng"> -->
-            <!-- <canvas id="canvas" height="28" width="110"></canvas> -->
+            <canvas id="canvas" height="28" width="110"></canvas>
         </div>
     </div>
 </template>
@@ -11,30 +11,40 @@ export default {
     data(){
         return{}
     },
-
+    props: {
+    identifyCode: {
+      type: String,
+      default: "1234"
+    },
+    fontSizeMin: {
+      type: Number,
+      default: 25
+    },
+    fontSizeMax: {
+      type: Number,
+      default: 30
+    },
+    },
     methods:{
         change(){
+            var sign1="+";
+            var sign2="-";
+            var sign3="=";
+            var sign4="？";
+            var deg=Math.floor(Math.random()*15)
+            ctx.font="24px SeiHei"
+            ctx.rotate(2*Math.PI/180);
+            ctx.fillText(ranNumber1,10,28)
+            ctx.fillText("+",20,28)
+            ctx.fillText("-",30,28)
+            ctx.fillText(ranNumber2,50,28)
+            ctx.fillText(ranNumber3,60,28)
+            ctx.fillText("=",70,28)
+            ctx.fillText("?",80,28)
+
             var ranNumber1=parseInt(1+Math.random()*19);
             var ranNumber2=parseInt(1+Math.random()*9);
             var ranNumber3=parseInt(1+Math.random()*9);
-
-            // var c3=document.getElementById("canvas");
-            // var ctx=c3.getContext("2d");
-            // ctx.clearRect(0,0,110,28);
-            // var sign1="+";
-            // var sign2="-";
-            // var sign3="=";
-            // var sign4="？";
-
-            // ctx.font="24px SeiHei"
-            // ctx.rotate(2*Math.PI/180);
-            // ctx.fillText(ranNumber1,10,28)
-            // ctx.fillText("+",20,28)
-            // ctx.fillText("-",30,28)
-            // ctx.fillText(ranNumber2,50,28)
-            // ctx.fillText(ranNumber3,60,28)
-            // ctx.fillText("=",70,28)
-            // ctx.fillText("?",80,28)
             var result;
             if(ranNumber1>ranNumber2){//&& ranNumber2!=0
                 this.$refs.yanzheng.innerHTML=ranNumber1+`-`+ranNumber2+`=`+`?`
@@ -47,9 +57,11 @@ export default {
                 console.log(result);
                 return result;
             }
-                $(window).load(change())
         },
     },
+    // created() {
+    //     this.change()
+    // },
 }
 </script>
 <style scoped>
