@@ -4,7 +4,7 @@
       <a
         class="swiper-slide"
         style="display: block;"
-        href="https://search.uzai.com/日本/1/0/0/s3-f1/"
+        href="javascript:;"
         target="_blank"
       >
         <img

@@ -9,7 +9,9 @@ import UserAgreement from "./components/reg/UserAgreement.vue"
 
 
 import order from "./components/order/order.vue"
+import booking from "./components/order/booking.vue"
 import Index from "./components/index/index.vue"
+import Detail from "./views/detail.vue"
 
 
 
@@ -26,5 +28,7 @@ export default new Router({
 
 
     {path:'/order',component:order},
+    {path:'/detail',component:Detail},
+    {path:'/booking',component:booking},
   ]
 })
