@@ -179,6 +179,13 @@
             </li>
           </ul>
         </div>
+        <div class="page">
+          <a id="firstPage">首页</a>
+          <a id="prePage">上一页</a>
+          <a class="active">1</a>
+          <a id="nextPage">下一页</a>
+          <a id="lastPage">尾页</a>
+        </div>
       </div>
     </div>
   </div>
@@ -204,7 +211,7 @@ export default {
       i: 0,
       is_show: false
     };
-  }, 
+  },
   created() {
     this.zhongji = this.myzx.concat(this.myzc, this.zhgl);
     console.log(this.zhongji);
@@ -568,121 +575,198 @@ i {
   display: block;
 }
 .notime {
-    font-size: 12px;
-    background: #f5f9ff;
-    padding: 0px 10px 0px 10px;
-    border-bottom: 1px dotted #e2e2e2;
-    color: #999;
+  font-size: 12px;
+  background: #f5f9ff;
+  padding: 0px 10px 0px 10px;
+  border-bottom: 1px dotted #e2e2e2;
+  color: #999;
 }
 .order_list span {
-    text-align: center;
-    border-right: 1px solid #f6f6f6;
-    float: left;
-    line-height: 30px;
+  text-align: center;
+  border-right: 1px solid #f6f6f6;
+  float: left;
+  line-height: 30px;
 }
 .notime .time {
-    float: right;
+  float: right;
 }
 .list_detail {
-    font-size: 14px;
-    position: relative;
+  font-size: 14px;
+  position: relative;
 }
 .list_detail tr td {
-    text-align: center;
-    border-right: 1px dotted #e2e2e2;
-    line-height: 25px;
-    padding: 10px 0 10px 0;
+  text-align: center;
+  border-right: 1px dotted #e2e2e2;
+  line-height: 25px;
+  padding: 10px 0 10px 0;
 }
 .order_list .th01 {
-    width: 380px;
+  width: 380px;
 }
 .list_detail tr td:first-child {
-    text-align: left;
-    padding: 10px;
-    width: 370px;
+  text-align: left;
+  padding: 10px;
+  width: 370px;
 }
 .list_detail tr td:last-child {
-    border: 0;
+  border: 0;
 }
-.fl, .left {
-    float: left;
+.fl,
+.left {
+  float: left;
 }
 .order_list .th01 .title {
-    width: 290px;
-    line-height: 16px;
-    display: block;
-    padding-left: 14px;
+  width: 290px;
+  line-height: 16px;
+  display: block;
+  padding-left: 14px;
 }
 .order_list .th01 .title em {
-    min-height: 32px;
-    display: block;
-    max-height: 52px;
-    overflow: hidden;
-    line-height: 18px;
+  min-height: 32px;
+  display: block;
+  max-height: 52px;
+  overflow: hidden;
+  line-height: 18px;
 }
 .list_detail a {
-    color: #0099d9;
-    margin: 0 5px 0 5px;
-    font-size: 14px;
-    line-height: 17px;
-    cursor: pointer;
+  color: #0099d9;
+  margin: 0 5px 0 5px;
+  font-size: 14px;
+  line-height: 17px;
+  cursor: pointer;
 }
 .order_list .th01 .title em a {
-    color: #4a4a4a;
+  color: #4a4a4a;
 }
-em, i {
-    font-style: normal;
+em,
+i {
+  font-style: normal;
 }
 .sendding {
-    height: 28px;
-    position: relative;
+  height: 28px;
+  position: relative;
 }
 .sendding_info {
-    font-size: 12px;
-    width: 250px;
-    position: absolute;
-    z-index: 22;
-    text-align: left;
-    background: #fff;
-    padding: 10px;
-    top: 20px;
-    left: -75px;
-    display: none;
-    box-shadow: 0px 0px 10px #ccc;
-    border-radius: 5px;
-    color: #666;
+  font-size: 12px;
+  width: 250px;
+  position: absolute;
+  z-index: 22;
+  text-align: left;
+  background: #fff;
+  padding: 10px;
+  top: 20px;
+  left: -75px;
+  display: none;
+  box-shadow: 0px 0px 10px #ccc;
+  border-radius: 5px;
+  color: #666;
 }
 .arr {
-    width: 0;
-    height: 0;
-    border-right: 9px dashed transparent;
-    border-bottom: 7px solid #e8e8e8;
-    border-left: 9px dashed transparent;
-    position: absolute;
-    top: -7px;
-    left: 118px;
+  width: 0;
+  height: 0;
+  border-right: 9px dashed transparent;
+  border-bottom: 7px solid #e8e8e8;
+  border-left: 9px dashed transparent;
+  position: absolute;
+  top: -7px;
+  left: 118px;
 }
 .arr2 {
-    width: 0;
-    height: 0;
-    border-right: 9px dashed transparent;
-    border-bottom: 7px solid #fff;
-    border-left: 9px dashed transparent;
-    position: absolute;
-    top: -6px;
-    left: 118px;
+  width: 0;
+  height: 0;
+  border-right: 9px dashed transparent;
+  border-bottom: 7px solid #fff;
+  border-left: 9px dashed transparent;
+  position: absolute;
+  top: -6px;
+  left: 118px;
 }
 .sendding_info dd {
-    margin: 5px auto 5px auto;
+  margin: 5px auto 5px auto;
 }
 .sendding_info dd em {
-    display: block;
-    float: left;
-    width: 160px;
-    line-height: 16px;
+  display: block;
+  float: left;
+  width: 160px;
+  line-height: 16px;
 }
 .sendding_info dd .dateYMD {
-    width: 80px;
-    text-align: center;
+  width: 80px;
+  text-align: center;
+}
+.hidden,
+.hide,
+.success .valid_message,
+.tip .valid_message {
+  display: none;
+}
+.order_fz {
+  border-top: 1px dotted #eaeaea;
+  position: relative;
+}
+.arr3 {
+  width: 0;
+  height: 0;
+  border-right: 9px dashed transparent;
+  border-bottom: 7px solid #eaeaea;
+  border-left: 9px dashed transparent;
+  position: absolute;
+  top: -7px;
+  left: 91px;
+}
+.arr4 {
+  width: 0;
+  height: 0;
+  border-right: 9px dashed transparent;
+  border-bottom: 7px solid #fff;
+  border-left: 9px dashed transparent;
+  position: absolute;
+  top: -6px;
+  left: 91px;
+}
+.order_fz_table {
+  font-size: 12px;
+  width: 820px;
+  margin: 10px auto 20px auto;
+}
+.order_fz_table tr th {
+  padding: 5px 0 5px 0;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+.order_fz_table .t01 {
+  width: 180px;
+}
+.order_fz_table .t02 {
+  width: 100px;
+}
+.order_fz_table .t03 {
+  width: 100px;
+}
+.order_fz_table .t04 {
+  width: 100px;
+}
+.order_fz_table .t05 {
+  width: 100px;
+}
+.order_fz_table .t06 {
+  width: 240px;
+}
+.page {
+  margin-top: 30px;
+  text-align: right;
+}
+.page a {
+  line-height: 25px;
+  font-size: 14px;
+  color: #666;
+  margin-right: 5px;
+  border: 1px solid #ececec;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.page a.active {
+  color: #fff;
+  background: #ea1a56;
 }
 </style>
