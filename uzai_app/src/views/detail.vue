@@ -566,7 +566,7 @@
     <input id="productprice" type="hidden" value="3280">
     <input id="productimgurl" type="hidden" value="https://img0.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg">
 
-    <div class="common_sidebar">
+    <!-- <div class="common_sidebar">
         <div class="common_sidebar_m">
             <a href="javascript:;" onclick="_index_online_service(this)" class="li">
                 <i class="iconfont icon-161019kefuicon">&#xe600;</i>
@@ -615,17 +615,18 @@
                 <i class="iconfont icon-backtop">&#xe603;</i>
             </div>
         </div>  
-    </div>  
+    </div>   -->
+    <d-cbl></d-cbl>
     <d-footer></d-footer>
 
-    <div class="duqGkC" v-if="show" @click="changeshow">
+    <!-- <div class="duqGkC" v-if="show" @click="changeshow">
         <div style="box-sizing: border-box; padding: 15px; width:100%; height:100%;">
             <div class="kmdKOE"></div>
         </div>
     </div> 
     <div class="xr" v-else>
         <d-xr :show="show" @changeshow="changeshow"></d-xr>
-    </div> 
+    </div>  -->
     
    
             
@@ -637,7 +638,8 @@
 <script>
 import dHeader from "../components/detail/dheader";
 import dFooter from "../components/detail/dfooter";
-import dXr from "../components/detail/xr";
+import dCbl from "../components/detail/cbl";
+
 export default {
     data(){
         return{
@@ -654,8 +656,8 @@ export default {
                 },
                 {
                     img01:"https://img1.uzaicdn.com/ba/sightGallery/万国建筑博览423万国建筑博览422+视觉中国+RF+VCG2120d318f4b.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1",
-                }],
-                show:true
+                }]
+                
         }
     },
     methods:{
@@ -667,28 +669,13 @@ export default {
             // }else if(e.target.localName === 'img'){
 	        //     console.log("触发事件2");  
             // }
-        },
-        changeshow(){
-           
-            if(this.show ==true){
-                this.show =false;
-                 console.log(this.show);
-                 return;
-            }
-            if(this.show ==false ){
-                this.show =true;
-                console.log(this.show);
-                return;
-            }
-          
         }
-    
+        
     },
     components:{
         dHeader,
         dFooter,
-        dXr
-
+        dCbl   
     }
 }
 </script>

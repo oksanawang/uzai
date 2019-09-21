@@ -388,6 +388,22 @@ export default {
         return{
 
         }
+    },
+    method:{
+        changeshow(){
+           
+            if(this.show ==true){
+                this.show =false;
+                 console.log(this.show);
+                 return;
+            }
+            if(this.show ==false ){
+                this.show =true;
+                console.log(this.show);
+                return;
+            }
+          
+        }
     }
 }
 </script>
