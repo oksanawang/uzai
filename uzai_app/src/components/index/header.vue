@@ -3,11 +3,11 @@
     <div class="common_top">
       <div class="top_m">
         <div class="top_m_r">
-          <a href="//userclub.uzai.com" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-vip"></i> 会员俱乐部
           </a>
-          <a href="//u.uzai.com/personal/myorder" target="_blank" class="paddl26">我的订单</a>
-          <a href="//www.uzai.com/aboutus/salesnetwork" target="_blank" class="paddl26 red">营业网点</a>
+          <a href="javascript:;" target="_blank" class="paddl26">我的订单</a>
+          <a href="javascript:;" target="_blank" class="paddl26 red">营业网点</a>
           <div class="top_server">
             <a href="#">
               服务中心
@@ -16,19 +16,19 @@
             </a>
             <div class="clear"></div>
             <div class="ul">
-              <a href="//www.uzai.com/aboutus/companyprofile" target="_blank">关于我们</a>
-              <a href="//www.uzai.com/aboutus/businesscooperation" target="_blank">商务合作</a>
-              <a href="//www.uzai.com/aboutus/contactus" target="_blank">联系我们</a>
-              <a href="//www.uzai.com/aboutus/joinus" target="_blank">诚聘英才</a>
+              <a href="javascript:;" target="_blank">关于我们</a>
+              <a href="javascript:;" target="_blank">商务合作</a>
+              <a href="javascript:;" target="_blank">联系我们</a>
+              <a href="javascript:;" target="_blank">诚聘英才</a>
             </div>
           </div>
         </div>
         <div class="top_m_l">
-          <a href="//u.uzai.com/reg/login">
+          <a href="#/reg">
             <i class="iconfont icon-yonghu"></i>登录
           </a>
           <a class="paddl0">|</a>
-          <a href="//u.uzai.com/reg/register_one">
+          <a href="#/login">
             <i class="iconfont icon-zhuce"></i>注册
           </a>
           <span class="red">新用户送5800元抵用券</span>
@@ -42,7 +42,7 @@
         </h2>
         <h3>09:00~21:00</h3>
       </div>
-      <a href="//www.uzai.com">
+      <a href="javascript:;">
         <img src="//r.uzaicdn.com/content/store/images/common/logo.png" class="logo">
       </a>
       <div class="address" id="address">
@@ -133,7 +133,7 @@
           type="text"
           class="search_input"
           id="index_search_input"
-          attr-href="https://search.uzai.com/国内游立减/1/0/0/s1/"
+          attr-href="javascript:;"
           placeholder="国内游 满额立减￥400/人"
         >
         <input type="hidden" id="index_search_input_last_value">
@@ -143,181 +143,181 @@
             <div class="hot">
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('北欧','https://search.uzai.com/北欧/',1)"
+                onclick="IndexSearch.target_link('北欧','javascript:;',1)"
               >北欧</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('东欧','https://search.uzai.com/东欧/',1)"
+                onclick="IndexSearch.target_link('东欧','javascript:;',1)"
               >东欧</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('俄罗斯','https://search.uzai.com/eluosi/1/0/0/s3-pCOTT000048_COTT000264_COTT000234/',1)"
+                onclick="IndexSearch.target_link('俄罗斯','javascript:;',1)"
               >俄罗斯</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('东京','https://search.uzai.com/dongjing/',1)"
+                onclick="IndexSearch.target_link('东京','javascript:;',1)"
               >东京</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('北海道','https://search.uzai.com/北海道/',1)"
+                onclick="IndexSearch.target_link('北海道','javascript:;',1)"
               >北海道</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('普吉岛','https://search.uzai.com/pujidao/',1)"
+                onclick="IndexSearch.target_link('普吉岛','javascript:;',1)"
               >普吉岛</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('土耳其','https://search.uzai.com/tuerqi/',1)"
+                onclick="IndexSearch.target_link('土耳其','javascript:;',1)"
               >土耳其</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('加拿大','http://search.uzai.com/jianada/',1)"
+                onclick="IndexSearch.target_link('加拿大','javascript:;',1)"
               >加拿大</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('澳大利亚','http://search.uzai.com/aodaliya/',1)"
+                onclick="IndexSearch.target_link('澳大利亚','javascript:;',1)"
               >澳大利亚</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('新西兰','http://search.uzai.com/新西兰/',1)"
+                onclick="IndexSearch.target_link('新西兰','javascript:;',1)"
               >新西兰</a>
             </div>
             <div class="more">
               <b>跟团游：</b>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('欧洲一国','https://search.uzai.com/%E6%AC%A7%E6%B4%B2/1/0/0/s0-t8_9_10/',1)"
+                onclick="IndexSearch.target_link('欧洲一国','javascript:;',1)"
               >欧洲一国</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('美国东西岸','https://search.uzai.com/meiguo/',1)"
+                onclick="IndexSearch.target_link('美国东西岸','javascript:;',1)"
               >美国东西岸</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('东京大阪','https://search.uzai.com/daban',1)"
+                onclick="IndexSearch.target_link('东京大阪','javascript:;',1)"
               >东京大阪</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('迪拜','https://search.uzai.com/dibai/1/0/0/s3/',1)"
+                onclick="IndexSearch.target_link('迪拜','javascript:;',1)"
               >迪拜</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('肯尼亚','https://search.uzai.com/kenniya',1)"
+                onclick="IndexSearch.target_link('肯尼亚','javascript:;',1)"
               >肯尼亚</a>
             </div>
             <div class="more">
               <b>海岛游：</b>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('巴厘岛','https://search.uzai.com/balidao',1)"
+                onclick="IndexSearch.target_link('巴厘岛','javascript:;',1)"
               >巴厘岛</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('长滩岛','https://search.uzai.com/changtandao',1)"
+                onclick="IndexSearch.target_link('长滩岛','javascript:;',1)"
               >长滩岛</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('民丹岛','https://search.uzai.com/民丹',1)"
+                onclick="IndexSearch.target_link('民丹岛','javascript:;',1)"
               >民丹岛</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('沙巴','https://search.uzai.com/shaba',1)"
+                onclick="IndexSearch.target_link('沙巴','javascript:;',1)"
               >沙巴</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('仙本那','https://search.uzai.com/仙本那',1)"
+                onclick="IndexSearch.target_link('仙本那','javascript:;',1)"
               >仙本那</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('塞班','https://search.uzai.com/saiban',1)"
+                onclick="IndexSearch.target_link('塞班','javascript:;',1)"
               >塞班</a>
             </div>
             <div class="more">
               <b>国内游：</b>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('亲子年票','https://www.uzai.com/tours/00014327.html',1)"
+                onclick="IndexSearch.target_link('亲子年票','javascript:;',1)"
               >亲子年票</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('川滇藏之旅','https://search.uzai.com/chengdu/1/0/0/s0-c227/',1)"
+                onclick="IndexSearch.target_link('川滇藏之旅','javascript:;',1)"
               >川滇藏之旅</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('江西','https://search.uzai.com/%E6%B1%9F%E8%A5%BF/1/0/0/s3/',1)"
+                onclick="IndexSearch.target_link('江西','javascript:;',1)"
               >江西</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('西藏','https://search.uzai.com/%E8%A5%BF%E8%97%8F/1/0/0/s3/',1)"
+                onclick="IndexSearch.target_link('西藏','javascript:;',1)"
               >西藏</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('海南','https://search.uzai.com/%E6%B5%B7%E5%8D%97/1/0/0/s3/',1)"
+                onclick="IndexSearch.target_link('海南','javascript:;',1)"
               >海南</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('云南','https://search.uzai.com/%E4%BA%91%E5%8D%97/1/0/0/s3/',1)"
+                onclick="IndexSearch.target_link('云南','javascript:;',1)"
               >云南</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('广西','https://search.uzai.com/%E6%A1%82%E6%9E%97/1/0/0/s3/',1)"
+                onclick="IndexSearch.target_link('广西','javascript:;',1)"
               >广西</a>
             </div>
             <div class="more">
               <b>邮轮游：</b>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('欧洲航线','https://search.uzai.com/ouzhou/1/5/2/s0/',1)"
+                onclick="IndexSearch.target_link('欧洲航线','javascript:;',1)"
               >欧洲航线</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('日本航线','https://search.uzai.com/riben/1/5/2/s0/',1)"
+                onclick="IndexSearch.target_link('日本航线','javascript:;',1)"
               >日本航线</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('美洲航线','https://search.uzai.com/%E7%BE%8E%E6%B4%B2/1/5/2/s0/',1)"
+                onclick="IndexSearch.target_link('美洲航线','javascript:;',1)"
               >美洲航线</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('极地航线','https://search.uzai.com/%E6%9E%81%E5%9C%B0/1/0/0/s4/',1)"
+                onclick="IndexSearch.target_link('极地航线','javascript:;',1)"
               >极地航线</a>
             </div>
             <div class="more">
               <b>热门游：</b>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('UYOUNG系列','https://search.uzai.com/UYOUNG/1/0/0/s3/',1)"
+                onclick="IndexSearch.target_link('UYOUNG系列','javascript:;',1)"
               >UYOUNG系列</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('一家一团','https://search.uzai.com/一家',1)"
+                onclick="IndexSearch.target_link('一家一团','javascript:;',1)"
               >一家一团</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('暑期亲子','https://search.uzai.com/乐园',1)"
+                onclick="IndexSearch.target_link('暑期亲子','javascript:;',1)"
               >暑期亲子</a>
             </div>
             <div class="more">
               <b>办签证：</b>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('美国签证','https://visa.uzai.com/ChannelList/GetChannelList?prodCounName=美国',1)"
+                onclick="IndexSearch.target_link('美国签证','javascript:;',1)"
               >美国签证</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('日本签证','https://visa.uzai.com/ChannelList/GetChannelList?prodCounName=日本',1)"
+                onclick="IndexSearch.target_link('日本签证','javascript:;',1)"
               >日本签证</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('马来西亚签证','https://visa.uzai.com/ChannelList/GetChannelList?prodCounName=马来西亚',1)"
+                onclick="IndexSearch.target_link('马来西亚签证','javascript:;',1)"
               >马来西亚签证</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('越南签证','https://visa.uzai.com/ChannelList/GetChannelList?prodCounName=越南',1)"
+                onclick="IndexSearch.target_link('越南签证','javascript:;',1)"
               >越南签证</a>
               <a
                 href="javascript:;"
-                onclick="IndexSearch.target_link('英国签证','https://visa.uzai.com/ChannelList/GetChannelList?prodCounName=英国',1)"
+                onclick="IndexSearch.target_link('英国签证','javascript:;',1)"
               >英国签证</a>
             </div>
           </div>
@@ -435,203 +435,203 @@
     <div class="common_nav">
       <ul>
         <li id="channel_1">
-          <a href="http://www.uzai.com/bj">
+          <a href="javascript:;">
             <i class="iconfont icon-yuandian"></i>首页
           </a>
         </li>
         <li id="channel_8" class="nav_more">
-          <a href="https://www.uzai.com/outbound/bj/" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>出境游
             <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg8.png">
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a" style="width: 1142px; left: 0px;">
             <div class="nav_item" style>
-              <a href="https://search.uzai.com/all/1/0/0/s1-f1/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>金秋放价 满额立减￥300-￥1000/人</span>
               </a>
-              <a href="https://search.uzai.com/优严选/1/0/0/s0/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>优严选 一价全含</span>
               </a>
-              <a href="//search.uzai.com/ouzhou/">
+              <a href="javascript:;">
                 <span>欧洲</span>
               </a>
-              <a href="//search.uzai.com/riben/">
+              <a href="javascript:;">
                 <span>日本</span>
               </a>
-              <a href="//search.uzai.com/东南亚/">
+              <a href="javascript:;">
                 <span>东南亚</span>
               </a>
-              <a href="//search.uzai.com/海岛/">
+              <a href="javascript:;">
                 <span>海岛</span>
               </a>
-              <a href="//search.uzai.com/美洲/">
+              <a href="javascript:;">
                 <span>美洲</span>
               </a>
-              <a href="//search.uzai.com/澳新/">
+              <a href="javascript:;">
                 <span>澳新</span>
               </a>
-              <a href="//search.uzai.com/中东非/">
+              <a href="javascript:;">
                 <span>中东非</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_17" class="nav_more">
-          <a href="//www.uzai.com/lvyoucn/bj/" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>国内游
             <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg3.png">
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a" style="width: 1142px; left: 0px;">
             <div class="nav_item" style>
-              <a href="https://search.uzai.com/国内游立减/1/0/0/s1/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>国内游 满额立减￥400/人</span>
               </a>
-              <a href="https://search.uzai.com/秋游国内/1/0/0/s0/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>国内游 送充电好礼</span>
               </a>
-              <a href="https://search.uzai.com/西藏/1/0/0/s0/">
+              <a href="javascript:;">
                 <span>西藏</span>
               </a>
-              <a href="https://search.uzai.com/福建/1/0/0/s0/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>福建</span>
               </a>
-              <a href="https://search.uzai.com/海南/1/0/0/s0/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>海南</span>
               </a>
-              <a href="https://search.uzai.com/云南/1/0/0/s0/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>云南</span>
               </a>
-              <a href="https://search.uzai.com/天山/1/0/0/s0/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>新疆</span>
               </a>
-              <a href="https://search.uzai.com/青海/1/0/0/s0/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>青海</span>
               </a>
-              <a href="https://search.uzai.com/长白山/1/0/0/s0/" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>长白山</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3058" class="nav_more">
-          <a href="https://event.uzai.com/subject/bjfxbxb/fxb.htm" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>主题游
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="https://www.uzai.com/qijilvxing">
+              <a href="javascript:;">
                 <span>奇迹旅行</span>
               </a>
-              <a href="http://event.uzai.com/subject/bjtuan/tuan.htm" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>一家一团</span>
               </a>
-              <a href="https://event.uzai.com/subject/bjzxyx/zxyx.htm" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>众信游学</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3060" class="nav_more">
-          <a href="https://search.uzai.com/邮轮/1/0/0/s0/" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>邮轮游
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="https://search.uzai.com/riben/1/5/2/s3-c375/">
+              <a href="javascript:;">
                 <span>日本航线</span>
               </a>
-              <a href="https://search.uzai.com/ouzhou/1/5/2/s0/">
+              <a href="javascript:;">
                 <span>欧洲航线</span>
               </a>
-              <a href="https://search.uzai.com/%E7%BE%8E%E6%B4%B2/1/5/2/s0/">
+              <a href="javascript:;">
                 <span>美洲航线</span>
               </a>
-              <a href="https://search.uzai.com/%E6%9E%81%E5%9C%B0/1/0/0/s4/">
+              <a href="javascript:;">
                 <span>极地航线</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3072" class="nav_more">
-          <a href="https://search.uzai.com/自由行/1/0/0/s3-c25/" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>自由行
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="https://search.uzai.com/自由行/1/0/0/s3-c25/">
+              <a href="javascript:;">
                 <span>机酒自由行</span>
               </a>
-              <a href="https://search.uzai.com/自由行/1/4/2/s0-c25/">
+              <a href="javascript:;">
                 <span>省心半自助</span>
               </a>
-              <a href="https://search.uzai.com/riben/1/2/2/s3/">
+              <a href="javascript:;">
                 <span>日本自由行</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3049" class="nav_more">
-          <a href="https://www.uzai.com/visa/index" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>全球签证
             <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg4.png">
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="https://visa.uzai.com/ChannelList/GetChannelList?prodCounName=美国">
+              <a href="javascript:;">
                 <span>美国十年多次签</span>
               </a>
-              <a href="https://visa.uzai.com/ChannelList/GetChannelList?prodCounName=日本">
+              <a href="javascript:;">
                 <span>日本三年多次签</span>
               </a>
-              <a href="https://visa.uzai.com/ChannelList/GetChannelList?prodCounName=新加坡">
+              <a href="javascript:;">
                 <span>新加坡个人旅游签</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3066" class="nav_more">
-          <a href="https://event.uzai.com/subject/bjydz/ydz.htm" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>定制旅行
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="https://dingzhi.uzai.com/product/custom/personal" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>私人订制</span>
               </a>
-              <a href="https://dingzhi.uzai.com/product/custom/enterprise" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>企业定制</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3070" class="nav_more">
-          <a href="https://hd.uzai.com/bjlx/lx.html?DH" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>会员福利
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="https://hd.uzai.com/bjlx/lx.html#3" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>免费抽奖</span>
               </a>
-              <a href="https://hd.uzai.com/bjlx/lx.html#2" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>邀请好友领好礼</span>
               </a>
-              <a href="https://hd.uzai.com/bjlx/lx.html#1" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>注册送￥5800优惠券</span>
               </a>
-              <a href="https://userclub.uzai.com/pointmall/index" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>积分兑换</span>
               </a>
               <a
-                href="https://userclub.uzai.com/activity/list?key=&amp;status=&amp;city=北京&amp;type=&amp;pi=1&amp;tp=54"
+                href="javascript:;"
                 target="_blank"
               >
                 <span>会员俱乐部</span>
@@ -640,44 +640,44 @@
           </div>
         </li>
         <li id="channel_2048" class="nav_more">
-          <a href="http://event.uzai.com/subject/bjdkh/dkh.htm" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>大客户专区
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="https://event.uzai.com/subject/unionpaya/index.html" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>银联优惠</span>
               </a>
-              <a href="https://www.uzai.com/dkh/lyj.html#BJDH" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>浦发老友记专区</span>
               </a>
-              <a href="https://event.uzai.com/subject/bjjh/jianh.htm" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>建行龙卡visa刷卡优惠</span>
               </a>
-              <a href="https://www.uzai.com/JointWork/Login" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>中信银行贵宾</span>
               </a>
-              <a href="https://www.uzai.com/JointWork/MinshengLogin" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>民生银行贵宾</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_1056" class="nav_more">
-          <a href="https://www.uzai.com/strategy/index.html" target="_blank">
+          <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>全球景点攻略
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="https://www.uzai.com/sight/list.html" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>全球景点</span>
               </a>
-              <a href="https://www.uzai.com/strategy/index.html" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>旅游攻略</span>
               </a>
-              <a href="https://www.uzai.com/gotour" target="_blank">
+              <a href="javascript:;" target="_blank">
                 <span>全球旅讯</span>
               </a>
             </div>
