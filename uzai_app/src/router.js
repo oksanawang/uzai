@@ -7,6 +7,7 @@ import Login from "./components/reg/Login.vue"
 import Number from "./components/reg/Number.vue"
 import order from "./components/order/order.vue"
 import Index from "./components/index/index.vue"
+import Detail from "./views/detail.vue"
 
 
 
@@ -20,5 +21,6 @@ export default new Router({
     {path:'/Login',component:Login},
     {path:'/Number',component:Number},
     {path:'/order',component:order},
+    {path:'/detail',component:Detail}
   ]
 })
