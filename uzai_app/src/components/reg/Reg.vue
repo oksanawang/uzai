@@ -46,9 +46,9 @@
                             <span class="body1-check-text3" ref="input333"></span>
                         </div>
                         <div class="body1-agree">
-                            <input type="checkbox">
+                            <input type="checkbox" id="checkboxbtn"><label for="checkboxbtn"></label>
                             <span class="check">我已阅读同意</span>
-                            <a href="javascript:;">《用户使用协议》</a>
+                            <a href="#/UserAgreement" target="_block">《用户使用协议》</a>
                         </div>
                         <button class="body1-next" @click="Login">下一步</button>
                     </div>
@@ -104,9 +104,11 @@
 </template>
 <script>
 import Number from "./Number.vue"
+import UserAgreement from "./UserAgreement.vue"
 export default {
     components:{
-        "num":Number
+        "num":Number,
+        // "user":UserAgreement,
     },
     data(){
         return{
@@ -282,16 +284,26 @@ a{
     background: yellow;
     position: relative;
 }
-.body1-checktext1,
-.body1-check-text2{
+.body1-checktext1{
     background:green;
     display: inline;
     margin:0 0 0 20px;
+    color:#fa164b;
+}
+.body1-check-text2{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    background:green;
+    display: inline;
+    margin:0 0 0 20px;
+    color:#fa164b;
 }
 .body1-check-text3{
     background:green;
     display: inline;
     margin:0 0 0 55px;
+    color:#fa164b;
 }
 .body1-check span:nth-child(1){
     font-size: 14px;
@@ -352,20 +364,50 @@ a{
     cursor: pointer;
     border:0;
 }
-/* input[type="checkbox"]{
-    font-size: 20px;
-    color:#1e9cf9;
-    background: #1e9cf9;
-    vertical-align: middle;
-    margin-right:5px;
-    visibility: hidden;
-} */
-
 .body1-agree{
     height:30px;
     text-align: center;
     margin-bottom: 10px;
-    padding:6px 0;
+    padding:6px 0 6px 50px;
+}
+input[type="checkbox"]{
+    width:12px;
+    height:12px;
+    line-height: 10px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle; 
+    position: relative;
+    margin-right: 10px;
+    margin-top:-2px;
+    }
+input[type="checkbox"]::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    margin-top:-2px;
+    }
+input[type="checkbox"]:checked::before{
+    content: "\2713";
+    width:100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #1f9bf9;
+    color:#1f9bf9;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:-2px;
+    }
+
+.body1-agree a{
+    color:#1e9cf9;
 }
 .body1-next{
     border-radius: 30px;

@@ -5,6 +5,9 @@ import Router from 'vue-router'
 import Reg from "./components/reg/Reg.vue"
 import Login from "./components/reg/Login.vue"
 import Number from "./components/reg/Number.vue"
+import UserAgreement from "./components/reg/UserAgreement.vue"
+
+
 import order from "./components/order/order.vue"
 import Index from "./components/index/index.vue"
 
@@ -19,6 +22,9 @@ export default new Router({
     {path:'/Reg',component:Reg},
     {path:'/Login',component:Login},
     {path:'/Number',component:Number},
+    {path:'/UserAgreement',component:UserAgreement},
+
+
     {path:'/order',component:order},
   ]
 })
