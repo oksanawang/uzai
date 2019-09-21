@@ -20,7 +20,7 @@
       <a
         class="li"
         title="＜【闲情鼓浪屿】厦门＋鼓浪屿＋云水谣＋土楼＋南普陀＋曾厝垵＋胡里山炮台　双飞５日无购物无自费＞【金秋放价　国内游立减４００】"
-        href="https://www.uzai.com/tours/00012816.html"
+        href="javascript:;"
         target="_blank"
       >
         <img
@@ -33,13 +33,13 @@
             <em>¥</em>3499
             <em>起</em>
           </b>
-          <span onclick="javascript:window.location='https://www.uzai.com/tours/00012816.html'">立即抢购</span>
+          <span onclick="javascript:window.location='javascript:;'">立即抢购</span>
         </div>
       </a>
       <a
         class="li"
         title="＜【额济纳旗】张掖七彩丹霞居延海大漠胡杨黑水城弱水金沙湾胡杨林嘉峪关城楼精华游纯玩双卧６日＞"
-        href="https://www.uzai.com/tours/00016447.html"
+        href="javascript:;"
         target="_blank"
       >
         <img
@@ -52,13 +52,13 @@
             <em>¥</em>3660
             <em>起</em>
           </b>
-          <span onclick="javascript:window.location='https://www.uzai.com/tours/00016447.html'">立即抢购</span>
+          <span onclick="javascript:window.location='javascript:;'">立即抢购</span>
         </div>
       </a>
       <a
         class="li"
         title="＜【五星盛宴】新疆天山天池＋喀纳斯＋白沙湖＋南山牧场＋１晚温泉酒店＋赠送民族歌舞表演　双飞８日＞"
-        href="https://www.uzai.com/tours/00011270.html"
+        href="javascript:;"
         target="_blank"
       >
         <img
@@ -71,13 +71,13 @@
             <em>¥</em>3999
             <em>起</em>
           </b>
-          <span onclick="javascript:window.location='https://www.uzai.com/tours/00011270.html'">立即抢购</span>
+          <span onclick="javascript:window.location='javascript:;'">立即抢购</span>
         </div>
       </a>
       <a
         class="li"
         title="＜【花样旅游】纯玩系列　昆明＋大理＋丽江双飞６日轻松游５晚６日＞"
-        href="https://www.uzai.com/tours/00016409.html"
+        href="javascript:;"
         target="_blank"
       >
         <img
@@ -90,7 +90,7 @@
             <em>¥</em>5580
             <em>起</em>
           </b>
-          <span onclick="javascript:window.location='https://www.uzai.com/tours/00016409.html'">立即抢购</span>
+          <span onclick="javascript:window.location='javascript:;'">立即抢购</span>
         </div>
       </a>
       <img
