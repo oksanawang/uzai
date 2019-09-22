@@ -13,6 +13,9 @@ import booking from "./components/order/booking.vue"
 import Index from "./components/index/index.vue"
 import Detail from "./views/detail.vue"
 
+// 测试借口组件
+import Vtest from "./views/test.vue"
+
 
 
 Vue.use(Router)
@@ -30,5 +33,8 @@ export default new Router({
     {path:'/order',component:order},
     {path:'/detail',component:Detail},
     {path:'/booking',component:booking},
+
+    // 测试借口组件 
+    {path:'/Vtest',component:Vtest}
   ]
 })

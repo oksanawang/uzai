@@ -30,6 +30,11 @@ router.get("/login",(req,res)=>{
       res.send("1")
     }
   })
-
+}),
+router.get("/test",(req,res)=>{
+  pool.query('select * from A',(err,result)=>{
+    if(err) throw err;
+    res.send({code:1,msg:"测试成功"});
+  });
 })
 module.exports=router;

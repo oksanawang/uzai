@@ -35,4 +35,8 @@ CREATE TABLE user_order (
   orderTime BIGINT ,
   departure_date BIGINT
 );
+CREATE TABLE A (
+  text VARCHAR (32)
+);
+INSERT INTO  A VALUES("巴拉巴拉");
 
