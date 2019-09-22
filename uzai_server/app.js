@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const userRouter=require("./routes/user_routr");
-const details=require("./routes/details");
+const userRouter=require("./routes/order_router")
 const cors=require("cors");
 /*引入路由模块*/
 
@@ -33,6 +33,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 /*使用路由器来管理路由*/
 // app.use("/index",index);
 app.use("/user",userRouter);
-// app.use("/reg",reg);
+app.use("/order",orderRouter);
 
 
