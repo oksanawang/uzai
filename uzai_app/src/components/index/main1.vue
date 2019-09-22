@@ -20,7 +20,7 @@
       <a
         class="li"
         title="＜【闲情鼓浪屿】厦门＋鼓浪屿＋云水谣＋土楼＋南普陀＋曾厝垵＋胡里山炮台　双飞５日无购物无自费＞【金秋放价　国内游立减４００】"
-        href="javascript:;"
+        href="#/detail"
         target="_blank"
       >
         <img

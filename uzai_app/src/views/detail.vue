@@ -5,7 +5,7 @@
     <div class="main">
       <a href="#">
         <h2 class="title">
-          &lt;【随遇时光】福建鼓浪屿+南普陀+环岛路+曾厝垵+沙坡尾+艺术西区+海上明珠塔 双飞4晚5日&gt;【金秋放价 国内游立减400】
+          {{gtitle}}
           <span
             class="word_icon"
           >二次确认</span>
@@ -89,7 +89,7 @@
                   style="width: 82px; height: 40px;"
                 >
                   <p>2019-09</p>
-                  <span>¥3280起</span>
+                  <span>¥{{man_price}}起</span>
                 </div>
               </div>
             </div>
@@ -292,7 +292,7 @@
                       23
                       <span class="style">A行程</span>
                     </p>
-                    <p class="price">¥3280起</p>
+                    <p class="price">¥{{man_price}}起</p>
                     <p class="spare">余位:充足</p>
                     <div
                       style="display:none"
@@ -307,7 +307,7 @@
                           <p class="tripId fl" style="display:none;">(727406)</p>
                         </div>
                         <p class="jiage" style="display:none;">
-                          <span>成人价3280</span>
+                          <span>成人价{{man_price}}</span>
                         </p>
                         <div class="data" style="display:none;">2019-09-23 出发</div>
                       </div>
@@ -400,14 +400,14 @@
           <p>产品编码：00016451</p>
           <div class="main_right_l1">
             <i class="iconfont icon-zuobiao"></i>
-            <span>出发地：北京</span>
+            <span>出发地：{{gmap}}</span>
           </div>
         </div>
         <div class="clear"></div>
         <div class="main_right1">
           <div class="n1">
             <span>¥</span>
-            <label id="price">3280</label>
+            <label id="price">{{man_price}}</label>
             <em>起/人</em>
             <div class="n2"></div>
           </div>
@@ -419,7 +419,7 @@
               <div class="main_right1_m2">
                 <p>
                   最低价 09-23 周一出发 ，
-                  <span>¥3280元</span>/人
+                  <span>¥{{man_price}}元</span>/人
                 </p>
                 <p>本起价是可选出发日期中，按2人同住一间房最低核算价格最低单人价格。产品价格会根据您所选择的出发日期、出行人数、入住酒店房型、航班或交通以及所选附加服务的不同而有所差别。</p>
               </div>
@@ -448,7 +448,7 @@
                     data-supproductcode="PD19080000036376"
                     data-compcode="MYST0000001"
                     data-date="2019-09-23"
-                  >09-23(周一)出发 - 3280/人 - A行程</div>
+                  >09-23(周一)出发 - {{man_price}}/人 - A行程</div>
                 </div>
               </div>
             </div>
@@ -509,7 +509,7 @@
           </div>
         </div>
         <div class="main_right4">
-          <div class="bot submit">
+          <div class="bot submit" @click="reserve">
             立即预订
             <img src="//r03.uzaicdn.com/content/store/images/detail/9.png?imageView2/2/w/114/h/26" />
           </div>
@@ -994,12 +994,45 @@ export default {
             "https://img1.uzaicdn.com/ba/sightGallery/万国建筑博览423万国建筑博览422+视觉中国+RF+VCG2120d318f4b.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
         }
       ],
-      man_num:10,
-      child_num:0
+      // 成人数量
+      man_num:0,
+      // 孩子数量
+      child_num:0,
+      // 景点名称
+      gtitle:"sss",
+      // 地点
+      gmap:"",
+      // 景点图片保存
+      gimg:"",
+      // 景点价格
+      man_price:0
+      
+      
+
+
       
     };
   },
+  
+  // 获取数据库信息放到页面中
+  mounted (){
+    // 获取数据库信息
+    var get_url = "order/getload";
+    // console.log(222)
+    this.axios.get(get_url).then(res=>{
+      var goods = res.data[0];
+      // console.log(goods)
+      this.gtitle = goods.gtitle;
+      this.man_price=goods.g_m_price;
+      this.gmap = goods.gmap;
+    
+      // console.log(this.gtitle)
+    })
+  },
+  
   methods: {
+    
+
     changeImg(e) {
       console.log(e.target.dataset.original);
       console.log(e.currentTarget.nextElementSibling);
@@ -1023,8 +1056,29 @@ export default {
       }else if(e=="c"){
         this.child_num++
       }
-    }
+    },
+    reserve(){
+      // console.log(555)
+      var oid ='OS'+ new Date().getTime();
+      console.log(oid)
+      var man_count = this.man_num ;
+      var child_count = this.child_num;
+      var man_price = this.man_price;
+      var child_price = this.man_price-200;
+      var mans_count = this.man_num + this.child_num;
 
+      var obj ={
+        uid:3456,
+        man_count ,
+        child_count,
+        man_price,
+        child_price,
+        mans_count
+      }
+      console.log(obj)
+      
+      this.axios.get("order/reserve",{params:obj})
+    }
 
     
   },
