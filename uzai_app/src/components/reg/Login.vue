@@ -1,9 +1,9 @@
 <template>
    <div class="login">
         <div class="login-top">
-            <a href="javascript:;">
+            <router-link to="javascript:;">
                 <img src="../../../public/images/reg_img/logo.png" />
-            </a>
+            </router-link>
             <img src="../../../public/images/reg_img/telephone.png" /> 
         </div>
         <div class="login-body">
@@ -22,19 +22,20 @@
                             <input placeholder="请输入密码" type="password" v-model="upwd" maxlength="16">
                         </div>
                         <div>
-                            <input placeholder="图形验证码" type="text" maxlength="2" v-model="umsg">
+                            <input placeholder="图形验证码" type="text" maxlength="2" v-model="ureg">
                             <num class="num" title="看不清，换一张"></num>
                         </div>
                         <div class="login-rember">
                             <span class="login-rember-span">记住我</span>
-                            <a class="login-rember-a" href="javascript:;">忘记密码？</a>
+                            <router-link to="javascript:;"  class="login-rember-a">忘记密码？</router-link>
                         </div>
-                        <button class="login-btn-login" @click="Login">登录</button>
+                        <button class="login-btn-login" @click="Login1">登录</button>
                         <p class="tishi" ref="tishi"></p>
                     </div>
                     <div class="login-right">
                         <p>还没众信悠哉网账号？</p>
-                        <a href="#/reg">立即注册-></a>
+                        <!-- <a href="#/reg">立即注册-></a> -->
+                        <router-link to="/reg">立即注册-></router-link>
                         <p>使用社交账号登录</p>
                     </div>
                 </div>
@@ -44,19 +45,19 @@
                             <input placeholder="请输入登录名/手机号/邮箱" type="text" maxlength="11" v-model="loginName">
                         </div>
                         <div class="login-dongtai-input">
-                            <input placeholder="图形验证码" type="text" maxlength="2" v-model="upwd">
+                            <input placeholder="图形验证码" type="text" maxlength="2" v-model="ureg">
                             <num class="num" title="看不清，换一张"></num>
                         </div>
                         <div class="login-dongtai-input">
                             <input placeholder="请输入验证码" type="text" maxlength="6" v-model="umsg">
                             <button class="getYan">获取验证码</button> 
                         </div>
-                        <button class="login-button-login" @click="Login">登录</button>
-                        <p class="tishi">111111</p>
+                        <button class="login-button-login" @click="Login2">登录</button>
+                        <p class="tishi" ref="tishi"></p>
                     </div>
                     <div class="login-dongtai-right">
                         <p>还没众信悠哉网账号？</p>
-                        <a href="#/reg">立即注册-></a>
+                        <router-link to="/reg">立即注册-></router-link>
                         <p>使用社交账号登录</p>
                     </div>
                 </div>
@@ -65,12 +66,12 @@
         </div>
         <div class="foot">
             <div class="foot_a">
-                <a href="javascript:;">众信旅游</a>
-                <a href="javascript:;">众信历程</a>
-                <a href="javascript:;">众信品牌</a>
-                <a href="javascript:;">营业网点</a>
-                <a href="javascript:;">诚聘英才</a>
-                <a href="javascript:;">商务合作</a>
+                <router-link to="javascript:;">众信旅游</router-link>
+                <router-link to="javascript:;">众信历程</router-link>
+                <router-link to="javascript:;">众信品牌</router-link>
+                <router-link to="javascript:;">营业网点</router-link>
+                <router-link to="javascript:;">诚聘英才</router-link>
+                <router-link to="javascript:;">商务合作</router-link>
             </div>
             <div class="foot_div">Copyright©2005-2018 Uzai.com&nbsp;&nbsp;&nbsp;&nbsp;许可证编号:L-TJ-CJ00059&nbsp;&nbsp;&nbsp;&nbsp;
              津ICP备18003064号&nbsp;&nbsp;&nbsp;&nbsp;悠哉呼叫中心来电显示号码为：10109898
@@ -88,14 +89,15 @@ export default {
         return{
             loginName:"",
             upwd:"",
-            umsg:"",
+            umsg:"",//短信验证码
+            ureg:""//图形验证码
         }
     },
     methods:{
-        Login(){
+        Login1(){
             var loginName=this.loginName;
             var pwd=this.upwd;
-            var msg=this.umsg;
+            var reg=this.ureg;
             console.log(loginName,pwd,msg);
             var regName=/^1[3-9]\d{9}&/;
             var regMsg=/^[0-9]\d{6}$/;
@@ -107,13 +109,32 @@ export default {
                 this.$refs.tishi.innerHTML="请输入您的密码!"
                 return;
             }
-            if(msg==""){
-                this.$refs.tishi.innerHTML="请输入验证码!"
+            if(reg==""){
+                this.$refs.tishi.innerHTML="请输入您的图形验证码!"
                 return;
             }
         },
+    //  Login2(){
+    //      var loginName=this.loginName;
+    //         var reg=this.ureg;
+    //         var msg=this.umsg;
+    //         console.log(loginName,pwd,msg);
+    //         var regName=/^1[3-9]\d{9}&/;
+    //         var regMsg=/^[0-9]\d{6}$/;
+    //         if(loginName==""){
+    //             this.$refs.tishi.innerHTML="请输入登录名/手机号/邮箱!"
+    //             return;
+    //         }
+    //         if(reg==""){
+    //             this.$refs.tishi.innerHTML="请输入您的图形验证码!"
+    //             return;
+    //         }
+    //         if(msg==""){
+    //             this.$refs.tishi.innerHTML="请输入短信验证码!"
+    //             return;
+    //         }
+    //     },
     },
-
 }
 </script>
 <style scoped>
@@ -152,7 +173,6 @@ a{
 .login-body-top{
     background:#fff;
     width: 492px;
-    /* height: 303px; */
     padding:25px 0 10px 32px;
     position:absolute;
     left:53%;
@@ -160,11 +180,50 @@ a{
     box-shadow:  0 0 10px rgba(0,0,0,.25);
 }
 .login-span{
+    box-sizing: border-box;
+    position: relative;
     font-size: 14px;
+}
+.login-span span:nth-child(1){
+    position: absolute;
+    background: url(../../../public/images/reg_img/1.png) no-repeat center;
+    font-size:14px;
+    width: 72px;
     height: 34px;
+    text-align: center;
 }
 .login-span span:nth-child(2){
+    font-size: 14px;
     margin:0 20px;
+    height: 34px;
+    position: absolute;
+    left:72px;
+}
+.login-span span:nth-child(1):hover,
+.login-span span:nth-child(1):active{
+    position: absolute;
+    background: url(../../../public/images/reg_img/1.png) no-repeat center;
+    font-size:18px;
+    width: 100px;
+    height: 34px;
+    text-align: center;
+}
+.login-span span:nth-child(3){
+    background: url(../../../public/images/reg_img/2.png) no-repeat center;
+    font-size:14px;
+    position: absolute;
+    left: 130px;
+    height: 34px;
+    text-align: center;
+}
+.login-span span:nth-child(3):hover,
+.login-span span:nth-child(3):active{
+    background: url(../../../public/images/reg_img/2.png) no-repeat center;
+    position: absolute;
+    left: 110px;
+    font-size:18px;
+    height: 34px;
+    text-align: center;
 }
 .login-middle{
     display: block;
@@ -178,8 +237,14 @@ a{
 .login-dongtai-left{
     float: left;
     padding-right:34px;
-    margin-top:10px;
+    margin-top:34px;
 }
+/* .login-middle:active{
+
+}
+.login-middle-dongtai:active{
+    display: block;
+} */
 .login-left input,
 .login-dongtai-left input{
     border: 1px solid #e5e5e5;
@@ -193,26 +258,12 @@ a{
 
 .login-left div:nth-child(3) input{
     width:105px;
-
-    /* background: #333; */
 }
-/* .login-left div:nth-child(3) img{
-    width:105px;
-    background: #333;
-    vertical-align:middle;
-    height: 28px;
-    margin-left:10px;
-} */
+
 .login-dongtai-input input{
     width:105px;
 }
-/* .login-dongtai-input img{
-    vertical-align:middle;
-    width:110px;
-    height: 28px;
-    margin-left:10px;
-    background: #fb284b;
-} */
+
 .login-dongtai-input .getYan{
     width: 110px;
     line-height: 25px;
@@ -235,7 +286,9 @@ a{
     position: absolute;
     color:#666;
     right: 0;
-
+}
+.login-rember-a:hover{
+    color:#1f9bf9;
 }
 .tishi{
     height: 13px;
@@ -272,19 +325,16 @@ a{
     margin-bottom: 7px;
     border:0;
 }
-.num{
-    /* display: inline; */
-    float: right;
+.login-left .num{
+    /* float: right; */
     height: 28px;
     width: 110px;
     margin-left: 10px;
     vertical-align: middle;
     cursor: pointer;
-    /* background: #fa164b; */
     position: absolute;
-    right: 0px;
-    /* top:0; */
-    bottom:0;
+    right: 26px;
+    top:10px;
 }
 .login-dongtai-input{
     position: relative;
@@ -292,15 +342,14 @@ a{
 .login-left div{
     position: relative;
 }
-.num{
-    /* display: inline; */
+.login-dongtai-left .num{
     float: right;
     height: 28px;
     width: 110px;
     margin-left: 10px;
     vertical-align: middle;
     cursor: pointer;
-    /* background: #fa164b; */
+    background: yellow;
     position: absolute;
     right: 26px;
     top:10px;
@@ -322,6 +371,11 @@ a{
 .login-right a,
 .login-dongtai-right a{
     font-size: 14px;
+    color: #1f9bf9;
+}
+.login-right a:hover,
+.login-dongtai-right a:hover{
+    color: #fb284b;
 }
 .login-right p,
 .login-dongtai-right p{

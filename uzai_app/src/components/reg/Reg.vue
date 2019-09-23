@@ -1,9 +1,9 @@
 <template>
    <div class="reg_register">
         <div class="top">
-            <a href="javascript:;">
+            <router-link to="javascript:;">
                 <img src="../../../public/images/reg_img/logo.png" />
-            </a>
+            </router-link>
             <img src="../../../public/images/reg_img/telephone.png" /> 
         </div>
         <div class="middle">
@@ -48,7 +48,8 @@
                         <div class="body1-agree">
                             <input type="checkbox" id="checkboxbtn"><label for="checkboxbtn"></label>
                             <span class="check">我已阅读同意</span>
-                            <a href="#/UserAgreement" target="_block">《用户使用协议》</a>
+                            <!-- <a href="#/" target="_block">《用户使用协议》</a> -->
+                            <router-link to="/UserAgreement">《用户使用协议》</router-link>
                         </div>
                         <button class="body1-next" @click="Login">下一步</button>
                     </div>
@@ -77,24 +78,24 @@
                             <p>恭喜成为悠哉网会员</p>
                             <p>
                                 <span>您可以</span>
-                                <a href="/" >登录首页</a>
+                                <router-link to="/">登录首页</router-link>
                                 <span>或3s后跳转首页</span>
                             </p>
                         </div>
                     </div>
                 </div>
-                <a class="middle-body-buttom" href="javascript:;"  @click="Login">立即登录</a>
+                <router-link class="middle-body-buttom" @click="Login" to="javascript:;">立即登录</router-link>
             </div>
 
         </div>
         <div class="foot">
             <div class="foot_a">
-                <a href="javascript:;">众信旅游</a>
-                <a href="javascript:;">众信历程</a>
-                <a href="javascript:;">众信品牌</a>
-                <a href="javascript:;">营业网点</a>
-                <a href="javascript:;">诚聘英才</a>
-                <a href="javascript:;">商务合作</a>
+                <router-link to="javascript:;">众信旅游</router-link>
+                <router-link to="javascript:;">众信历程</router-link>
+                <router-link to="javascript:;">众信品牌</router-link>
+                <router-link to="javascript:;">营业网点</router-link>
+                <router-link to="javascript:;">诚聘英才</router-link>
+                <router-link to="javascript:;">商务合作</router-link>
             </div>
             <div class="foot_div">Copyright©2005-2018 Uzai.com&nbsp;&nbsp;&nbsp;&nbsp;许可证编号:L-TJ-CJ00059&nbsp;&nbsp;&nbsp;&nbsp;
              津ICP备18003064号&nbsp;&nbsp;&nbsp;&nbsp;悠哉呼叫中心来电显示号码为：10109898
