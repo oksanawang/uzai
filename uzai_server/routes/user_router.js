@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require("express-session")
 const router = express.Router();
 const pool = require("../pool");
 
@@ -17,24 +18,32 @@ router.get("/reg",(req,res)=>{
 })
 router.get("/login",(req,res)=>{
   var obj = req.query;
-  console.log(obj)
+  // console.log(obj.uname)
   // res.send(10086)
   var uname = obj.uname;
   var upwd = obj.upwd ;
-  var sql = `SELECT uname=? and upwd=? FROM uzi_user `
+  var sql = `SELECT uid from uzi_user where uname=? and upwd =? `
   pool.query(sql,[uname,upwd],(err,result)=>{
     if(err)throw err;
-    console.log(result);
-    console.log(333)
-    if(result.RowDataPacket!=0){
-      res.send("1")
+    // console.log(result)
+    if(result!=""){
+      var id = result[0].uid
+      // console.log(id[0].uid);
+      req.session.uid = id ;
+      console.log(req.session)
+      res.send("1");
+    }else{
+      res.send({code:401,msg:"用户名或密码错误"});
     }
+    
   })
 }),
 router.get("/test",(req,res)=>{
   pool.query('select * from A',(err,result)=>{
     if(err) throw err;
-    res.send({code:1,msg:"测试成功"});
+    var uid = req.session;
+    console.log(uid);
+    res.send(uid);
   });
 })
 module.exports=router;
