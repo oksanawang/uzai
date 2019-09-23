@@ -25,6 +25,7 @@ CREATE TABLE uzi_goods(
 INSERT INTO uzi_goods VALUES(
   1000231,"<【闲情鼓浪屿】厦门+鼓浪屿+云水谣+土楼+南普陀+曾厝垵+胡里山炮台 双飞5日无购物无自费>【金秋放价 国内游立减400】","北京",3499,3299,null
 );
+
 CREATE TABLE user_reserve(
   uid INT,
   man_count SMALLINT,
