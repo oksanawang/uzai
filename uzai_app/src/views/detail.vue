@@ -998,7 +998,7 @@ export default {
       man_num:0,
       // 孩子数量
       child_num:0,
-      // 景点名称
+      // 景点名称 
       gtitle:"sss",
       // 地点
       gmap:"",

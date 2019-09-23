@@ -10,7 +10,8 @@ export default {
     test(){
       var url ="user/test";
       this.axios.get(url).then(res=>{
-        console.log(res.data.code)
+        console.log(res)
+        
       })
     }
   },

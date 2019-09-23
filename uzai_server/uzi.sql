@@ -10,6 +10,9 @@ CREATE TABLE uzi_user(
 );
 INSERT INTO uzi_user VALUES(
 1001,'一只小小怪','333444','199999'
+),
+(
+  1002,"tom","123456",'1008688'
 );
 CREATE TABLE uzi_goods(
   gid INT PRIMARY KEY AUTO_INCREMENT ,
