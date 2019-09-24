@@ -17,17 +17,21 @@ router.get("/reg",(req,res)=>{
 })
 router.get("/login",(req,res)=>{
   var obj = req.query;
+
   console.log(obj)
   // res.send(10086)
   var uname = obj.uname;
   var upwd = obj.upwd ;
-  var sql = `SELECT uname=? and upwd=? FROM uzi_user `
+  var sql = `SELECT uid FROM uzi_user WHERE uname=? and upwd=?`
   pool.query(sql,[uname,upwd],(err,result)=>{
+
     if(err)throw err;
     console.log(result);
     console.log(333)
-    if(result.RowDataPacket!=0){
-      res.send("1")
+    if(result.affectedRows!=0){
+      res.send("1");
+      //req.session.user = result.dataValues
+      //req.session.islogin = true;
     }
   })
 }),

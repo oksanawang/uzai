@@ -27,23 +27,23 @@
         <input id="payType" value="二次确认" type="hidden" />
         <input id="isTwPro" value="0" type="hidden" />
         <div class="order_meg">
-          <h3>&lt;【闲情鼓浪屿】厦门+鼓浪屿+云水谣+土楼+南普陀+曾厝垵+胡里山炮台 双飞5日无购物无自费&gt;【金秋放价 国内游立减400】</h3>
+          <h3>{{res_obj.gtitle}}</h3>
           <div class="mesg_box">
             <p>
               <i class="iconfont icon-yuandian"></i>
               <span class="col9">行程名称：</span>
               <em>
-                【闲情鼓浪屿】厦门、鼓浪屿、云水谣、福建土楼、南普陀、曾厝垵、胡里山炮台 双飞5日&lt;无购物无自费&gt;
+                {{res_obj.gtitle}}
                 【商品编号：
                 <span
                   id="tuanNo"
-                >PD19090000001881</span>】
+                >{{res_obj.oid}}</span>】
               </em>
             </p>
             <p class="inlineblock">
               <i class="iconfont icon-yuandian"></i>
               <span class="col9">出发城市：</span>
-              <em>北京</em>
+              <em>{{res_obj.local}}</em>
             </p>
             <p class="inlineblock">
               <i class="iconfont icon-yuandian"></i>
@@ -571,7 +571,31 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+    return{
+      res_obj:{}
+    }
+  },
+  created(){
+    this.comedata()
+  },
+   beforeDestroy(){
+       this.bus.$off('getpinfo');
+   },
+  methods:{
+    comedata(){
+
+      console.log("comein");
+      //console.log(this.bus);
+      //console.log(this.bus.$on("getpinfo"));
+      this.bus.$on('getpinfo',(obj)=>{
+        this.res_obj = obj;
+        console.log("with"+obj.man_count);
+      });
+    }
+  }
+};
 </script>
 
 <style scoped>

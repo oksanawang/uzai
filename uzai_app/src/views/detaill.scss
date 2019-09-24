@@ -339,6 +339,8 @@ input{
     float: left;
     width: 470px;
 }
+
+
 .main_right3 .select .select_left .selected {
     cursor: pointer;
     border-radius: 5px;
@@ -346,12 +348,14 @@ input{
     background: url(//r.uzaicdn.com/content/store/images/detail/5.png) no-repeat 442px 10px #f4f4f4;
     position: relative;
     border: 1px solid #f4f4f4;
+    z-index:1;
 }
 .main_right3 .select .select_left .selected .li {
     line-height: 32px;
     margin-left: 20px;
     font-size: 14px;
     color: #333;
+    z-index:10;
 }
 .main_right3 .select .select_left .selected_m {
     display: none;
@@ -369,6 +373,9 @@ input{
     padding-left: 20px;
     font-size: 14px;
     color: #333;
+}
+.main_right3 .select .select_left .selected_m .p:hover {
+    background: #e4e4e4;
 }
 .main_right3 .choose_route {
     display: none;
@@ -498,7 +505,7 @@ input{
     border-bottom: 1px dashed #666;
     cursor: pointer;
     position: relative;
-    z-index: 1;
+   
 }
 .main_right3 .select .select_left .num .lack {
     display: none;

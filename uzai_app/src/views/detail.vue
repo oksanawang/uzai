@@ -1,7 +1,6 @@
 <template>
   <div style="margin-top:10px;">
     <d-header></d-header>
-
     <div class="main">
       <a href="#">
         <h2 class="title">
@@ -13,66 +12,25 @@
       </a>
       <div class="main_left">
         <div class="main_left_rotate">
-          <div class="main_left_rotater" @click="changeImg($event)">
-            <div class="main_left_rotater1 active">
-              <img
-                data-original="https://img4.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
-                class="img lazy active"
-                data-imgcode="COGS0000028569"
-                src="https://img4.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
-                style="display: inline; z-index:888;"
-              />
-              <img
-                src="//r03.uzaicdn.com/content/store/images/detail/1.png?imageView2/2/w/91/h/62"
-                class="active1"
-              />
-            </div>
-            <div class="main_left_rotater1">
-              <img
-                data-original="https://img0.uzaicdn.com/ba/sightGallery/鼓浪环岛447鼓浪环岛路446+视觉中国+RF+VCG21gic19991303.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
-                class="img lazy active"
-                data-imgcode="COGS0000015602"
-                src="https://img0.uzaicdn.com/ba/sightGallery/鼓浪环岛447鼓浪环岛路446+视觉中国+RF+VCG21gic19991303.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
-                style="display: inline;"
-              />
-              <img
-                src="//r03.uzaicdn.com/content/store/images/detail/1.png?imageView2/2/w/91/h/62"
-                class="active1"
-              />
-            </div>
-            <div class="main_left_rotater1">
-              <img
-                data-original="https://img4.uzaicdn.com/ba/sightGallery/曾厝垵22919曾厝垵30598+视觉中国+RF+VCG21gic20062182.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
-                class="img lazy active"
-                data-imgcode="COGS0000014888"
-                src="https://img4.uzaicdn.com/ba/sightGallery/曾厝垵22919曾厝垵30598+视觉中国+RF+VCG21gic20062182.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
-                style="display: inline;"
-              />
-              <img
-                src="//r02.uzaicdn.com/content/store/images/detail/1.png?imageView2/2/w/91/h/62"
-                class="active1"
-              />
-            </div>
-            <div class="main_left_rotater1">
-              <img
-                data-original="https://img1.uzaicdn.com/ba/sightGallery/万国建筑博览423万国建筑博览422+视觉中国+RF+VCG2120d318f4b.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
-                class="img lazy active"
-                data-imgcode="COGS0000013993"
-                src="https://img1.uzaicdn.com/ba/sightGallery/万国建筑博览423万国建筑博览422+视觉中国+RF+VCG2120d318f4b.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
-                style="display: inline;"
-              />
-              <img
-                src="//r02.uzaicdn.com/content/store/images/detail/1.png?imageView2/2/w/91/h/62"
-                class="active1"
-              />
-            </div>
+          <div class="main_left_rotater">
+                <div :class="[item.ac==true?'main_left_rotater1 active':'main_left_rotater1']" v-for="(item,index) in items" :key="index"  @click="changeImg(index)">
+                <img class="img lazy active"
+                    :src="item.img"
+                    style="display: inline; z-index:888;"
+                />
+                <img
+                    src="//r03.uzaicdn.com/content/store/images/detail/1.png?imageView2/2/w/91/h/62"
+                    class="active1"
+                />
+                </div>
+            
           </div>
 
           <div class="main_left_rotatel">
             <img
               class="lazy"
               data-original="https://img0.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg?imageView2/2/w/550/h/413/format/jpg/interlace/1"
-              src="https://img1.uzaicdn.com/ba/sightGallery/万国建筑博览423万国建筑博览422+视觉中国+RF+VCG2120d318f4b.jpg?imageView2/1/w/550/h/413/format/jpg"
+              :src="img"
               style="display: block;"
             />
           </div>
@@ -428,27 +386,16 @@
           </div>
         </div>
         <div class="main_right2"></div>
+
         <div class="main_right3">
-          <div class="select">
+          <div class="select" >
             <span>选择团期：</span>
             <div class="select_left">
-              <div class="selected">
-                <div class="li">请选择出团日期</div>
-                <div class="selected_m" style="display: none;">
-                  <div
-                    class="p"
-                    data-price="3280"
-                    data-preferential
-                    data-freenum="20"
-                    data-paytype="二次确认"
-                    data-tuanno="TS1900727406"
-                    data-teamid="1073707"
-                    data-linecode="OPL00050088"
-                    data-route="A"
-                    data-supproductcode="PD19080000036376"
-                    data-compcode="MYST0000001"
-                    data-date="2019-09-23"
-                  >09-23(周一)出发 - {{man_price}}/人 - A行程</div>
+              <div class="selected" @click="showtime($event)">
+                <div class="li" v-text="def_time"></div>
+                <div class="selected_m" style="display: block;" v-show="act_time">
+                  <div class="p" v-for="(item,index) in chostime" :key="index" @click="choosetime(index)">>{{item.tit}} </div>
+        
                 </div>
               </div>
             </div>
@@ -511,7 +458,7 @@
         <div class="main_right4">
           <div class="bot submit" @click="reserve">
             立即预订
-            <img src="//r03.uzaicdn.com/content/store/images/detail/9.png?imageView2/2/w/114/h/26" />
+            <img v-show="msg" src="//r03.uzaicdn.com/content/store/images/detail/9.png?imageView2/2/w/114/h/26" />
           </div>
           <div class="bot dwzx" onclick="_MEIQIA('showPanel')">点我咨询</div>
           <div class="left">
@@ -903,68 +850,10 @@
       type="hidden"
       value="https://img0.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg"
     />
-
-    <!-- <div class="common_sidebar">
-        <div class="common_sidebar_m">
-            <a href="javascript:;" onclick="_index_online_service(this)" class="li">
-                <i class="iconfont icon-161019kefuicon">&#xe600;</i>
-                <div class="common_sidebar_m_li">
-                    <i class="iconfont icon-yuandian">&#xe66b;</i> 在线客服</div>
-            </a>
-            <a class="li">
-                <i class="iconfont icon-lianxiwomen">&#xe631;</i>
-                <div class="common_sidebar_m_li"><i class="iconfont icon-yuandian">&#xe66b;</i> 1010-9898</div>
-            </a>
-            <a class="app li">
-                <i class="iconfont icon-APP">&#xe6fd;</i>
-                <div class="common_sidebar_m_li ewm">
-                    <img src="//r.uzaicdn.com/content/store/images/common/phoneapp.png">
-                </div>
-            </a>
-            <a class="wecat li">
-                <i class="iconfont icon-weixin">&#xe654;</i>
-                <div class="common_sidebar_m_li ewm">
-                    <img src="//r.uzaicdn.com/content/store/images/common/wecat.png">
-                </div>
-            </a>
-            <a target="_blank" href="https://dingzhi.uzai.com/" class="li youdingz">
-                <i class="iconfont icon-Udingzhilogo">&#xe68c;</i>
-                <div class="common_sidebar_m_li">
-                    <i class="iconfont icon-yuandian">&#xe66b;</i> 优定制
-                    <p class="siren">企业/私人定制服务</p>
-                </div>
-            </a>
-            <a href="javascript:;" onclick="_index_my_order('//u.uzai.com/reg/login')" class="mart50 li">
-                <i class="iconfont icon-dingdan">&#xe614;</i>
-                <div class="common_sidebar_m_li">
-                    <i class="iconfont icon-yuandian">&#xe66b;</i>
-                    <span>我的订单</span>
-                </div>
-            </a>
-            <a href="javascript:;" onclick="_index_my_trace('//www.uzai.com/home/browsinghistory')" class="li">
-                <i class="iconfont icon-jiaoyinzujifangke">&#xe699;</i>
-                <div class="common_sidebar_m_li">
-                    <i class="iconfont icon-yuandian">&#xe66b;</i> 
-                    <span>我的足迹</span>
-                </div>
-            </a>
-
-            <div class="return_top li">
-                <i class="iconfont icon-backtop">&#xe603;</i>
-            </div>
-        </div>  
-    </div>-->
     <d-cbl></d-cbl>
     <d-footer></d-footer>
 
-    <!-- <div class="duqGkC" v-if="show" @click="changeshow">
-        <div style="box-sizing: border-box; padding: 15px; width:100%; height:100%;">
-            <div class="kmdKOE"></div>
-        </div>
-    </div> 
-    <div class="xr" v-else>
-        <d-xr :show="show" @changeshow="changeshow"></d-xr>
-    </div>-->
+    
   </div>
 </template>
 <script>
@@ -976,26 +865,30 @@ export default {
   data() {
     return {
       titleImg: "img/product01.png",
+      img:"https://img0.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg?imageView2/2/w/550/h/413/format/jpg/interlace/1",
+      ac:true,
+      msg:false,
       items: [
         {
-          img01:
-            "https://img4.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
+          img:"https://img4.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1",
+            ac:true
         },
         {
-          img01:
-            "https://img0.uzaicdn.com/ba/sightGallery/鼓浪环岛447鼓浪环岛路446+视觉中国+RF+VCG21gic19991303.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
+          img:"https://img0.uzaicdn.com/ba/sightGallery/鼓浪环岛447鼓浪环岛路446+视觉中国+RF+VCG21gic19991303.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1",
+            ac:false
         },
         {
-          img01:
-            "https://img4.uzaicdn.com/ba/sightGallery/曾厝垵22919曾厝垵30598+视觉中国+RF+VCG21gic20062182.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
+          img:"https://img4.uzaicdn.com/ba/sightGallery/曾厝垵22919曾厝垵30598+视觉中国+RF+VCG21gic20062182.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1",
+            ac:false
         },
         {
-          img01:
-            "https://img1.uzaicdn.com/ba/sightGallery/万国建筑博览423万国建筑博览422+视觉中国+RF+VCG2120d318f4b.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1"
+          img:"https://img1.uzaicdn.com/ba/sightGallery/万国建筑博览423万国建筑博览422+视觉中国+RF+VCG2120d318f4b.jpg?imageView2/2/w/182/h/137/format/jpg/interlace/1",
+            ac:false
         }
       ],
+      act_time:false,
       // 成人数量
-      man_num:0,
+      man_num:1,
       // 孩子数量
       child_num:0,
       // 景点名称
@@ -1004,47 +897,97 @@ export default {
       gmap:"",
       // 景点图片保存
       gimg:"",
+      def_time:"请选择出团日期",
       // 景点价格
-      man_price:0
-      
-      
-
-
-      
+      man_price:0,
+      local:"北京",
+      chostime:[{
+        tit:"09-26(周四)出发 - 3660/人 - A行程",
+        ptime:false
+      },{
+        tit:"10-01(周二)出发 - 4460/人 - A行程",
+        ptime:false
+      },
+      {
+        tit:"10-02(周三)出发 - 4460/人 - A行程",
+        ptime:false
+      },
+      {
+        tit:"10-08(周二)出发 - 4060/人 - A行程",
+        ptime:false
+      },
+      {
+        tit:"10-10(周四)出发 - 4060/人 - A行程",
+        ptime:false
+      },
+      {
+        tit:"10-12(周六)出发 - 4060/人 - A行程",
+        ptime:false
+      },
+      {
+        tit:"10-30(周三)出发 - 4460/人 - A行程" ,
+        ptime:false
+      }],
+      res_obj:{} 
     };
   },
-  
   // 获取数据库信息放到页面中
-  mounted (){
+  created (){
     // 获取数据库信息
     var get_url = "order/getload";
-    // console.log(222)
     this.axios.get(get_url).then(res=>{
       var goods = res.data[0];
-      // console.log(goods)
       this.gtitle = goods.gtitle;
       this.man_price=goods.g_m_price;
       this.gmap = goods.gmap;
     
-      // console.log(this.gtitle)
     })
   },
-  
+  beforeDestroy(){
+      this.bus.$emit('getpinfo',this.res_obj);
+  },
+  watch:{
+    def_time:{
+      handler(newval){
+          if(newval!="请选择出团日期"){
+            this.msg = false;
+          }
+        }
+      } 
+  },
   methods: {
-    
-
-    changeImg(e) {
-      console.log(e.target.dataset.original);
-      console.log(e.currentTarget.nextElementSibling);
-      // if(e.target.localName === 'img'){
-      //     console.log("触发事件1");
-      // }else if(e.target.localName === 'img'){
-      //     console.log("触发事件2");
-      // }
+    changeImg(index) {
+        this.img=this.items[index].img
+        for(let i=0;i<this.items.length;i++){
+            if(i==index){
+                this.items[index].ac=true
+            }
+            else{
+                this.items[i].ac=false
+            }
+        }
+    },
+    showtime(e){
+      //console.log(e.currentTarget);
+        //e.currentTarget.getElementById("string") 
+      if(e.currentTarget.firstChild.className=="li"){
+        if(this.act_time==false){
+          this.act_time=true;
+          return;
+        }
+        if(this.act_time==true){
+          this.act_time=false;
+          return;
+        }
+      }
+    },
+    choosetime(index){
+      this.def_time = this.chostime[index].tit;
+      
     },
     // 人的加减
     reduce(e){
-      if(e=="m"&&this.man_num>0){
+      if(e=="m"&&this.man_num>1){
         this.man_num--
       }else if(e=="c"&&this.child_num>0){
         this.child_num--
@@ -1058,29 +1001,40 @@ export default {
       }
     },
     reserve(){
-      // console.log(555)
-      var oid ='OS'+ new Date().getTime();
-      console.log(oid)
-      var man_count = this.man_num ;
-      var child_count = this.child_num;
-      var man_price = this.man_price;
-      var child_price = this.man_price-200;
-      var mans_count = this.man_num + this.child_num;
+      if(this.def_time==="请选择出团日期"){
 
-      var obj ={
+        this.msg = true;
+        return;
+      }
+      else{
+        this.msg = false;
+      }
+      let oid ='PD'+ new Date().getTime();
+      //console.log(oid)
+      let man_count = this.man_num ;
+      let child_count = this.child_num;
+      let man_price = this.man_price;
+      let child_price = this.man_price-200;
+      let mans_count = this.man_num + this.child_num;
+      let gtitle = this.gtitle;
+      let local = this.gmap;
+      let choosetime = this.def_time;
+
+      let obj ={
+        oid,
         uid:3456,
         man_count ,
         child_count,
         man_price,
         child_price,
-        mans_count
+        mans_count,
+        gtitle,
+        local,
+        choosetime
       }
-      console.log(obj)
-      
-      this.axios.get("order/reserve",{params:obj})
+      this.res_obj = obj;
+      this.$router.push('/booking');
     }
-
-    
   },
   components: {
     dHeader,
@@ -1092,6 +1046,7 @@ export default {
 <style scoped>
 @import url("../assets/css/detail.scss");
 @import url("detaill.scss");
+
 .xr {
   overflow-x: visible;
   overflow-y: visible;
