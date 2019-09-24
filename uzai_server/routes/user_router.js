@@ -32,7 +32,7 @@ router.get("/login",(req,res)=>{
       var id = result[0].uid
       // console.log(id[0].uid);
       req.session.uid = id ;
-      console.log(req.session)
+      // console.log(req.session)
       res.send("1");
       //req.session.user = result.dataValues
       //req.session.islogin = true;
