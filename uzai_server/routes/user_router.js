@@ -30,7 +30,7 @@ router.get("/login",(req,res)=>{
       var id = result[0].uid
       // console.log(id[0].uid);
       req.session.uid = id ;
-      // console.log(req.session)
+      console.log(req.session)
       res.send("1");
     }else{
       res.send({code:401,msg:"用户名或密码错误"});
