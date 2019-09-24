@@ -104,11 +104,11 @@
     </div> 
 </template>
 <script>
-import Number from "./Number.vue"
+import Numberdx from "./Numberdx.vue"
 import UserAgreement from "./UserAgreement.vue"
 export default {
     components:{
-        "num":Number,
+        "num":Numberdx,
         // "user":UserAgreement,
     },
     data(){

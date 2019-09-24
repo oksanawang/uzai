@@ -4,8 +4,9 @@ import Router from 'vue-router'
 // --注册组件
 import Reg from "./components/reg/Reg.vue"
 import Login from "./components/reg/Login.vue"
-import Number from "./components/reg/Number.vue"
+import Numberdx from "./components/reg/Numberdx.vue"
 import UserAgreement from "./components/reg/UserAgreement.vue"
+import Forget from "./components/reg/Forget.vue"
 
 
 import order from "./components/order/order.vue"
@@ -27,8 +28,9 @@ export default new Router({
     // --注册组件
     {path:'/Reg',component:Reg},
     {path:'/Login',component:Login},
-    {path:'/Number',component:Number},
+    {path:'/Numberdx',component:Numberdx},
     {path:'/UserAgreement',component:UserAgreement},
+    {path:'/Forget',component:Forget},
 
 
     {path:'/order',component:order},

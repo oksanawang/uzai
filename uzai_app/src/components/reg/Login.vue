@@ -80,10 +80,10 @@
   </div>
 </template>
 <script>
-import Number from "./Number.vue";
+import Numberdx from "./Numberdx.vue";
 export default {
   components: {
-    num: Number
+    num: Numberdx
   },
   data() {
     return {
