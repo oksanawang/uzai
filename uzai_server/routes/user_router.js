@@ -18,12 +18,14 @@ router.get("/reg",(req,res)=>{
 })
 router.get("/login",(req,res)=>{
   var obj = req.query;
-  // console.log(obj.uname)
+
+  console.log(obj)
   // res.send(10086)
   var uname = obj.uname;
   var upwd = obj.upwd ;
-  var sql = `SELECT uid from uzi_user where uname=? and upwd =? `
+  var sql = `SELECT uid FROM uzi_user WHERE uname=? and upwd=?`
   pool.query(sql,[uname,upwd],(err,result)=>{
+
     if(err)throw err;
     // console.log(result)
     if(result!=""){
@@ -32,8 +34,8 @@ router.get("/login",(req,res)=>{
       req.session.uid = id ;
       console.log(req.session)
       res.send("1");
-    }else{
-      res.send({code:401,msg:"用户名或密码错误"});
+      //req.session.user = result.dataValues
+      //req.session.islogin = true;
     }
     
   })

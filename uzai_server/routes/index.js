@@ -2,6 +2,7 @@ const express=require("express");
 const router=express.Router();
 const pool=require("../pool");
 
+//查询数据库中的
 router.get("/tnt",(req,res)=>{
   var sql = `select * from uzi_user `
   pool.query(sql,(err,result)=>{

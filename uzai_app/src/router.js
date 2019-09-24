@@ -13,6 +13,7 @@ import booking from "./components/order/booking.vue"
 import Index from "./components/index/index.vue"
 import Detail from "./views/detail.vue"
 
+
 // 测试借口组件
 import Vtest from "./views/test.vue"
 
