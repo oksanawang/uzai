@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require("express-session")
 const router = express.Router();
 const pool = require("../pool");
 
@@ -33,12 +34,15 @@ router.get("/login",(req,res)=>{
       //req.session.user = result.dataValues
       //req.session.islogin = true;
     }
+    
   })
 }),
 router.get("/test",(req,res)=>{
   pool.query('select * from A',(err,result)=>{
     if(err) throw err;
-    res.send({code:1,msg:"测试成功"});
+    var uid = req.session;
+    console.log(uid);
+    res.send(uid);
   });
 })
 module.exports=router;

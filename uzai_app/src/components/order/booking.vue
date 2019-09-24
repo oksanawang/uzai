@@ -3,7 +3,7 @@
     <div class="top">
       <div class="wrap top_wrap">
         <div class="logo_pic_l">
-          <a href="//www.uzai.com">
+          <a href="#/">
             <img src="//r.uzaicdn.com/content/store/images/order/logo.png?imageView2/2/w/243/h/43" />
           </a>
         </div>
@@ -574,6 +574,28 @@
 export default {
   data(){
     return{
+      // 商品编号：
+      gid:"",
+      // 成人数量
+      man_num:0,
+      // 孩子数量
+      child_num:0,
+      // 景点名称 
+      gtitle:"",
+      // 地点
+      gmap:"",
+      // 景点图片保存
+      gimg:"",
+      // 景点价格
+      man_price:0,
+      // 出发日期
+      go_data:0,
+      // 房间差价
+      rooms_difference:0,
+      // 人数
+      mans_count:0,
+      //  总价钱
+      total_price :0,
       res_obj:{}
     }
   },
@@ -595,7 +617,8 @@ export default {
       });
     }
   }
-};
+}
+
 </script>
 
 <style scoped>
@@ -1267,217 +1290,220 @@ select {
   line-height: 24px;
 }
 #loader {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -20px;
-    margin-left: -90px;
-    background: #fff;
-    z-index: 999;
-    border-radius: 6px;
-    padding: 20px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -90px;
+  background: #fff;
+  z-index: 999;
+  border-radius: 6px;
+  padding: 20px;
 }
 #loader div {
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    vertical-align: middle;
-    margin: 0 6px;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+  margin: 0 6px;
 }
 #loader img {
-    height: 100%;
+  height: 100%;
 }
-.bg_000, .mask {
-    background-color: #000;
-    opacity: .6;
-    filter: alpha(opacity=60);
-    position: fixed;
-    z-index: 99;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    display: none;
+.bg_000,
+.mask {
+  background-color: #000;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
 }
 .footer {
-    background: #484848;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    color: #ccc;
-    text-align: center;
-    margin-top: 50px;
+  background: #484848;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #ccc;
+  text-align: center;
+  margin-top: 50px;
 }
 .footer a {
-    color: #ccc;
-    font-size: 12px;
-    margin: 10px;
+  color: #ccc;
+  font-size: 12px;
+  margin: 10px;
 }
 .footer p span {
-    margin: 10px 10px 0;
-    font-size: 12px;
-    display: inline-block;
+  margin: 10px 10px 0;
+  font-size: 12px;
+  display: inline-block;
 }
 .reserve_r {
-    width: 250px;
-    background: #fff url(//r.uzaicdn.com/content/store/images/order/x_x.jpg) center top no-repeat;
-    margin-top: 26px;
-    position: absolute;
-    position: fixed\9;
-    padding: 20px;
-    margin-left: 850px;
+  width: 250px;
+  background: #fff url(//r.uzaicdn.com/content/store/images/order/x_x.jpg)
+    center top no-repeat;
+  margin-top: 26px;
+  position: absolute;
+  position: fixed\9;
+  padding: 20px;
+  margin-left: 850px;
 }
 .reserve_r h1 {
-    font-size: 16px;
-    margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 .reserve_r h2 .price {
-    float: right;
-    color: #ea1a56;
+  float: right;
+  color: #ea1a56;
 }
 .reserve_r p {
-    color: #999;
-    font-size: 12px;
-    height: 25px;
-    background: url(//r.uzaicdn.com/content/store/images/liner/liner_order_line.jpg) repeat-x 0 -1px;
+  color: #999;
+  font-size: 12px;
+  height: 25px;
+  background: url(//r.uzaicdn.com/content/store/images/liner/liner_order_line.jpg)
+    repeat-x 0 -1px;
 }
 .reserve_r p span {
-    background: #fff;
-    padding-right: 7px;
+  background: #fff;
+  padding-right: 7px;
 }
 .reserve_r p .fr {
-    padding-right: 0;
-    padding-left: 7px;
+  padding-right: 0;
+  padding-left: 7px;
 }
 .reserve_r div em {
-    color: #ea1a56;
-    font-size: 12px;
-    margin: auto 0 auto 5px;
+  color: #ea1a56;
+  font-size: 12px;
+  margin: auto 0 auto 5px;
 }
 #sum_price {
-    color: #ea1a56;
+  color: #ea1a56;
 }
 .store_ad {
-    clear: left;
-    width: 700px;
-    height: 440px;
-    padding: 25px;
-    background: #f7f7f7;
-    box-shadow: 0 0 10px #999;
-    margin: 10px;
-    border-radius: 12px;
-    border: 1px solid #e4e4e4;
-    position: fixed;
+  clear: left;
+  width: 700px;
+  height: 440px;
+  padding: 25px;
+  background: #f7f7f7;
+  box-shadow: 0 0 10px #999;
+  margin: 10px;
+  border-radius: 12px;
+  border: 1px solid #e4e4e4;
+  position: fixed;
 }
 .tank {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 100;
-    -webkit-box-shadow: 0 0 30px rgba(0,0,0,.3);
-    box-shadow: 0 0 30px rgba(0,0,0,.3);
-    -moz-box-shadow: 0 0 30px rgba(0,0,0,.3);
-    -ms-shadow: 0 0 30px rgba(0,0,0,.3);
-    -o-shadow: 0 0 30px rgba(0,0,0,.3);
-    display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  -ms-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  -o-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  display: none;
 }
 .store_ad h1 {
-    color: #000;
-    font-size: 18px;
-    font-weight: 700;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
 }
 .icon-mendian {
-    margin-right: 5px;
-    font-size: 18px!Important;
+  margin-right: 5px;
+  font-size: 18px!Important;
 }
 .store_ad .border {
-    font-size: 12px;
-    line-height: 30px;
-    margin: 20px 0;
-    border: 1px #e2e2e2 dashed;
-    background: #fbfbfb;
+  font-size: 12px;
+  line-height: 30px;
+  margin: 20px 0;
+  border: 1px #e2e2e2 dashed;
+  background: #fbfbfb;
 }
 .store_ad b {
-    text-align: center;
-    display: inline-block;
-    width: 30%;
-    color: #999;
+  text-align: center;
+  display: inline-block;
+  width: 30%;
+  color: #999;
 }
 .store_ad b span {
-    font-size: 18px;
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: -1px;
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: -1px;
 }
 .store_ad .adress_opt {
-    width: 100%;
-    margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 .input_seach_wrap {
-    float: left;
+  float: left;
 }
 .adress_opt select {
-    border: 0;
-    background-color: #fff;
-    line-height: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 120px;
-    margin-right: 15px;
-    text-align: center;
-    outline: 0;
-    font-size: 13px;
+  border: 0;
+  background-color: #fff;
+  line-height: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 120px;
+  margin-right: 15px;
+  text-align: center;
+  outline: 0;
+  font-size: 13px;
 }
 .input_seach_wrap {
-    float: left;
+  float: left;
 }
 .adress_opt .search {
-    width: 60px;
-    height: 34px;
-    line-height: 34px;
-    background: #ea1a56;
-    color: #fff;
-    font-size: 12px;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    border-radius: 4px;
+  width: 60px;
+  height: 34px;
+  line-height: 34px;
+  background: #ea1a56;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  border-radius: 4px;
 }
 .adress_store {
-    overflow: hidden;
+  overflow: hidden;
 }
 .adress_store ul {
-    padding: 5px;
-    height: 250px;
-    overflow: auto;
-    display: block;
-    width: 32%;
-    background: #fff;
-    float: left;
+  padding: 5px;
+  height: 250px;
+  overflow: auto;
+  display: block;
+  width: 32%;
+  background: #fff;
+  float: left;
 }
 .map_store {
-    float: right;
-    width: 65.5%;
-    height: 260px;
-    background: #ffe6e6;
+  float: right;
+  width: 65.5%;
+  height: 260px;
+  background: #ffe6e6;
 }
 .sure_btn {
-    margin: 0 auto;
-    width: 80px;
-    height: 30px;
-    background: #ea1a56;
-    color: #fff;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 40px;
-    display: block;
-    margin-top: 15px;
-    line-height: 30px;
-    font-size: 14px;
+  margin: 0 auto;
+  width: 80px;
+  height: 30px;
+  background: #ea1a56;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 40px;
+  display: block;
+  margin-top: 15px;
+  line-height: 30px;
+  font-size: 14px;
 }
 .reserve_r h2 {
-    font-size: 14px;
-    margin: 25px auto 8px;
-    height: 20px;
+  font-size: 14px;
+  margin: 25px auto 8px;
+  height: 20px;
 }
 </style>
