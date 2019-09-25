@@ -27,9 +27,12 @@ router.get("/login",(req,res)=>{
   pool.query(sql,[uname,upwd],(err,result)=>{
 
     if(err)throw err;
-    console.log(result);
-    console.log(333)
-    if(result.affectedRows!=0){
+    // console.log(result)
+    if(result!=""){
+      var id = result[0].uid
+      // console.log(id[0].uid);
+      req.session.uid = id ;
+      // console.log(req.session)
       res.send("1");
       //req.session.user = result.dataValues
       //req.session.islogin = true;
