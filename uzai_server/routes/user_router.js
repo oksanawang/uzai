@@ -4,15 +4,22 @@ const router = express.Router();
 const pool = require("../pool");
 
 router.get("/reg",(req,res)=>{
-  var obj = req.body;
-  console.log(obj);
-  var sql = `INSERT INTO xz_user SET ? `;
+  console.log(req.query);
+  var phone = req.query.phone;
+  var upwd = req.query.upwd;
+  var uname = 'uzai'+phone;
+  var obj={
+    uname,
+    upwd,
+    phone
+  }
+  var sql = `INSERT INTO uzi_user SET ? `;
   pool.query(sql,[obj],(err,result)=>{
     if(err) throw err;
     if(result.affectedRows>0){
-      res.send(1)
+      res.send("1")
     }else{
-      res.send(0)
+      res.send("-1")
     }
   })
 })
@@ -23,7 +30,15 @@ router.get("/login",(req,res)=>{
   // res.send(10086)
   var uname = obj.uname;
   var upwd = obj.upwd ;
-  var sql = `SELECT uid FROM uzi_user WHERE uname=? and upwd=?`
+  var sql =``;
+  var regUname = /^1[3-9]\d{9}$/
+  if(regUname.test(uname)){
+    sql = `SELECT uid FROM uzi_user WHERE phone=? and upwd=?`
+    console.log(1)
+  }else{
+    var sql = `SELECT uid FROM uzi_user WHERE uname=? and upwd=?`
+    console.log(2)
+  }
   pool.query(sql,[uname,upwd],(err,result)=>{
 
     if(err)throw err;
@@ -37,7 +52,6 @@ router.get("/login",(req,res)=>{
       //req.session.user = result.dataValues
       //req.session.islogin = true;
     }
-    
   })
 }),
 router.get("/test",(req,res)=>{

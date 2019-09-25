@@ -19,7 +19,7 @@ import axios from "axios"
 // 1.6配置请求时保存session信息
 axios.defaults.withCredentials=true
 // 1.7：配置请求基础路径
-axios.defaults.baseURL="http://127.0.0.1:8081/"
+axios.defaults.baseURL="http://127.0.0.1:8080/"
 // 注意：地址栏必须输入！！！！！！！
 // http://127.0.0.1:8080/！！！！！
 // 如果地址http://localhost 报错

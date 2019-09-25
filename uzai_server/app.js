@@ -7,18 +7,18 @@ const cors=require("cors");
 const userRouter=require("./routes/user_router");
 const orderRouter=require("./routes/order_router");
 const indexRouter=require("./routes/index");
-const cors=require("cors");
-const session = require("express-session");
-const orderRouter=require("./routes/order_router")
-/*引入路由模块*/
+// const cors=require("cors");
+// const session = require("express-session");
+// const orderRouter=require("./routes/order_router")
+// /*引入路由模块*/
 
 
 var app = express();
-app.listen(8081);
+app.listen(8080);
 //添加cors中间件函数
 //统一为每个请求先修改响应头
 app.use(cors({
-  origin:["http://127.0.0.1:5050","http://127.0.0.1:8081"],//不能用*
+  origin:["http://127.0.0.1:5050","http://127.0.0.1:5050"],//不能用*
   credentials:true
 }));
 

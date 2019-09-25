@@ -4,7 +4,7 @@ CREATE DATABASE uzi CHARSET UTF8;
 USE  uzi ;
 CREATE TABLE uzi_user(
   uid INT PRIMARY KEY AUTO_INCREMENT,
-  uname VARCHAR(11),
+  uname VARCHAR(32),
   upwd VARCHAR(16),
   phone VARCHAR(11)
 );

@@ -24,11 +24,11 @@
           </div>
         </div>
         <div class="top_m_l">
-          <a href="#/reg">
+          <a href="#/login">
             <i class="iconfont icon-yonghu"></i>登录
           </a>
           <a class="paddl0">|</a>
-          <a href="#/login">
+          <a href="#/reg">
             <i class="iconfont icon-zhuce"></i>注册
           </a>
           <span class="red">新用户送5800元抵用券</span>
@@ -1046,9 +1046,6 @@ a {
 .top_m_l span.red {
   color: #fff;
   background: linear-gradient(left bottom, #ea1a56, #ff8700);
-  background: -webkit-linear-gradient(left bottom, #ea1a56, #ff8700);
-  background: -o-linear-gradient(left bottom, #ea1a56, #ff8700);
-  background: -moz-linear-gradient(left bottom, #ea1a56, #ff8700);
   font-size: 12px;
   padding: 0 7px;
   position: relative;

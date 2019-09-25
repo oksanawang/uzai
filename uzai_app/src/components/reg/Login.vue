@@ -16,10 +16,10 @@
         <div class="login-middle">
           <div class="login-left">
             <div>
-              <input ref="uname"  placeholder="请输入登录名/手机号/邮箱" type="text" v-model="loginName" maxlength="11" />
+              <input ref="uname"  placeholder="请输入登录名/手机号/邮箱" type="text" v-model="loginName" maxlength="32" />
             </div>
             <div>
-              <input placeholder="请输入密码" type="password" v-model="upwd" maxlength="16" />
+              <input placeholder="请输入密码" type="password" v-model="upwd" maxlength="18" />
             </div>
             <div>
               <input placeholder="图形验证码" type="text" maxlength="2" v-model="ureg" />
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="login-middle-dongtai">
-          <div class="login-dongtai-left">
+          <!-- <div class="login-dongtai-left">
             <div>
               <input placeholder="请输入登录名/手机号/邮箱" type="text" maxlength="11" v-model="loginName" />
             </div>
@@ -54,7 +54,7 @@
             </div>
             <button class="login-button-login" @click="Login2">登录</button>
             <p class="tishi" ref="tishi"></p>
-          </div>
+          </div> -->
           <div class="login-dongtai-right">
             <p>还没众信悠哉网账号？</p>
             <router-link to="/reg">立即注册-></router-link>
@@ -80,10 +80,10 @@
   </div>
 </template>
 <script>
-import Number from "./Number.vue";
+import Numberdx from "./Numberdx.vue";
 export default {
   components: {
-    num: Number
+    num: Numberdx
   },
   data() {
     return {
@@ -100,13 +100,14 @@ export default {
       var pwd = this.upwd;
       var reg = this.ureg;
       console.log(loginName, pwd, reg);
-      var regName = /^[a-z0-9]{3,12}$/;
-      var regMsg = /^\d{6,12}$/;
+      var regName = /^[a-z0-9]{0,32}$/;
+      var regMsg = /^[\w]{6,19}$/;
       if (!regName.test(loginName)) {
         this.uperr = "登录名/手机号/邮箱格式不正确!";
         return;
       }
       if (!regMsg.test(pwd)) {
+        console.log(pwd)
         this.uperr = "密码不是不正确!";
         return;
       }
@@ -130,24 +131,6 @@ export default {
       });
     },
     Login2() {
-      var loginName = this.loginName;
-      var reg = this.ureg;
-      var msg = this.umsg;
-      console.log(loginName, pwd, msg);
-      var regName = /^1[3-9]\d{9}$/;
-      var regMsg = /^[0-9]\d{6}$/;
-      if (!regName.test(loginName)) {
-        this.uperr = "请输入登录名/手机号/邮箱!";
-        return;
-      }
-      if (reg == "") {
-        this.uperr = "请输入您的图形验证码!";
-        return;
-      }
-      if (msg == "") {
-        this.uperr = "请输入验证码";
-        return;
-      }
     }
   }
 };
@@ -309,7 +292,7 @@ a {
   margin: 0;
   padding: 0;
   color: #fb284b;
-  background: yellowgreen;
+  /* background: yellowgreen; */
   text-align: center;
   font-size: 12px;
 }

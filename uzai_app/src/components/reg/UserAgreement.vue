@@ -548,7 +548,7 @@ body {
 .address .icon-right-arr {
     color: #0099d9;
     font-size: 18px;
-    :  !important;
+    /* :  !important; */
     vertical-align: middle;
     margin-right: 0
 }
