@@ -6,6 +6,7 @@ import Reg from "./components/reg/Reg.vue"
 import Login from "./components/reg/Login.vue"
 import Numberdx from "./components/reg/Numberdx.vue"
 import UserAgreement from "./components/reg/UserAgreement.vue"
+import Forget from "./components/reg/Forget.vue"
 
 
 import order from "./components/order/order.vue"
@@ -29,6 +30,7 @@ export default new Router({
     {path:'/Login',component:Login},
     {path:'/Numberdx',component:Numberdx},
     {path:'/UserAgreement',component:UserAgreement},
+    {path:'/Forget',component:Forget},
 
 
     {path:'/order',component:order},

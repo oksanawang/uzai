@@ -27,23 +27,23 @@
         <input id="payType" value="二次确认" type="hidden" />
         <input id="isTwPro" value="0" type="hidden" />
         <div class="order_meg">
-          <h3>{{res_obj.gtitle}}</h3>
+          <h3>{{gtitle}}</h3>
           <div class="mesg_box">
             <p>
               <i class="iconfont icon-yuandian"></i>
               <span class="col9">行程名称：</span>
               <em>
-                {{res_obj.gtitle}}
+                {{gtitle}}
                 【商品编号：
                 <span
                   id="tuanNo"
-                >{{res_obj.oid}}</span>】
+                >{{gid}}</span>】
               </em>
             </p>
             <p class="inlineblock">
               <i class="iconfont icon-yuandian"></i>
               <span class="col9">出发城市：</span>
-              <em>{{res_obj.local}}</em>
+              <em>{{gmap}}</em>
             </p>
             <p class="inlineblock">
               <i class="iconfont icon-yuandian"></i>
@@ -53,10 +53,10 @@
             <p class="inlineblock">
               <i class="iconfont icon-yuandian"></i>
               <span class="col9">出行人数：</span>
-              <em id="adultNum">1</em>成人
-              <span id="child" style="display: none;">
+              <em id="adultNum" v-text="man_num"></em>成人
+              <span id="child"  v-show="child_num!=0">
                 ,
-                <em id="childNum"></em>儿童
+                <em id="childNum" v-text="child_num"></em>儿童
               </span>
             </p>
           </div>
@@ -71,14 +71,14 @@
             </li>
             <li class="supplement_text">
               <span>单房间差</span>
-              <span>¥700.00</span>
+              <span>¥{{rooms_difference}}</span>
               <span>元/人</span>
               <span>
-                <em id="num_reduce" class="unsed">-</em>
-                <strong id="num">0</strong>
-                <em id="num_plus">+</em>
+                <em id="num_reduce" class="unsed" @click="rcountchange(-1)">-</em>
+                <strong id="num" v-text="room_count">0</strong>
+                <em id="num_plus" @click="rcountchange(1)">+</em>
               </span>
-              <span class="col48" id="singleTotalPrice">¥0.00</span>
+              <span class="col48" id="singleTotalPrice" ><span style="margin-left:28px;">¥</span><span v-text="room_allprice">0.00</span></span>
             </li>
           </ul>
           <input type="hidden" id="SingleHousePrice" value="700.00" />
@@ -105,8 +105,10 @@
                 data-valid="isNonEmpty"
                 data-error="姓名不能为空"
                 avalon-events="input:_6,compositionstart:_4,compositionend:_5,focus:_2,blur:_3"
+                v-model="main_name"
               />
             </div>
+
             <div class="meg-person tel">
               <b class="letter2">
                 <span>*</span>手机号码
@@ -123,6 +125,7 @@
                 data-valid="isNonEmpty||isMobile"
                 data-error="手机号码不能为空||手机号码不正确"
                 avalon-events="input:_6,compositionstart:_4,compositionend:_5,focus:_2,blur:_3"
+                v-model="main_phone"
               />
             </div>
             <div class="meg-person">
@@ -136,6 +139,7 @@
                 data-valid="isEmail"
                 data-error="邮箱格式错误"
                 avalon-events="input:_6,compositionstart:_4,compositionend:_5,focus:_2,blur:_3"
+                v-model="main_email"
               />
               <span class="valid_message hide">邮箱格式不正确</span>
             </div>
@@ -148,6 +152,7 @@
                 cols="30"
                 rows="10"
                 maxlength="200"
+                v-model="main_remark"
               ></textarea>
             </div>
           </div>
@@ -158,127 +163,179 @@
             <span>为了更好的帮您完成行程预订，建议您可以填写出游人或稍后在“我的悠哉-我的订单”中补充出游人信息</span>
           </h1>
           <div class="order_pay_nav">
-            <ul class="linkman" style="display: block;">
-              <!--ms-for:($index, el) in travelerList-->
-              <li
-                class="list"
-                id="12728"
-                avalon-events="click:eclick_0_chooseTraveler40$event44el46ctId41"
-              >
-                <i class="iconfont icon-fangkuang"></i>yang
-                <div class="hide_tips">出游人已满</div>
-              </li>
-              <!--for685892855988-->
-              <!--ms-for-end:-->
-            </ul>
-            <div class="people_list">
-              <div class="people_masg" data-type="adult" data-sort="0" tid="0">
-                <h2 class="visitor">
-                  <b>
-                    <span class="span1">出游人1</span>
-                    <span class="span2">成人</span>
-                  </b>
-                  <em class="clearall" cid="0">
-                    <i class="iconfont icon-qingkong"></i>清空
-                  </em>
-                  <span class="travel_user fr">
-                    <i class="iconfont icon-checkbank"></i> 存为常用联系人
-                  </span>
-                </h2>
-                <div class="meg-person">
-                  <b class="letter3">
-                    <span>*</span>姓名
-                  </b>
-                  <input
-                    placeholder="请输入姓名"
-                    name="tname"
-                    type="text"
-                    class="required"
-                    maxlength="11"
-                    data-valid="isNonEmpty"
-                    data-error="姓名不能为空"
-                    avalon-events="input:_6,compositionstart:_4,compositionend:_5,focus:_2,blur:_3"
-                  />
-                </div>
-                <div class="meg-person tel">
-                  <b class="letter2">手机号码</b>
-                  <input
-                    placeholder="请输入11位手机号码"
-                    name="tphone"
-                    maxlength="11"
-                    type="text"
-                    class="add_required"
-                    data-valid="isMobile"
-                    data-error="手机格式不正确"
-                    avalon-events="input:_6,compositionstart:_4,compositionend:_5,focus:_2,blur:_3"
-                  />
-                  <!-- <div class="hide_tips_box">
-                                        <i class="iconfont icon-question"></i>
-                                        <div class="bubble" style="display: none;">
-                                            <p>此手机号为接收短信所用，作为订购与取票凭证，请准确填写。</p>
-                                            <span></span>
-                                        </div>
-
-                  </div>-->
-                </div>
-                <div class="meg-person" data-sort="0">
-                  <b class="letter2">证件类型</b>
-                  <select
-                    name
-                    id
-                    class="selection"
-                    avalon-events="change:echange_0_change40$event444841"
+            <div class="man" v-for="(item,index) in man_info" :key="index">
+                <ul class="linkman" style="display: block;">
+                  <!--ms-for:($index, el) in travelerList-->
+                  <li
+                    class="list"
+                    id="12728"
+                    avalon-events="click:eclick_0_chooseTraveler40$event44el46ctId41"
                   >
-                    <option value="0">请选择</option>
-                    <option value="1">身份证</option>
-                    <option value="7">军官证</option>
-                    <option value="2">护照</option>
-                    <option value="5">台胞证</option>
-                    <option value="8">回乡证</option>
-                  </select>
-                  <input
-                    class="user_num"
-                    placeholder="请输入证件号码"
-                    type="text"
-                    name="tcard"
-                    onblur="CardInfo(0,$(this))"
-                    maxlength="20"
-                  />
-                </div>
-                <div class="meg-person">
-                  <b class="letter3">
-                    <span>*</span>性别
-                  </b>
-                  <div class="select_sex" data-sort="0">
-                    <i class="iconfont icon-check" change-class="iconfont icon-check"></i>
-                    男
-                    <i
-                      style="margin-left:30px;"
-                      class="iconfont icon-radio"
-                      change-class="iconfont icon-radio"
-                    ></i>
-                    女
+                    <i class="iconfont icon-fangkuang"></i>
+                    <div class="hide_tips">出游人已满</div>
+                  </li>
+                </ul>
+                
+                <div class="people_list">
+                  <div class="people_masg" data-type="adult" data-sort="0" tid="0">
+                    <h2 class="visitor">
+                      <b>
+                        <span class="span1">出游人</span>
+                        <span class="span2">成人:{{index+1}}</span>
+                      </b>
+                      <em class="clearall" cid="0">
+                        <i class="iconfont icon-qingkong"></i>清空
+                      </em>
+                      <span class="travel_user fr">
+                        <i class="iconfont icon-checkbank"></i> 存为常用联系人
+                      </span>
+                    </h2>
+                    <div class="meg-person">
+                      <b class="letter3">
+                        <span>*</span>姓名
+                      </b>
+                      <input
+                        placeholder="请输入姓名" name="tname" type="text"
+                        class="required"  maxlength="11"
+                        v-model="item.m_name"
+                      />
+                    </div>
+                    <div class="meg-person tel">
+                      <b class="letter2">手机号码</b>
+                      <input placeholder="请输入11位手机号码" name="tphone"
+                        maxlength="11" type="text" class="add_required"
+                        v-model="item.m_phone" />
+                    </div>
+                    <div class="meg-person" data-sort="0">
+                      <b class="letter2">证件类型</b>
+                      <select
+                        name
+                        id
+                        class="selection"
+                        avalon-events="change:echange_0_change40$event444841"
+                      >
+                        <option value="0">请选择</option>
+                        <option value="1">身份证</option>
+                        
+                      </select>
+                      <input
+                        class="user_num"
+                        placeholder="请输入证件号码"
+                        type="text"
+                        name="tcard"
+                      
+                        maxlength="20"
+                        v-model="item.m_certificates"
+                      />
+                    </div>
+                    <div class="meg-person">
+                      <b class="letter3">
+                        <span>*</span>性别
+                      </b>
+                      <div class="select_sex" data-sort="0" >
+                        <i id="m_g_male" :class="{'iconfont icon-radio':item.m_gender==0,'iconfont icon-check':item.m_gender==1,'iconfont icon-radio':item.m_gender==-1}" @click="mc_gender($event,index)" >&#xe612;</i>
+                        男
+                        <i
+                          style="margin-left:30px;" id="m_g_female" 
+                          :class="{'iconfont icon-radio':item.m_gender==1,'iconfont icon-check':item.m_gender==0,'iconfont icon-radio':item.m_gender==-1}"
+                          @click="mc_gender($event,index)" 
+                        >&#xe612;</i>
+                        女
+                      </div>
+                    </div>
+                    <div class="meg-person">
+                      <b class="letter2">
+                        <span>*</span>出生日期
+                      </b>
+                      <input
+                        type="text"
+                        class="date_select required"
+                        name="tbirthday"
+                        data-valid="isNonEmpty"
+                        data-error="请选择出生日期"
+                        onclick="WdatePicker({'qsEnabled':false})"
+                        placeholder="请选择"
+                        readonly="readonly"
+                        avalon-events="input:_6,compositionstart:_4,compositionend:_5,focus:_2,blur:_3"
+                        v-model="item.m_birth"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div class="meg-person">
-                  <b class="letter2">
-                    <span>*</span>出生日期
-                  </b>
-                  <input
-                    type="text"
-                    class="date_select required"
-                    name="tbirthday"
-                    data-valid="isNonEmpty"
-                    data-error="请选择出生日期"
-                    onclick="WdatePicker({'qsEnabled':false})"
-                    placeholder="请选择"
-                    readonly="readonly"
-                    avalon-events="input:_6,compositionstart:_4,compositionend:_5,focus:_2,blur:_3"
-                  />
+            </div>
+<!-- //////////////////                   -->
+            <div class="fg" style="width:100%; height:1px; background-color:red;" v-show="child_num!=0"></div>
+            <div class="children" v-for="(item,index2) in child_info" :key="'info2-'+index2" v-show="child_num!=0">
+                <ul class="linkman" style="display: block;" v-show="child_num!=0">
+            
+                  <li class="list">
+                    <i class="iconfont icon-fangkuang"></i>
+                    <div class="hide_tips">出游人已满</div>
+                  </li>
+                
+                </ul>
+                <div class="people_list">
+                  <div class="people_masg" >
+                    <h2 class="visitor">
+                      <b>
+                        <span class="span1">出游人</span>
+                        <span class="span2">儿童:{{index2+1}}</span>
+                      </b>
+
+                      <em class="clearall" cid="0">
+                        <i class="iconfont icon-qingkong"></i>清空
+                      </em>
+                    
+                    </h2>
+                    <div class="meg-person">
+                      <b class="letter3">
+                        <span>*</span>姓名
+                      </b>
+                      <input
+                        placeholder="请输入姓名" name="tname"
+                        type="text" class="required"
+                        maxlength="11"
+                       
+                       
+                        v-model="item.c_name"
+                      />
+                    </div>
+                    <div class="meg-person" >
+                      <b class="letter3">
+                        <span>*</span>性别
+                      </b>
+                      <div class="select_sex" data-sort="0" >
+                        <i id="c_g_male" :class="{'iconfont icon-radio':item.c_gender==0,'iconfont icon-check':item.c_gender==1,'iconfont icon-radio':item.c_gender==-1}" @click="cc_gender($event,index2)">&#xe612;</i>
+                      男
+                        <i id="c_g_female" style="margin-left:30px;" :class="{'iconfont icon-radio':item.c_gender==1,'iconfont icon-check':item.c_gender==0,'iconfont icon-radio':item.c_gender==-1}" @click="cc_gender($event,index2)">&#xe612;</i>
+                        女
+                      </div>
+                    </div>
+                    <div class="meg-person">
+                      <b class="letter2">
+                        <span>*</span>出生日期
+                      </b>
+                      <input
+                        type="text"
+                        class="date_select required"
+                        name="tbirthday"
+                        data-valid="isNonEmpty"
+                        data-error="请选择出生日期"
+                        onclick="WdatePicker({'qsEnabled':false})"
+                        placeholder="请选择"
+                        readonly="readonly"
+                        avalon-events="input:_6,compositionstart:_4,compositionend:_5,focus:_2,blur:_3"
+                        v-model="item.c_birth"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
+
             </div>
           </div>
+
+
+
         </div>
         <div class="order_nav">
           <h1>
@@ -315,9 +372,10 @@
         </div>
         <div class="order_submit_nav clear">
           <div class="pay_tips">
-            <i class="iconfont icon-xuanzhong agree"></i>我已阅读并知悉以下旅游合同、费用包含、预定须知、温馨提示、自费项目等所有相关内容,同意签署下列旅游合同。
+            <i :class="{'iconfont icon-xuanzhong':if_agree==true,'iconfont agree':if_agree==false}" @click="ifagree" >&#xe613;</i>
+            我已阅读并知悉以下旅游合同、费用包含、预定须知、温馨提示、自费项目等所有相关内容,同意签署下列旅游合同。
           </div>
-          <div class="go_pay" id="order_submit_go_pay">提交订单</div>
+          <div class="go_pay" id="order_submit_go_pay" @click="go_pay">提交订单</div>
         </div>
         <div class="order_nav order_nav_ht">
           <h2 id="text_nav">
@@ -535,18 +593,48 @@
         <h1>
           <i class="iconfont icon-icon"></i>费用明细
         </h1>
+        <div>
+            <h2>
+              <span class="title">旅游团费</span>
+              <span class="price">¥ <span v-text="total_price"></span></span>
+            </h2>
+            <p>
+              <span><span v-text="man_num"></span>:成人&nbsp;x&nbsp;¥<span v-text="man_price">3499.00</span></span>
+              <span class="fr">¥<span >3499</span></span>
+            </p>
+            <p v-show="child_num!=0">
+              <span><span v-text="child_num"></span>:儿童&nbsp;x&nbsp;¥<span v-text="child_price">3099.00</span></span>
+              <span class="fr">¥<span >3499</span></span>
+            </p>
+          </div>
+      <div v-show="room_count!=0">
         <h2>
-          <span class="title">旅游团费</span>
-          <span class="price">¥3499</span>
+          <span class="title">单房差</span>
+          <span class="price">¥<span v-text="room_allprice"></span></span>
         </h2>
         <p>
-          <span>1成人&nbsp;x&nbsp;¥3499.00</span>
-          <span class="fr">¥3499</span>
+          <span><span v-text="room_count"></span>:份&nbsp;x&nbsp;¥<span v-text="rooms_difference"></span></span>
+          <span class="fr">¥<span v-text="room_allprice" >3499</span></span>
         </p>
+       
+      </div>
+
+      <div>
+        <h2>
+          <span class="title">优惠信息</span>
+          <span class="price">-¥<span v-text="cut_price"></span></span>
+        </h2>
+        <p>
+          <span>金秋放价 乐享满减 &nbsp;&nbsp;</span>
+          <span class="fr">-¥<span >300</span></span>
+        </p>
+       
+      </div>
+
         <div>
           总计
           <em>¥</em>
-          <span id="sum_price">3499</span>
+          <span id="sum_price" v-text="all_price">3499</span>
         </div>
       </div>
     </div>
@@ -574,47 +662,229 @@
 export default {
   data(){
     return{
+      res_obj:{},
       // 商品编号：
       gid:"",
-      // 成人数量
-      man_num:0,
-      // 孩子数量
-      child_num:0,
       // 景点名称 
       gtitle:"",
       // 地点
       gmap:"",
       // 景点图片保存
       gimg:"",
-      // 景点价格
-      man_price:0,
+      // 景点价格 
       // 出发日期
       go_data:0,
       // 房间差价
-      rooms_difference:0,
+      rooms_difference:700,
+      room_count:0,
+      room_allprice:0,
       // 人数
-      mans_count:0,
-      //  总价钱
+      // 成人数量
+      man_num:0,
+      man_info:[],
+      man_price:0,
+      // 孩子数量
+      child_num:0, 
+      child_info:[],
+      child_price:0,
+      //打折费用
+      cut_price:300,
+      //旅游团费总价钱
       total_price :0,
-      res_obj:{}
+      //总价格
+      all_price:0,
+      //////////////////////////////////////
+      main_name:"",
+      main_phone:"",
+      main_email:"",
+      main_remark:"",
+     
+      if_agree:false,
+      //////////////////////
+      payinfo:{}
     }
+  },
+  beforecreate() {
+    this.comedata()
   },
   created(){
     this.comedata()
   },
+  beforeMount(){
+    this.allprice()
+  },
    beforeDestroy(){
        this.bus.$off('getpinfo');
+       this.bus.$emit('pay_info',this.payinfo);
    },
   methods:{
     comedata(){
-
-      console.log("comein");
-      //console.log(this.bus);
-      //console.log(this.bus.$on("getpinfo"));
+      //console.log("comein");
+  
       this.bus.$on('getpinfo',(obj)=>{
-        this.res_obj = obj;
-        console.log("with"+obj.man_count);
+        for(let i =1;i<=obj.man_count;i++){
+          let m_init ={
+              m_name:"",
+              m_phone:"",
+              m_gender:-1,
+              m_certificates:"",
+              m_birth:""
+          } 
+          this.man_info.push(m_init);
+        }
+
+        for(let j=1;j<=obj.child_count;j++){
+          let c_init={
+            c_name:"",
+            c_gender:-1,
+            c_birth:""
+          }
+          this.child_info.push(c_init);
+        }
+      //this.uid = obj.uid
+      this.res_obj = obj;
+        // 商品编号：
+      this.gid=obj.oid
+      // 成人数量
+      this.man_num= obj.man_count
+      // 孩子数量
+      this.child_num= obj.child_count
+       // 景点价格
+      this.man_price = obj.man_price
+      this.child_price = obj.child_price
+      // 景点名称 
+      this.gtitle = obj.gtitle
+      // 地点
+      this.gmap = obj.local
+      // 景点图片保存
+      // 出发日期
+      this.go_data= obj.choosetime
+      // 房间差价
+   
+        this.total_price = this.man_price * this.man_num+this.child_num * this.child_price;
+        this.allprice();
       });
+      
+    },
+    allprice(){
+      this.room_allprice = this.room_count * this.rooms_difference;
+      
+      this.all_price = this.total_price + this.room_allprice - this.cut_price;
+    },
+    rcountchange(num){
+      if(num==1){
+        this.room_count++;
+        this.allprice();
+      }
+      if(num==-1){
+        this.room_count--;
+        if(this.room_count<0){
+          this.room_count=0;
+          this.allprice();
+        }
+        this.allprice();
+      }
+    },
+    mc_gender(e,index){
+      //console.log(e.currentTarget.nodeName)
+      if(e.currentTarget.nodeName=="I"){
+        if(e.currentTarget.id=="m_g_male"){
+          console.log(e.currentTarget.id)
+          this.man_info[index].m_gender=1;
+        }
+        if(e.currentTarget.id=="m_g_female"){
+          console.log(e.currentTarget.id)
+          this.man_info[index].m_gender=0;
+          console.log(this.man_info[index].m_gender);
+        }
+      }
+    },
+    cc_gender(e,index){
+      if(e.currentTarget.id=="c_g_male"){
+        this.child_info[index].c_gender=1;
+        console.log("c1")
+      }
+      if(e.currentTarget.id=="c_g_female"){
+        console.log("c0")
+        this.child_info[index].c_gender=0;
+      }
+
+    },
+    ifagree(){
+      console.log(this.if_agree);
+      if(this.if_agree==true){
+        this.if_agree=false;
+        return;
+      }
+      if(this.if_agree==false){
+        this.if_agree=true;
+        return;
+      }
+    },
+    go_pay(){
+      if(this.main_name==""||this.main_phone==""){
+           window.alert("‘主要联系人’信息中,您有未填写完成的重要选项,请您去完成填写");
+           return;
+        }
+      for(let i=0;i<this.man_num;i++){
+         if(this.man_info[i].m_name==""||this.man_info[i].m_certificates==""||this.man_info[i].m_gender==-1){
+           console.log(this.man_info[i].m_name,this.man_info[i].m_gender,this.man_info[i].m_certificates);
+           window.alert("‘成人游客’信息中,您有未填写完成的重要选项,请您去完成填写");
+           return;
+          }
+      }
+      for(let j=0;j<this.child_num;j++){
+         if(this.child_info[j].c_name==""||this.child_info[j].c_gender==-1){
+            window.alert("‘儿童游客’信息中,您有未填写完成的重要选项，请您去填写完成");
+            return;
+        }
+      }
+      let payinfo={
+        gid:this.gid,
+      // 景点名称 
+      gtitle:this.gtitle,
+      // 地点
+      gmap:this.gmap,
+    
+      // 景点价格 
+      // 出发日期
+      go_data:this.go_data,
+      // 房间差价
+      rooms_difference:this.rooms_difference,
+      room_count:this.room_count,
+      room_allprice:this.room_allprice,
+      // 人数
+      // 成人数量
+      man_num:this.man_num,
+   
+      man_price:this.man_price,
+      // 孩子数量
+      child_num:this.child_num, 
+ 
+      child_price:this.child_price,
+      //打折费用
+      cut_price:this.cut_price,
+      //旅游团费总价钱
+      total_price :this.total_price,
+      //总价格
+      all_price:this.all_price,
+      //////////////////////////////////////
+        main_name:this.main_name,
+        main_email:this.main_email,
+        main_phone:this.main_phone,
+        main_remark:this.main_remark,
+        man_info:this.man_info,
+        child_info:this.child_info 
+      }
+      if(this.if_agree==false){
+            window.alert("阅读合同内容并点击同意")
+            return;
+      }else{
+          this.payinfo = payinfo;
+          this.$router.push('/order');
+      }
+      console.log(this.payinfo)
+      
     }
   }
 }
@@ -622,88 +892,11 @@ export default {
 </script>
 
 <style scoped>
-a,
-abbr,
-acronym,
-address,
-applet,
-article,
-aside,
-audio,
-b,
-big,
-blockquote,
-body,
-canvas,
-caption,
-center,
-cite,
-code,
-dd,
-del,
-details,
-dfn,
-div,
-dl,
-dt,
-em,
-embed,
-fieldset,
-figcaption,
-figure,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-hgroup,
-html,
-i,
-iframe,
-img,
-input,
-ins,
-kbd,
-label,
-legend,
-li,
-mark,
-menu,
-nav,
-object,
-ol,
-output,
-p,
-pre,
-q,
-ruby,
-s,
-samp,
-section,
-small,
-span,
-strike,
-strong,
-sub,
-summary,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-time,
-tr,
-tt,
-u,
-ul,
-var,
-video {
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,
+body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footerform,
+h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,input,ins,kbd,label,legend,li,mark,menunav,object,ol,output,p,
+pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,
+ul,var,video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -1122,6 +1315,7 @@ select {
   display: inline-block;
   color: #999;
   cursor: pointer;
+ 
 }
 .select_sex {
   margin-left: -20px;
@@ -1130,14 +1324,17 @@ select {
   color: #f25a5a;
   line-height: 30px;
   font-size: 18px !important;
+ 
 }
 .icon-radio {
   color: #999;
   line-height: 30px;
   font-size: 18px !important;
+  
 }
 .select_sex i {
   padding: 10px;
+   z-index:20;
 }
 .date_select {
   background: #f7f7f7;
@@ -1201,6 +1398,7 @@ select {
   line-height: 34px;
 }
 .order_submit_nav {
+  
   background: #fff8fa;
   border: 1px solid #ff6ea0;
   border-radius: 5px;
@@ -1216,14 +1414,21 @@ select {
 .agree {
   cursor: pointer;
 }
-.pay_tips .iconfont {
-  color: #ff0048;
+.pay_tips .iconfont{
+  
   margin-right: 4px;
 }
 .pay_tips .icon-xuanzhong {
   color: #ea1a56;
   margin-right: 4px;
+  cursor: pointer;
 }
+.pay_tips .agree{
+  
+  margin-right: 4px;
+  color:rgba(0, 0, 0, 0.1);
+}
+
 .order_submit_nav .go_pay {
   background: #ea1a56;
   color: #fff;
@@ -1231,6 +1436,7 @@ select {
   padding: 10px 30px;
   border-radius: 5px;
   display: inline-block;
+  cursor: pointer;
   /* float: right; */
 }
 .order_nav_ht {
