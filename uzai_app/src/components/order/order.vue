@@ -215,6 +215,12 @@ export default {
   created() {
     this.zhongji = this.myzx.concat(this.myzc, this.zhgl);
     console.log(this.zhongji);
+    this.bus.$on('pay_info',(data)=>{
+      console.log("从上个页面传递过来的值"+data)
+    })
+  },
+  beforeDestroy() {
+    this.bus.$off('pay_info')
   },
   methods: {
     tab(n) {
