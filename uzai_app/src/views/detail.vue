@@ -993,8 +993,8 @@ export default {
     },
     choosetime(index){
       this.def_time = this.chostime[index].tit;
-      this.godata=this.chostime[index].godata;
-      // console.log(this.data)
+      this.gdata=this.chostime[index].godata;
+      console.log(this.gdata)
       
     },
     // 提交订单
@@ -1030,23 +1030,71 @@ export default {
       let oid ='PD'+ new Date().getTime();
       let gimg=this.gimg;
       let gtitle=this.gtitle;
-      let gdata = this.godata;
+      let gdata = this.gdata;
       //console.log(oid)
-  
-
-      let obj ={
-        oid,gimg,gtitle,gdata
+      let man_count = this.man_num ;
+      let child_count = this.child_num;
+      let man_price = this.man_price;
+      let child_price = this.man_price-200;
+      let mans_count = this.man_num + this.child_num;
+      // let godata=this.godata;
+      let local = this.gmap;
+      let choosetime = this.gdata;
+      let obj2 ={
+        oid,
+         man_count ,
+         child_count,
+         man_price,
+         child_price,
+         mans_count,
+         gtitle,
+         local,
+         gimg,
+         choosetime,
+         gdata
       }
-      this.res_obj = obj;
-      this.axios.get("order/reserve",{params:obj}).then(res=>{
-        if(res.data==1){
-          this.$router.push('/booking');
-        }else{
-          alert("未知错误，请重新尝试")
-        }
-      })
+      this.res_obj = obj2;
+     
+      this.$router.push('/booking');
+      
       // this.$router.push('/booking');
     }
+    // reserve(){
+    //   if(this.def_time==="请选择出团日期"){
+
+    //     this.msg = true;
+    //     window.alert("请选择出团日期");
+    //     return;
+    //   }
+    //   else{
+    //     this.msg = false;
+    //   }
+    //   let oid ='PD'+ new Date().getTime();
+    //   //console.log(oid)
+    //   let man_count = this.man_num ;
+    //   let child_count = this.child_num;
+    //   let man_price = this.man_price;
+    //   let child_price = this.man_price-200;
+    //   let mans_count = this.man_num + this.child_num;
+    //   let gtitle = this.gtitle;
+    //   let local = this.gmap;
+    //   let choosetime = this.def_time;
+
+    //   let obj ={
+    //     oid,
+    //     uid:3456,
+    //     man_count ,
+    //     child_count,
+    //     man_price,
+    //     child_price,
+    //     mans_count,
+    //     gtitle,
+    //     local,
+    //     choosetime
+    //   }
+    //   this.res_obj = obj;
+    //   this.$router.push('/booking');
+    // }
   },
   components: {
     dHeader,

@@ -612,7 +612,7 @@ export default {
 };
 </script>
 <style scoped>
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 a,
 abbr,
 acronym,

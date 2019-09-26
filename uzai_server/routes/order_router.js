@@ -37,15 +37,15 @@ router.get("/reserve",(req,res)=>{
   var gimg = obj.gimg;
   var gimg_title=obj.gtitle;
   var go_data = obj.gdata;
-  var total_price = obj.totalmoney;
+  var total_price = Number(obj.totalmoney);
   var sql = ``;
   var obj2 = {};
-  console.log(obj)
   // console.log(uid,oid,gimg,gimg_title,go_data)
-  if(oid&&gimg&&gimg_title&&go_data&&!total_price){
-    obj2={uid,oid,gimg,gimg_title,go_data}
+  
+  obj2={uid,oid,gimg,gimg_title,go_data,total_price}
+  console.log(obj2)
     sql = `INSERT INTO user_reserve SET ?`
-  }
+  
   pool.query(sql,[obj2],(err,result)=>{
     if(err) throw err ;
     if(result.affectedRows>0){
@@ -54,12 +54,13 @@ router.get("/reserve",(req,res)=>{
       res.send("-1")
     }
   })
-  if(false){
-  var sql = `INSERT INTO user_reserve VALUES(${uid},${man_count},${child_count},${man_price},${child_price},${mans_count})`;
-  pool.query(sql,[uid,man_count,child_count,man_price,child_price,mans_count],(err,result)=>{
-    if(err) throw err ;
+})
+router.get("/lorder",(req,res)=>{
+  var uid = req.session.uid;
+  var sql = "select * from user_reserve where uid=?"
+  pool.query(sql,[uid],(err,result)=>{
+    res.send(result)
   })
-}
 })
 
 module.exports=router;

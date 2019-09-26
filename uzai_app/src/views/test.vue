@@ -16,15 +16,6 @@ export default {
     },
 
 
-    didi(){
-
-
-      
-
-
-
-    }
-
 
 
 

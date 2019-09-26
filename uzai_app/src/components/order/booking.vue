@@ -721,6 +721,7 @@ export default {
       gid: "",
       // 景点名称
       gtitle: "",
+      gimg: "",
       // 地点
       gmap: "",
       // 景点图片保存
@@ -728,6 +729,7 @@ export default {
       // 景点价格
       // 出发日期
       go_data: 0,
+      gdata: "",
       // 房间差价
       rooms_difference: 700,
       room_count: 0,
@@ -747,12 +749,13 @@ export default {
       total_price: 0,
       //总价格
       all_price: 0,
+
       //////////////////////////////////////
       main_name: "",
       main_phone: "",
       main_email: "",
       main_remark: "",
-
+      oid: "",
       if_agree: false,
       //////////////////////
       payinfo: {}
@@ -808,11 +811,14 @@ export default {
         this.child_price = obj.child_price;
         // 景点名称
         this.gtitle = obj.gtitle;
+        this.gimg = obj.gimg;
         // 地点
         this.gmap = obj.local;
         // 景点图片保存
+        this.oid = obj.oid;
         // 出发日期
         this.go_data = obj.choosetime;
+        this.gdata = obj.gdata;
         // 房间差价
 
         this.total_price =
@@ -938,6 +944,7 @@ export default {
         total_price: this.total_price,
         //总价格
         all_price: this.all_price,
+
         //////////////////////////////////////
         main_name: this.main_name,
         main_email: this.main_email,
@@ -951,10 +958,38 @@ export default {
         return;
       } else {
         this.payinfo = payinfo;
-        this.$router.push("/order");
+        let objr = {
+          oid: this.oid,
+          gimg: this.gimg,
+          gtitle: this.gtitle,
+          gdata: this.go_data,
+          totalmoney: this.all_price
+        };
+        this.axios.get("order/reserve", { params: objr }).then(res => {
+          if (res.data == 1) {
+            this.$router.push("/order");
+          } else {
+            alert("未知错误，请重新尝试");
+          }
+        });
+
+        // console.log(objr);
+        
       }
-      console.log(this.payinfo);
+      // console.log(this.payinfo);
+
+      //
     }
+  },
+  goreserve() {
+    let obj = {
+      oid: this.oid,
+      gimg: this.img,
+      gtitle: this.gtitle,
+      gdata: this.go_data,
+      total_pric: this.all_price
+    };
+    console.log(obj);
   }
 };
 </script>

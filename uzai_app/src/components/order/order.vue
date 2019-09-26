@@ -101,8 +101,8 @@
             </li>
             <li>
               <div class="notime clear">
-                <span>订单编号：FR19090000002687</span>
-                <span class="time">下单时间：2019-09-19</span>
+                <span>订单编号：{{oid}}</span>
+                <span class="time">下单时间：2019-09-28</span>
               </div>
               <table class="list_detail">
                 <tbody>
@@ -111,7 +111,7 @@
                       <div class="fl">
                         <img
                           onerror="nofind()"
-                          src="https://img4.uzaicdn.com/ba/sightGallery/鼓浪屿416鼓浪屿夜景18686+视觉中国+RF+VCG21061f0f0f4.jpg?imageView2/2/w/80/h/62"
+                          :src="imgurl"
                           width="60"
                           height="45"
                         />
@@ -121,7 +121,7 @@
                           <a
                             href="00012816.html"
                             target="_blank"
-                          >&lt;【闲情鼓浪屿】厦门+鼓浪屿+云水谣+土楼+南普陀+曾厝垵+胡里山炮台 双飞5日无购物无自费&gt;【金秋放价 国内游立减400】</a>
+                          >&lt;{{imgtitle}}</a>
                         </em>
                       </div>
                     </td>
@@ -215,7 +215,13 @@ export default {
       zhgl: ["个人资料", "账户安全"],
       zhongji: [],
       i: 0,
-      is_show: false
+      is_show: false,
+      oid:"",
+      imgurl:"",
+      imgtitle:"",
+      gdata:"",
+      money:"",
+
     };
   },
   created() {
@@ -233,7 +239,19 @@ export default {
       this.i = n;
       console.log(this.i);
     }
-  }
+  },
+  mounted() {
+    this.axios.get("order/lorder").then(res=>{
+      var sj = res.data[res.data.length-1]
+      console.log(sj)
+      this.oid=sj.oid;
+      this.imgurl=sj.gimg;
+      this.imgtitle=sj.gimg_title;
+      this.gdata=sj.go_data;
+      this.money=sj.total_price;
+
+    })
+  },
 };
 </script>
 <style scoped>
