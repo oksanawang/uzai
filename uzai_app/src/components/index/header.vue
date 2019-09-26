@@ -23,7 +23,7 @@
             </div>
           </div>
         </div>
-        <div class="top_m_l">
+        <div v-if="uid==''" class="top_m_l">
           <a href="#/login">
             <i class="iconfont icon-yonghu"></i>登录
           </a>
@@ -32,6 +32,15 @@
             <i class="iconfont icon-zhuce"></i>注册
           </a>
           <span class="red">新用户送5800元抵用券</span>
+        </div>
+        <div v-if="uid!=''" class="top_m_l1">
+          <a href="javascript:;" target="_blank">
+            <span>HI，{{uname}}</span>
+          </a>
+          <a target="_blank" class="grade grade1"></a>
+          <a class="sign" href="javascript:;">
+            <i class="iconfont icon-tuichu-copy"></i>退出
+          </a>
         </div>
       </div>
     </div>
@@ -43,7 +52,7 @@
         <h3>09:00~21:00</h3>
       </div>
       <a href="javascript:;">
-        <img src="//r.uzaicdn.com/content/store/images/common/logo.png" class="logo">
+        <img src="//r.uzaicdn.com/content/store/images/common/logo.png" class="logo" />
       </a>
       <div class="address" id="address">
         <div class="maskLine"></div>
@@ -135,152 +144,62 @@
           id="index_search_input"
           attr-href="javascript:;"
           placeholder="国内游 满额立减￥400/人"
-        >
-        <input type="hidden" id="index_search_input_last_value">
+        />
+        <input type="hidden" id="index_search_input_last_value" />
         <div id="searchQuickInput" style="display: none;"></div>
         <div class="search_more" id="search_board" style="display: none;">
           <div class="search_more_m" id="search_more_m">
             <div class="hot">
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('北欧','javascript:;',1)"
-              >北欧</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('东欧','javascript:;',1)"
-              >东欧</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('俄罗斯','javascript:;',1)"
-              >俄罗斯</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('东京','javascript:;',1)"
-              >东京</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('北海道','javascript:;',1)"
-              >北海道</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('普吉岛','javascript:;',1)"
-              >普吉岛</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('土耳其','javascript:;',1)"
-              >土耳其</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('加拿大','javascript:;',1)"
-              >加拿大</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('澳大利亚','javascript:;',1)"
-              >澳大利亚</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('新西兰','javascript:;',1)"
-              >新西兰</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('北欧','javascript:;',1)">北欧</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('东欧','javascript:;',1)">东欧</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('俄罗斯','javascript:;',1)">俄罗斯</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('东京','javascript:;',1)">东京</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('北海道','javascript:;',1)">北海道</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('普吉岛','javascript:;',1)">普吉岛</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('土耳其','javascript:;',1)">土耳其</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('加拿大','javascript:;',1)">加拿大</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('澳大利亚','javascript:;',1)">澳大利亚</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('新西兰','javascript:;',1)">新西兰</a>
             </div>
             <div class="more">
               <b>跟团游：</b>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('欧洲一国','javascript:;',1)"
-              >欧洲一国</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('欧洲一国','javascript:;',1)">欧洲一国</a>
               <a
                 href="javascript:;"
                 onclick="IndexSearch.target_link('美国东西岸','javascript:;',1)"
               >美国东西岸</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('东京大阪','javascript:;',1)"
-              >东京大阪</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('迪拜','javascript:;',1)"
-              >迪拜</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('肯尼亚','javascript:;',1)"
-              >肯尼亚</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('东京大阪','javascript:;',1)">东京大阪</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('迪拜','javascript:;',1)">迪拜</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('肯尼亚','javascript:;',1)">肯尼亚</a>
             </div>
             <div class="more">
               <b>海岛游：</b>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('巴厘岛','javascript:;',1)"
-              >巴厘岛</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('长滩岛','javascript:;',1)"
-              >长滩岛</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('民丹岛','javascript:;',1)"
-              >民丹岛</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('沙巴','javascript:;',1)"
-              >沙巴</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('仙本那','javascript:;',1)"
-              >仙本那</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('塞班','javascript:;',1)"
-              >塞班</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('巴厘岛','javascript:;',1)">巴厘岛</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('长滩岛','javascript:;',1)">长滩岛</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('民丹岛','javascript:;',1)">民丹岛</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('沙巴','javascript:;',1)">沙巴</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('仙本那','javascript:;',1)">仙本那</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('塞班','javascript:;',1)">塞班</a>
             </div>
             <div class="more">
               <b>国内游：</b>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('亲子年票','javascript:;',1)"
-              >亲子年票</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('亲子年票','javascript:;',1)">亲子年票</a>
               <a
                 href="javascript:;"
                 onclick="IndexSearch.target_link('川滇藏之旅','javascript:;',1)"
               >川滇藏之旅</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('江西','javascript:;',1)"
-              >江西</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('西藏','javascript:;',1)"
-              >西藏</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('海南','javascript:;',1)"
-              >海南</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('云南','javascript:;',1)"
-              >云南</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('广西','javascript:;',1)"
-              >广西</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('江西','javascript:;',1)">江西</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('西藏','javascript:;',1)">西藏</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('海南','javascript:;',1)">海南</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('云南','javascript:;',1)">云南</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('广西','javascript:;',1)">广西</a>
             </div>
             <div class="more">
               <b>邮轮游：</b>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('欧洲航线','javascript:;',1)"
-              >欧洲航线</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('日本航线','javascript:;',1)"
-              >日本航线</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('美洲航线','javascript:;',1)"
-              >美洲航线</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('极地航线','javascript:;',1)"
-              >极地航线</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('欧洲航线','javascript:;',1)">欧洲航线</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('日本航线','javascript:;',1)">日本航线</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('美洲航线','javascript:;',1)">美洲航线</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('极地航线','javascript:;',1)">极地航线</a>
             </div>
             <div class="more">
               <b>热门游：</b>
@@ -288,37 +207,19 @@
                 href="javascript:;"
                 onclick="IndexSearch.target_link('UYOUNG系列','javascript:;',1)"
               >UYOUNG系列</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('一家一团','javascript:;',1)"
-              >一家一团</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('暑期亲子','javascript:;',1)"
-              >暑期亲子</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('一家一团','javascript:;',1)">一家一团</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('暑期亲子','javascript:;',1)">暑期亲子</a>
             </div>
             <div class="more">
               <b>办签证：</b>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('美国签证','javascript:;',1)"
-              >美国签证</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('日本签证','javascript:;',1)"
-              >日本签证</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('美国签证','javascript:;',1)">美国签证</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('日本签证','javascript:;',1)">日本签证</a>
               <a
                 href="javascript:;"
                 onclick="IndexSearch.target_link('马来西亚签证','javascript:;',1)"
               >马来西亚签证</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('越南签证','javascript:;',1)"
-              >越南签证</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('英国签证','javascript:;',1)"
-              >英国签证</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('越南签证','javascript:;',1)">越南签证</a>
+              <a href="javascript:;" onclick="IndexSearch.target_link('英国签证','javascript:;',1)">英国签证</a>
             </div>
           </div>
         </div>
@@ -331,7 +232,7 @@
         <div class="senior_search_m">
           <div class="senior_search_m_input">
             <div class="left">关键字:</div>
-            <input type="text" placeholder="请输入目的地、关键词" id="input_adv_search">
+            <input type="text" placeholder="请输入目的地、关键词" id="input_adv_search" />
             <div id="adv_search_error_tip"></div>
           </div>
           <div class="senior_search_m_input1" style="display: none;">
@@ -420,8 +321,8 @@
           <div class="senior_search_m_input1">
             <div class="left">价格区间：</div>
             <div class="left1 section">
-              <input type="text" id="index_price_low" maxlength="6"> -
-              <input type="text" id="index_price_high" maxlength="6">
+              <input type="text" id="index_price_low" maxlength="6" /> -
+              <input type="text" id="index_price_high" maxlength="6" />
             </div>
           </div>
           <div class="senior_search_m_bot">
@@ -442,7 +343,7 @@
         <li id="channel_8" class="nav_more">
           <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>出境游
-            <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg8.png">
+            <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg8.png" />
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a" style="width: 1142px; left: 0px;">
@@ -480,7 +381,7 @@
         <li id="channel_17" class="nav_more">
           <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>国内游
-            <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg3.png">
+            <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg3.png" />
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a" style="width: 1142px; left: 0px;">
@@ -578,7 +479,7 @@
         <li id="channel_3049" class="nav_more">
           <a href="javascript:;" target="_blank">
             <i class="iconfont icon-yuandian"></i>全球签证
-            <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg4.png">
+            <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg4.png" />
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
@@ -630,10 +531,7 @@
               <a href="javascript:;" target="_blank">
                 <span>积分兑换</span>
               </a>
-              <a
-                href="javascript:;"
-                target="_blank"
-              >
+              <a href="javascript:;" target="_blank">
                 <span>会员俱乐部</span>
               </a>
             </div>
@@ -689,6 +587,30 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      uid: "",
+      uname: "",
+      
+        
+    }
+  },
+  mounted() {
+    this.axios.get("user/load").then(res => {
+      this.uid = res.data.uid;
+      this.uname = res.data.uname;
+      console.log(res.data);
+      
+    });
+    
+  },
+  beforeUpdate() {
+     
+  },
+};
+</script>
 <style scoped>
 @charset "UTF-8";
 a,
@@ -1720,9 +1642,9 @@ a {
   text-align: center;
   display: none;
 }
-.common_nav ul li:hover .nav_a{
+.common_nav ul li:hover .nav_a {
   display: block;
-  background:#fff;
+  background: #fff;
 }
 /* 到这里是css代写需要修改的部分 */
 .common_nav ul li .nav_item {

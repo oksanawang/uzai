@@ -13,7 +13,24 @@ export default {
         console.log(res)
         
       })
+    },
+
+
+    didi(){
+
+
+      
+
+
+
     }
+
+
+
+
+
+
+
   },
 }
 </script>

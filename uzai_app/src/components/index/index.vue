@@ -1,60 +1,67 @@
 <template>
-    <div class="yzly">
+  <div class="yzly">
     <head01></head01>
     <div class="main">
-        <main1></main1>
-        <main2></main2>
-        <clear></clear>
-        <banner1></banner1>
-        <main2></main2>
-        <clear></clear>
-        <banner1></banner1>
-        <main2></main2>
-        <clear></clear>
-        <main2></main2>
-        <clear></clear>
-
-
+      <main1></main1>
+      <main2></main2>
+      <clear></clear>
+      <banner1></banner1>
+      <main2></main2>
+      <clear></clear>
+      <banner1></banner1>
+      <main2></main2>
+      <clear></clear>
+      <main2></main2>
+      <clear></clear>
     </div>
     <foot01></foot01>
-    </div>
+    <d-cbl></d-cbl>
+  </div>
 </template>
 <script>
-import Header from "./header.vue"
-import Footer from "./footer.vue"
-import Main1 from "./main1.vue"
-import Main2 from "./main2.vue"
-import Clear from "./clear.vue"
-import Banner_slide from "./banner_slide.vue"
+import Header from "./header.vue";
+import Footer from "./footer.vue";
+import Main1 from "./main1.vue";
+import Main2 from "./main2.vue";
+import Clear from "./clear.vue";
+import Banner_slide from "./banner_slide.vue";
+import dCbl from "../detail/cbl";
 export default {
-    data() {
-        return {
-            
-        }
-    },
-    components:{
-       "head01":Header,
-       "foot01":Footer,
-       "main1":Main1,
-       "main2":Main2,
-       "clear":Clear,
-       "banner1":Banner_slide
-       
-    }
-}
+  data() {
+    return {
+      uid:"",
+      uname:"",
+    };
+  },
+  methods: {
+   
+    
+    
+  },
+  
+  components: {
+    head01: Header,
+    foot01: Footer,
+    main1: Main1,
+    main2: Main2,
+    clear: Clear,
+    banner1: Banner_slide,
+    dCbl
+  }
+};
 </script>
 <style>
-.yzly{
-    overflow: hidden;
+.yzly {
+  overflow: hidden;
 }
-.clear, .clearfix {
-    clear: both;
+.clear,
+.clearfix {
+  clear: both;
 }
-.main{
-    
-    width: 1142px;
-    margin: auto;
-    margin-top: 30px;
+.main {
+  width: 1142px;
+  margin: auto;
+  margin-top: 30px;
 }
 li {
   list-style: none;

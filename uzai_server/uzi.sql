@@ -28,27 +28,15 @@ INSERT INTO uzi_goods VALUES(
 
 CREATE TABLE user_reserve(
   uid INT,
-  man_count SMALLINT,
-  child_count SMALLINT,
-  man_price DECIMAL(9,2),
-  child_price DECIMAL(9,2),
-  mans_count SMALLINT
+  oid VARCHAR(32),
+  gimg VARCHAR(128),
+  gimg_title VARCHAR (64),
+  total_price DECIMAL(9,2),
+  go_data VARCHAR(16)
 );
 
 
-CREATE TABLE user_order (
-  oid VARCHAR(16),
-  uid INT ,
-  gid INT ,
-  man_count CHAR(2),
-  child_count  CHAR(2),
-  man_price DECIMAL(9,2),
-  child_price DECIMAL(9,2),
-  total_price DECIMAL(10,2),
-  mans_count SMALLINT,
-  orderTime BIGINT ,
-  departure_date BIGINT
-);
+
 CREATE TABLE A (
   text VARCHAR (32)
 );

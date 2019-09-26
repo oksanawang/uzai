@@ -893,39 +893,47 @@ export default {
       child_num:0,
       // 景点名称 
       gtitle:"sss",
+      gimg:"https://img0.uzaicdn.com/ba/sightGallery/ATT0000806749.jpg?imageView2/2/w/550/h/413/format/jpg/interlace/1",
       // 地点
       gmap:"",
-      // 景点图片保存
-      gimg:"",
+
       def_time:"请选择出团日期",
+      godata:"",
       // 景点价格
       man_price:0,
       local:"北京",
       chostime:[{
         tit:"09-26(周四)出发 - 3660/人 - A行程",
+        godata:"2019-09-26",
         ptime:false
       },{
         tit:"10-01(周二)出发 - 4460/人 - A行程",
+        godata:"2019-10-01",
         ptime:false
       },
       {
         tit:"10-02(周三)出发 - 4460/人 - A行程",
+        godata:"2019-10-02",
         ptime:false
       },
       {
         tit:"10-08(周二)出发 - 4060/人 - A行程",
+        godata:"2019-10-08",
         ptime:false
       },
       {
         tit:"10-10(周四)出发 - 4060/人 - A行程",
+        godata:"2019-10-10",
         ptime:false
       },
       {
         tit:"10-12(周六)出发 - 4060/人 - A行程",
+        godata:"2019-10-12",
         ptime:false
       },
       {
         tit:"10-30(周三)出发 - 4460/人 - A行程" ,
+        godata:"2019-10-30",
         ptime:false
       }],
       res_obj:{} 
@@ -961,6 +969,8 @@ export default {
         for(let i=0;i<this.items.length;i++){
             if(i==index){
                 this.items[index].ac=true
+                this.gimg=this.items[index].img;
+                console.log(this.gimg)
             }
             else{
                 this.items[i].ac=false
@@ -983,8 +993,15 @@ export default {
     },
     choosetime(index){
       this.def_time = this.chostime[index].tit;
+      this.godata=this.chostime[index].godata;
+      // console.log(this.data)
       
     },
+    // 提交订单
+    order(){
+      
+    }
+    ,
     // 人的加减
     reduce(e){
       if(e=="m"&&this.man_num>1){
@@ -1009,31 +1026,26 @@ export default {
       else{
         this.msg = false;
       }
+
       let oid ='PD'+ new Date().getTime();
+      let gimg=this.gimg;
+      let gtitle=this.gtitle;
+      let gdata = this.godata;
       //console.log(oid)
-      let man_count = this.man_num ;
-      let child_count = this.child_num;
-      let man_price = this.man_price;
-      let child_price = this.man_price-200;
-      let mans_count = this.man_num + this.child_num;
-      let gtitle = this.gtitle;
-      let local = this.gmap;
-      let choosetime = this.def_time;
+  
 
       let obj ={
-        oid,
-        uid:3456,
-        man_count ,
-        child_count,
-        man_price,
-        child_price,
-        mans_count,
-        gtitle,
-        local,
-        choosetime
+        oid,gimg,gtitle,gdata
       }
       this.res_obj = obj;
-      this.$router.push('/booking');
+      this.axios.get("order/reserve",{params:obj}).then(res=>{
+        if(res.data==1){
+          this.$router.push('/booking');
+        }else{
+          alert("未知错误，请重新尝试")
+        }
+      })
+      // this.$router.push('/booking');
     }
   },
   components: {

@@ -26,7 +26,7 @@ router.get("/reg",(req,res)=>{
 router.get("/login",(req,res)=>{
   var obj = req.query;
 
-  console.log(obj)
+  // console.log(obj)
   // res.send(10086)
   var uname = obj.uname;
   var upwd = obj.upwd ;
@@ -34,10 +34,10 @@ router.get("/login",(req,res)=>{
   var regUname = /^1[3-9]\d{9}$/
   if(regUname.test(uname)){
     sql = `SELECT uid FROM uzi_user WHERE phone=? and upwd=?`
-    console.log(1)
+    // console.log(1)
   }else{
     var sql = `SELECT uid FROM uzi_user WHERE uname=? and upwd=?`
-    console.log(2)
+    // console.log(2)
   }
   pool.query(sql,[uname,upwd],(err,result)=>{
 
@@ -54,6 +54,17 @@ router.get("/login",(req,res)=>{
     }
   })
 }),
+router.get("/load",(req,res)=>{
+   var uid = req.session.uid;
+   if(uid!=undefined){
+   var sql = `select uname from uzi_user where uid=?`
+   pool.query(sql,[uid],(err,result)=>{
+     if(err) throw err;
+     var uname = result[0].uname;
+     res.send({uid,uname});
+   })
+  }
+})
 router.get("/test",(req,res)=>{
   pool.query('select * from A',(err,result)=>{
     if(err) throw err;

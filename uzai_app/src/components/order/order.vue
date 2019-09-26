@@ -1,4 +1,6 @@
 <template>
+<div>
+  <nheader></nheader>
   <div class="MyCenterWrap">
     <div class="main clear">
       <div class="sidebar">
@@ -189,12 +191,16 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 <script>
 import order_navVue from "./order_nav.vue";
+import nheader from "../index/header.vue"
 export default {
   components: {
-    "order-nav": order_navVue
+    "order-nav": order_navVue,
+    nheader
+    
   },
   data() {
     return {

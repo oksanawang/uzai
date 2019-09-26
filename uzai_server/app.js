@@ -7,10 +7,6 @@ const cors=require("cors");
 const userRouter=require("./routes/user_router");
 const orderRouter=require("./routes/order_router");
 const indexRouter=require("./routes/index");
-// const cors=require("cors");
-// const session = require("express-session");
-// const orderRouter=require("./routes/order_router")
-// /*引入路由模块*/
 
 
 var app = express();
