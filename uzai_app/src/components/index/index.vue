@@ -86,12 +86,13 @@ body {
   height: 450px;
 }
 .banner_wrap .content_list li {
-  display: none;
+  opacity:0;
   position: absolute;
   left: 0;
   top: 0;
   height: 450px;
   width: 100%;
+  transition:opacity .5s linear;
 }
 .banner_wrap .content_list li a {
   display: block;
@@ -100,7 +101,8 @@ body {
   background-position: center top;
 }
 .banner_wrap .content_list li.active {
-  display: block;
+  opacity:1;
+  z-index:2;
 }
 .banner_wrap .pagination {
   position: absolute;
@@ -110,6 +112,7 @@ body {
   min-width: 890px;
   text-align: center;
   font-size: 0;
+  z-index:10;
 }
 .banner_wrap .pagination span {
   display: inline-block;
@@ -137,6 +140,7 @@ body {
   background: #fff;
   box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.08);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  z-index:10;
 }
 .banner_index .nav_left1 {
   height: 37px;
@@ -325,7 +329,7 @@ body {
   border-bottom: 2px solid #ea1a56;
 }
 .main1_top li {
-  margin: 0 10px;
+  margin: 0 8px;
   float: left;
   font-size: 16px;
   color: #565656;

@@ -1,55 +1,49 @@
 <template>
   <div class="banner_index">
     <div class="banner_wrap">
-      <ul class="content_list">
-        <li class="active" style="display: list-item;">
+      <ul class="content_list" @mouseenter="Ent" @mouseleave="Lea">
+        <li :class="i==0?'active':''">
           <a href="javascript:;" 
-            style="background-image: url('https://img8.uzaicdn.com/uz/advertisement/ATT0001127121.jpg') ;"
+            style="background-image: url('https://img7.uzaicdn.com/uz/advertisement/ATT0001127278.jpg')"
           ></a>
         </li>
-        <li style="display: none;">
+        <li :class="i==1?'active':''">
           <a
             href="javascript:;"
             style="background-image: url('https://img8.uzaicdn.com/uz/advertisement/ATT0001127121.jpg' )"
             
           ></a>
         </li>
-        <li style="display: none;">
+        <li :class="i==2?'active':''">
           <a
             href="javascript:;"
             style="background-image: url('https://img6.uzaicdn.com/uz/advertisement/ATT0001127291.jpg')"
             
           ></a>
         </li>
-        <li style="display: none;">
+        <li :class="i==3?'active':''">
           <a
             href="javascript:;"
             style="background-image: url('https://img7.uzaicdn.com/uz/advertisement/ATT0001128719.jpg')"
             
           ></a>
         </li>
-        <li style="display: none;">
+        <li :class="i==4?'active':''">
           <a
             href="javascript:;"
             style="background-image: url('https://img7.uzaicdn.com/uz/advertisement/ATT0001027999.jpg')"
             
           ></a>
         </li>
-        <li style="display: none;">
+        <li :class="i==5?'active':''">
           <a
             href="javascript:;"
             style="background-image: url('https://img8.uzaicdn.com/uz/advertisement/ATT0001085549.jpg')"
-            
           ></a>
         </li>
       </ul>
       <div class="pagination">
-        <span class style="width: 146.667px;">金秋放价 满减优惠</span>
-        <span style="width: 146.667px;" class="active">日本 立减￥300/人</span>
-        <span style="width: 146.667px;" class>欧洲 立减￥800/人</span>
-        <span style="width: 146.667px;" class>澳新 立减￥1000/人</span>
-        <span style="width: 146.667px;" class>大客户老友记</span>
-        <span style="width: 146.667px;" class>移民置业</span>
+        <span v-for="(item,index) of lilist" :key="index" :class="index==i?'active':''" style="width: 146.667px;" v-text="item" @mouseenter="moveTo(index)"></span>
       </div>
     </div>
     <div class="nav_left">
@@ -948,3 +942,37 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data(){
+    return{
+      i: 0,
+      time: "",
+      lilist:["金秋放价 满减优惠","日本 立减￥300/人","欧洲 立减￥800/人","澳新 立减￥1000/人","大客户老友记","移民置业"]
+    }
+  },
+  methods: {
+    move(i) {
+      this.i += i;
+      if (this.i == 0 && i == -1) {
+        this.i = this.lilist.length - 1;
+      } else if (this.i == this.lilist.length && i == 1) {
+        this.i = 0;
+      }
+    },
+    moveTo(idx) {
+      this.i = 0;
+      this.move(idx);
+    },
+    Lea() {
+      this.time = setInterval(() => {
+        this.move(1);
+      }, 3000);
+    },
+    Ent() {
+      clearInterval(this.time);
+    }
+  }
+}
+</script>
