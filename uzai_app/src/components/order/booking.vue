@@ -95,7 +95,7 @@
           <div class="order_pay_nav" id="auto_login">
             <div class="meg-person">
               <b class="letter3">
-                <span>*</span>姓名
+                <span></span>姓名
               </b>
               <input
                 type="text"
@@ -112,7 +112,7 @@
 
             <div class="meg-person tel">
               <b class="letter2">
-                <span>*</span>手机号码
+                <span></span>手机号码
               </b>
               <input type="hidden" id="hdPhone" value="17634931725" />
               <input type="hidden" id="hdName" value="17634931725" />
@@ -193,7 +193,7 @@
                   </h2>
                   <div class="meg-person">
                     <b class="letter3">
-                      <span>*</span>姓名
+                      <span></span>姓名
                     </b>
                     <input
                       placeholder="请输入姓名"
@@ -237,7 +237,7 @@
                   </div>
                   <div class="meg-person">
                     <b class="letter3">
-                      <span>*</span>性别
+                      <span></span>性别
                     </b>
                     <div class="select_sex" data-sort="0">
                       <i
@@ -257,7 +257,7 @@
                   </div>
                   <div class="meg-person">
                     <b class="letter2">
-                      <span>*</span>出生日期
+                      <span></span>出生日期
                     </b>
                     <input
                       type="text"
@@ -307,7 +307,7 @@
                   </h2>
                   <div class="meg-person">
                     <b class="letter3">
-                      <span>*</span>姓名
+                      <span></span>姓名
                     </b>
                     <input
                       placeholder="请输入姓名"
@@ -320,7 +320,7 @@
                   </div>
                   <div class="meg-person">
                     <b class="letter3">
-                      <span>*</span>性别
+                      <span></span>性别
                     </b>
                     <div class="select_sex" data-sort="0">
                       <i
@@ -340,7 +340,7 @@
                   </div>
                   <div class="meg-person">
                     <b class="letter2">
-                      <span>*</span>出生日期
+                      <span></span>出生日期
                     </b>
                     <input
                       type="text"

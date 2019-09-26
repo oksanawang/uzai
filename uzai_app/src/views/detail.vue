@@ -857,8 +857,8 @@
   </div>
 </template>
 <script>
-import dHeader from "../components/detail/dheader";
-import dFooter from "../components/detail/dfooter";
+import dHeader from "../components/index/header";
+import dFooter from "../components/index/footer";
 import dCbl from "../components/detail/cbl";
 
 export default {

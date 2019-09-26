@@ -40,6 +40,9 @@ export default {
     
     
   },
+  mounted() {
+    
+  },
   
   components: {
     head01: Header,

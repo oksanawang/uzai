@@ -47,61 +47,61 @@
           <dl class="foor_link_left">
             <dt class="f14">出境游</dt>
             <dd>
-              <a href="javascript:;" target="_blank">欧洲</a>
-              <a href="javascript:;" target="_blank">亚洲</a>
-              <a href="javascript:;" target="_blank">美洲</a>
-              <a href="javascript:;" target="_blank">澳新</a>
-              <a href="javascript:;" target="_blank">中东非</a>
+              <a href="javascript:;" >欧洲</a>
+              <a href="javascript:;" >亚洲</a>
+              <a href="javascript:;" >美洲</a>
+              <a href="javascript:;" >澳新</a>
+              <a href="javascript:;" >中东非</a>
             </dd>
           </dl>
           <dl class="foor_link_left">
             <dt class="f14">玩法多</dt>
             <dd>
-              <a href="javascript:;" target="_blank">世界遗产</a>
-              <a href="javascript:;" target="_blank">国家公园</a>
-              <a href="javascript:;" target="_blank">极地旅游</a>
-              <a href="javascript:;" target="_blank">海上假期</a>
-              <a href="javascript:;" target="_blank">说走就走</a>
+              <a href="javascript:;" >世界遗产</a>
+              <a href="javascript:;" >国家公园</a>
+              <a href="javascript:;" >极地旅游</a>
+              <a href="javascript:;" >海上假期</a>
+              <a href="javascript:;" >说走就走</a>
             </dd>
           </dl>
           <dl class="foor_link_left">
             <dt class="f14">好热门</dt>
             <dd>
-              <a href="javascript:;" target="_blank">法瑞意</a>
-              <a href="javascript:;" target="_blank">澳大利亚</a>
-              <a href="javascript:;" target="_blank">日本</a>
-              <a href="javascript:;" target="_blank">美国</a>
-              <a href="javascript:;" target="_blank">海岛</a>
+              <a href="javascript:;" >法瑞意</a>
+              <a href="javascript:;" >澳大利亚</a>
+              <a href="javascript:;" >日本</a>
+              <a href="javascript:;" >美国</a>
+              <a href="javascript:;" >海岛</a>
             </dd>
           </dl>
           <dl class="foor_link_left">
             <dt class="f14">保品质</dt>
             <dd>
-              <a href="javascript:;" target="_blank">奇迹旅行</a>
-              <a href="javascript:;" target="_blank">众信自营</a>
-              <a href="javascript:;" target="_blank">企业定制</a>
-              <a href="javascript:;" target="_blank">私人定制</a>
-              <a href="javascript:;" target="_blank">全球签证</a>
+              <a href="javascript:;" >奇迹旅行</a>
+              <a href="javascript:;" >众信自营</a>
+              <a href="javascript:;" >企业定制</a>
+              <a href="javascript:;" >私人定制</a>
+              <a href="javascript:;" >全球签证</a>
             </dd>
           </dl>
           <dl class="foor_link_left">
             <dt class="f14">享服务</dt>
             <dd>
-              <a href="javascript:;" target="_blank">营业网点</a>
-              <a href="javascript:;" target="_blank">会员活动</a>
-              <a href="javascript:;" target="_blank">积分换礼</a>
-              <a href="javascript:;" target="_blank">您的悠哉</a>
-              <a href="javascript:;" target="_blank">活动集锦</a>
+              <a href="javascript:;" >营业网点</a>
+              <a href="javascript:;" >会员活动</a>
+              <a href="javascript:;" >积分换礼</a>
+              <a href="javascript:;" >您的悠哉</a>
+              <a href="javascript:;" >活动集锦</a>
             </dd>
           </dl>
           <dl class="foor_link_left">
             <dt class="f14">品安心</dt>
             <dd>
-              <a href="javascript:;" target="_blank">众信旅游集团</a>
-              <a href="javascript:;" target="_blank">集团全品牌</a>
-              <a href="javascript:;" target="_blank">众信历程</a>
-              <a href="javascript:;" target="_blank">众信动态</a>
-              <a href="javascript:;" target="_blank">联系我们</a>
+              <a href="javascript:;" >众信旅游集团</a>
+              <a href="javascript:;" >集团全品牌</a>
+              <a href="javascript:;" >众信历程</a>
+              <a href="javascript:;" >众信动态</a>
+              <a href="javascript:;" >联系我们</a>
             </dd>
           </dl>
         </div>
@@ -110,25 +110,25 @@
     <div class="friendship_link">
       <div class="friendship_link_left">友情链接:</div>
       <div class="friendship_link_right">
-        <a href="javascript:;" class="a" target="_blank">旅游网</a>
-        <a href="javascript:;" class="a" target="_blank">北京景点推荐</a>
-        <a href="javascript:;" class="a" target="_blank">旅游线路</a>
-        <a href="javascript:;" class="a" target="_blank">北京夏令营</a>
-        <a href="javascript:;" class="a" target="_blank">坝上草原旅游网</a>
-        <a href="javascript:;" class="a" target="_blank">优达国际</a>
-        <a href="javascript:;" class="a" target="_blank">美国旅游</a>
-        <a href="javascript:;" class="a" target="_blank">美国旅游</a>
-        <a href="javascript:;" class="a" target="_blank">花店</a>
-        <a href="javascript:;" class="a" target="_blank">旅行社</a>
-        <a href="javascript:;" class="a" target="_blank">昆明康辉旅行社</a>
-        <a href="javascript:;" class="a" target="_blank">第六感</a>
-        <a href="javascript:;" class="a" target="_blank">马尔代夫</a>
-        <a href="javascript:; " class="a" target="_blank">留学生公寓</a>
-        <a href="javascript:;" class="a" target="_blank">民宿网</a>
-        <a href="javascript:; " class="a" target="_blank">北京国旅官网</a>
-        <a href="javascript:;" class="a" target="_blank">云智行全球火车票</a>
-        <a href="javascript:;" class="a" target="_blank">途风旅游</a>
-        <a href="javascript:;" class="a" target="_blank">新疆旅行社</a>
+        <a href="javascript:;" class="a" >旅游网</a>
+        <a href="javascript:;" class="a" >北京景点推荐</a>
+        <a href="javascript:;" class="a" >旅游线路</a>
+        <a href="javascript:;" class="a" >北京夏令营</a>
+        <a href="javascript:;" class="a" >坝上草原旅游网</a>
+        <a href="javascript:;" class="a" >优达国际</a>
+        <a href="javascript:;" class="a" >美国旅游</a>
+        <a href="javascript:;" class="a" >美国旅游</a>
+        <a href="javascript:;" class="a" >花店</a>
+        <a href="javascript:;" class="a" >旅行社</a>
+        <a href="javascript:;" class="a" >昆明康辉旅行社</a>
+        <a href="javascript:;" class="a" >第六感</a>
+        <a href="javascript:;" class="a" >马尔代夫</a>
+        <a href="javascript:; " class="a" >留学生公寓</a>
+        <a href="javascript:;" class="a" >民宿网</a>
+        <a href="javascript:; " class="a" >北京国旅官网</a>
+        <a href="javascript:;" class="a" >云智行全球火车票</a>
+        <a href="javascript:;" class="a" >途风旅游</a>
+        <a href="javascript:;" class="a" >新疆旅行社</a>
         <a href="javascript:;" class="a">联系邮箱：zhuxiaoting@utourworld.com</a>
         <span class="friendship_link_shouqi">
           收起
@@ -144,38 +144,38 @@
     <div class="friendship_link">
       <div class="friendship_link_left">景点目录:</div>
       <div class="friendship_link_r">
-        <a href="javascript:;" class="a" target="_blank">卢浮宫</a>
-        <a href="javascript:;" class="a" target="_blank">凡尔赛宫</a>
-        <a href="javascript:;" class="a" target="_blank">巴黎圣母院</a>
-        <a href="javascript:;" class="a" target="_blank">埃菲尔铁塔</a>
-        <a href="javascript:;" class="a" target="_blank">巴黎凯旋门</a>
-        <a href="javascript:;" class="a" target="_blank">香榭丽舍大街</a>
-        <a href="javascript:;" class="a" target="_blank">蒙马特高地</a>
-        <a href="javascript:;" class="a" target="_blank">塞纳河</a>
-        <a href="javascript:;" class="a" target="_blank">巴黎歌剧院</a>
-        <a href="javascript:;" class="a" target="_blank">法国圣心大教堂</a>
-        <a href="javascript:;" class="a" target="_blank">协和广场</a>
-        <a href="javascript:;" class="a" target="_blank">剑桥大学城</a>
-        <a href="javascript:;" class="a" target="_blank">雅罗斯拉夫尔尼古拉教堂</a>
-        <a href="javascript:;" class="a" target="_blank">白金汉宫</a>
-        <a href="javascript:;" class="more" target="_blank">更多</a>
+        <a href="javascript:;" class="a" >卢浮宫</a>
+        <a href="javascript:;" class="a" >凡尔赛宫</a>
+        <a href="javascript:;" class="a" >巴黎圣母院</a>
+        <a href="javascript:;" class="a" >埃菲尔铁塔</a>
+        <a href="javascript:;" class="a" >巴黎凯旋门</a>
+        <a href="javascript:;" class="a" >香榭丽舍大街</a>
+        <a href="javascript:;" class="a" >蒙马特高地</a>
+        <a href="javascript:;" class="a" >塞纳河</a>
+        <a href="javascript:;" class="a" >巴黎歌剧院</a>
+        <a href="javascript:;" class="a" >法国圣心大教堂</a>
+        <a href="javascript:;" class="a" >协和广场</a>
+        <a href="javascript:;" class="a" >剑桥大学城</a>
+        <a href="javascript:;" class="a" >雅罗斯拉夫尔尼古拉教堂</a>
+        <a href="javascript:;" class="a" >白金汉宫</a>
+        <a href="javascript:;" class="more" >更多</a>
       </div>
       <div class="clear"></div>
     </div>
     <div class="friendship_img">
-      <a href="javascript:;" target="_blank">
+      <a href="javascript:;" >
         <img src="//r.uzaicdn.com/content/store/images/common/nationalt.gif">
       </a>
-      <a href="javascript:;" target="_blank">
+      <a href="javascript:;" >
         <img src="//r.uzaicdn.com/content/store/images/common/icp.gif">
       </a>
-      <a href="javascript:;" target="_blank">
+      <a href="javascript:;" >
         <img src="//r.uzaicdn.com/content/store/images/common/5atravel.gif">
       </a>
-      <a href="javascript:;" target="_blank">
+      <a href="javascript:;" >
         <img src="//r.uzaicdn.com/content/store/images/common/zz.gif">
       </a>
-      <a href="javascript:;" target="_blank">
+      <a href="javascript:;" >
         <img src="//r.uzaicdn.com/content/store/images/common/jtel.gif">
       </a>
       <a href="javascript:;">
@@ -184,19 +184,19 @@
     </div>
     <div class="friendship_p">
       <p>
-        <a href="javascript:;" target="_blank">众信旅游</a>
-        <a href="javascript:;" target="_blank">众信历程</a>
-        <a href="javascript:;" target="_blank">众信品牌</a>
-        <a href="javascript:;" target="_blank">营业网点</a>
-        <a href="javascript:;" target="_blank">诚聘英才</a>
-        <a href="javascript:;" target="_blank">商务合作</a>
+        <a href="javascript:;" >众信旅游</a>
+        <a href="javascript:;" >众信历程</a>
+        <a href="javascript:;" >众信品牌</a>
+        <a href="javascript:;" >营业网点</a>
+        <a href="javascript:;" >诚聘英才</a>
+        <a href="javascript:;" >商务合作</a>
       </p>
       <p>
         Copyright 2015-2018 Uzai.com&nbsp;&nbsp;&nbsp;&nbsp;许可证编号:L-TJ-CJ00059&nbsp;&nbsp;&nbsp;&nbsp;津ICP备18003064号&nbsp;&nbsp;&nbsp;&nbsp;悠哉呼叫中心来电显示号码为：10109898
         <a
           style="color:#fff "
           href="javascript:;"
-          target="_blank"
+          
         >旅行笔记</a>
       </p>
     </div>

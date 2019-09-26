@@ -13,7 +13,7 @@
       <span>/</span>
       <li>中东非 立减￥800</li>
       <span>/</span>
-      <li>澳新游 立减￥1000</li>
+      <!-- <li>澳新游 立减￥1000</li> -->
     </div>
 
     <div class="main1_m template0 clearfix">
@@ -90,13 +90,10 @@
             <em>¥</em>5580
             <em>起</em>
           </b>
-          <span onclick="javascript:window.location='javascript:;'">立即抢购</span>
+          <span onclick="javascript:;'">立即抢购</span>
         </div>
       </a>
-      <img
-        onerror="nofind()"
-        src="https://img7.uzaicdn.com/uz/preferential/column/ATT0001126249.jpg?imageView2/2/w/212/h/253"
-      >
+
 
       <div class="clear"></div>
     </div>

@@ -45,9 +45,9 @@
       </ul>
       <div class="pagination">
         <span class style="width: 146.667px;">金秋放价 满减优惠</span>
-        <span style="width: 146.667px;" class>日本 立减￥300/人</span>
+        <span style="width: 146.667px;" class="active">日本 立减￥300/人</span>
         <span style="width: 146.667px;" class>欧洲 立减￥800/人</span>
-        <span style="width: 146.667px;" class="active">澳新 立减￥1000/人</span>
+        <span style="width: 146.667px;" class>澳新 立减￥1000/人</span>
         <span style="width: 146.667px;" class>大客户老友记</span>
         <span style="width: 146.667px;" class>移民置业</span>
       </div>

@@ -3,11 +3,11 @@
     <div class="common_top">
       <div class="top_m">
         <div class="top_m_r">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-vip"></i> 会员俱乐部
           </a>
-          <a href="javascript:;" target="_blank" class="paddl26">我的订单</a>
-          <a href="javascript:;" target="_blank" class="paddl26 red">营业网点</a>
+          <a href="javascript:;"  class="paddl26">我的订单</a>
+          <a href="javascript:;"  class="paddl26 red">营业网点</a>
           <div class="top_server">
             <a href="#">
               服务中心
@@ -16,10 +16,10 @@
             </a>
             <div class="clear"></div>
             <div class="ul">
-              <a href="javascript:;" target="_blank">关于我们</a>
-              <a href="javascript:;" target="_blank">商务合作</a>
-              <a href="javascript:;" target="_blank">联系我们</a>
-              <a href="javascript:;" target="_blank">诚聘英才</a>
+              <a href="javascript:;" >关于我们</a>
+              <a href="javascript:;" >商务合作</a>
+              <a href="javascript:;" >联系我们</a>
+              <a href="javascript:;" >诚聘英才</a>
             </div>
           </div>
         </div>
@@ -33,12 +33,12 @@
           </a>
           <span class="red">新用户送5800元抵用券</span>
         </div>
-        <div v-if="uid!=''" class="top_m_l1">
-          <a href="javascript:;" target="_blank">
+        <div v-if="uid!=''&&$router.go(0)" class="top_m_l1">
+          <a href="javascript:;" >
             <span>HI，{{uname}}</span>
           </a>
-          <a target="_blank" class="grade grade1"></a>
-          <a class="sign" href="javascript:;">
+          <a  class="grade grade1"></a>
+          <a class="sign" @click="quit" href="javascript:;">
             <i class="iconfont icon-tuichu-copy"></i>退出
           </a>
         </div>
@@ -51,85 +51,85 @@
         </h2>
         <h3>09:00~21:00</h3>
       </div>
-      <a href="javascript:;">
+      <a href="/">
         <img src="//r.uzaicdn.com/content/store/images/common/logo.png" class="logo" />
       </a>
       <div class="address" id="address">
         <div class="maskLine"></div>
         <i class="iconfont icon-zuobiao"></i>
-        <span class="land" id="_site_name">北京</span>
+        <span class="land" id="_site_name">{{addr}}</span>
         <i class="iconfont icon-zhankai" onclick="javascript:$('#cityBoard').show()"></i>
         <div class="address_m" id="cityBoard">
           <div class="hot_address">
-            <a href="javascript:void();" onclick="city_change(this,25,'bj')">北京</a>
-            <a href="javascript:void();" onclick="city_change(this,347,'sh')">上海</a>
-            <a href="javascript:void();" onclick="city_change(this,375,'tj')">天津</a>
-            <a href="javascript:void();" onclick="city_change(this,355,'xa')">西安</a>
-            <a href="javascript:void();" onclick="city_change(this,338,'nj')">南京</a>
-            <a href="javascript:void();" onclick="city_change(this,389,'wh')">武汉</a>
-            <a href="javascript:void();" onclick="city_change(this,260,'hz')">杭州</a>
+            <a href="javascript:void();" @click="addr='北京'">北京</a>
+            <a href="javascript:void();" @click="addr='上海'">上海</a>
+            <a href="javascript:void();" @click="addr='天津'">天津</a>
+            <a href="javascript:void();" @click="addr='西安'">西安</a>
+            <a href="javascript:void();" @click="addr='南京'">南京</a>
+            <a href="javascript:void();" @click="addr='武汉'">武汉</a>
+            <a href="javascript:void();" @click="addr='杭州'">杭州</a>
           </div>
           <div class="hot_address_er">
             <div class="left">华北：</div>
             <div class="right">
-              <a href="javascript:void();" onclick="city_change(this,25,'bj')">北京</a>
-              <a href="javascript:void();" onclick="city_change(this,375,'tj')">天津</a>
-              <a href="javascript:void();" onclick="city_change(this,356,'sjz')">石家庄</a>
-              <a href="javascript:void();" onclick="city_change(this,377,'ts')">唐山</a>
-              <a href="javascript:void();" onclick="city_change(this,365,'qd')">青岛</a>
-              <a href="javascript:void();" onclick="city_change(this,371,'jn')">济南</a>
-              <a href="javascript:void();" onclick="city_change(this,379,'ty')">太原</a>
-              <a href="javascript:void();" onclick="city_change(this,5423,'lf')">廊坊</a>
+              <a href="javascript:void();" @click="addr='北京'">北京</a>
+              <a href="javascript:void();" @click="addr='天津'">天津</a>
+              <a href="javascript:void();" @click="addr='石家'">石家庄</a>
+              <a href="javascript:void();" @click="addr='唐山'">唐山</a>
+              <a href="javascript:void();" @click="addr='青岛'">青岛</a>
+              <a href="javascript:void();" @click="addr='济南'">济南</a>
+              <a href="javascript:void();" @click="addr='太原'">太原</a>
+              <a href="javascript:void();" @click="addr='廊坊'">廊坊</a>
             </div>
           </div>
           <div class="hot_address_er">
             <div class="left">东北：</div>
             <div class="right">
-              <a href="javascript:void();" onclick="city_change(this,351,'sy')">沈阳</a>
-              <a href="javascript:void();" onclick="city_change(this,235,'dl')">大连</a>
-              <a href="javascript:void();" onclick="city_change(this,218,'cc')">长春</a>
-              <a href="javascript:void();" onclick="city_change(this,268,'heb')">哈尔滨</a>
+              <a href="javascript:void();" @click="addr='沈阳'">沈阳</a>
+              <a href="javascript:void();" @click="addr='大连'">大连</a>
+              <a href="javascript:void();" @click="addr='长春'">长春</a>
+              <a href="javascript:void();" @click="addr='哈尔滨'">哈尔滨</a>
             </div>
           </div>
           <div class="hot_address_er">
             <div class="left">华东：</div>
             <div class="right">
-              <a href="javascript:void();" onclick="city_change(this,347,'sh')">上海</a>
-              <a href="javascript:void();" onclick="city_change(this,338,'nj')">南京</a>
-              <a href="javascript:void();" onclick="city_change(this,363,'sz')">苏州</a>
-              <a href="javascript:void();" onclick="city_change(this,260,'hz')">杭州</a>
-              <a href="javascript:void();" onclick="city_change(this,336,'nb')">宁波</a>
-              <a href="javascript:void();" onclick="city_change(this,391,'wx')">无锡</a>
-              <a href="javascript:void();" onclick="city_change(this,298,'nc')">南昌</a>
-              <a href="javascript:void();" onclick="city_change(this,259,'hf')">合肥</a>
-              <a href="javascript:void();" onclick="city_change(this,229,'cz')">常州</a>
+              <a href="javascript:void();" @click="addr='上海'">上海</a>
+              <a href="javascript:void();" @click="addr='南京'">南京</a>
+              <a href="javascript:void();" @click="addr='苏州'">苏州</a>
+              <a href="javascript:void();" @click="addr='杭州'">杭州</a>
+              <a href="javascript:void();" @click="addr='宁波'">宁波</a>
+              <a href="javascript:void();" @click="addr='无锡'">无锡</a>
+              <a href="javascript:void();" @click="addr='南昌'">南昌</a>
+              <a href="javascript:void();" @click="addr='合肥'">合肥</a>
+              <a href="javascript:void();" @click="addr='常州'">常州</a>
             </div>
           </div>
           <div class="hot_address_er">
             <div class="left">华中：</div>
             <div class="right">
-              <a href="javascript:void();" onclick="city_change(this,217,'zz')">郑州</a>
-              <a href="javascript:void();" onclick="city_change(this,226,'cs')">长沙</a>
-              <a href="javascript:void();" onclick="city_change(this,389,'wh')">武汉</a>
+              <a href="javascript:void();" @click="addr='郑州'">郑州</a>
+              <a href="javascript:void();" @click="addr='长沙'">长沙</a>
+              <a href="javascript:void();" @click="addr='武汉'">武汉</a>
             </div>
           </div>
           <div class="hot_address_er">
             <div class="left">华南：</div>
             <div class="right">
-              <a href="javascript:void();" onclick="city_change(this,399,'xm')">厦门</a>
+              <a href="javascript:void();" @click="addr='厦门'">厦门</a>
             </div>
           </div>
           <div class="hot_address_er">
             <div class="left">西南：</div>
             <div class="right">
-              <a href="javascript:void();" onclick="city_change(this,227,'cd')">成都</a>
-              <a href="javascript:void();" onclick="city_change(this,223,'cq')">重庆</a>
+              <a href="javascript:void();" @click="addr='成都'">成都</a>
+              <a href="javascript:void();" @click="addr='重庆'">重庆</a>
             </div>
           </div>
           <div class="hot_address_er">
             <div class="left">西北：</div>
             <div class="right">
-              <a href="javascript:void();" onclick="city_change(this,355,'xa')">西安</a>
+              <a href="javascript:void();" @click="addr='西安'">西安</a>
             </div>
           </div>
         </div>
@@ -147,82 +147,7 @@
         />
         <input type="hidden" id="index_search_input_last_value" />
         <div id="searchQuickInput" style="display: none;"></div>
-        <div class="search_more" id="search_board" style="display: none;">
-          <div class="search_more_m" id="search_more_m">
-            <div class="hot">
-              <a href="javascript:;" onclick="IndexSearch.target_link('北欧','javascript:;',1)">北欧</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('东欧','javascript:;',1)">东欧</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('俄罗斯','javascript:;',1)">俄罗斯</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('东京','javascript:;',1)">东京</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('北海道','javascript:;',1)">北海道</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('普吉岛','javascript:;',1)">普吉岛</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('土耳其','javascript:;',1)">土耳其</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('加拿大','javascript:;',1)">加拿大</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('澳大利亚','javascript:;',1)">澳大利亚</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('新西兰','javascript:;',1)">新西兰</a>
-            </div>
-            <div class="more">
-              <b>跟团游：</b>
-              <a href="javascript:;" onclick="IndexSearch.target_link('欧洲一国','javascript:;',1)">欧洲一国</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('美国东西岸','javascript:;',1)"
-              >美国东西岸</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('东京大阪','javascript:;',1)">东京大阪</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('迪拜','javascript:;',1)">迪拜</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('肯尼亚','javascript:;',1)">肯尼亚</a>
-            </div>
-            <div class="more">
-              <b>海岛游：</b>
-              <a href="javascript:;" onclick="IndexSearch.target_link('巴厘岛','javascript:;',1)">巴厘岛</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('长滩岛','javascript:;',1)">长滩岛</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('民丹岛','javascript:;',1)">民丹岛</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('沙巴','javascript:;',1)">沙巴</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('仙本那','javascript:;',1)">仙本那</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('塞班','javascript:;',1)">塞班</a>
-            </div>
-            <div class="more">
-              <b>国内游：</b>
-              <a href="javascript:;" onclick="IndexSearch.target_link('亲子年票','javascript:;',1)">亲子年票</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('川滇藏之旅','javascript:;',1)"
-              >川滇藏之旅</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('江西','javascript:;',1)">江西</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('西藏','javascript:;',1)">西藏</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('海南','javascript:;',1)">海南</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('云南','javascript:;',1)">云南</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('广西','javascript:;',1)">广西</a>
-            </div>
-            <div class="more">
-              <b>邮轮游：</b>
-              <a href="javascript:;" onclick="IndexSearch.target_link('欧洲航线','javascript:;',1)">欧洲航线</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('日本航线','javascript:;',1)">日本航线</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('美洲航线','javascript:;',1)">美洲航线</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('极地航线','javascript:;',1)">极地航线</a>
-            </div>
-            <div class="more">
-              <b>热门游：</b>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('UYOUNG系列','javascript:;',1)"
-              >UYOUNG系列</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('一家一团','javascript:;',1)">一家一团</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('暑期亲子','javascript:;',1)">暑期亲子</a>
-            </div>
-            <div class="more">
-              <b>办签证：</b>
-              <a href="javascript:;" onclick="IndexSearch.target_link('美国签证','javascript:;',1)">美国签证</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('日本签证','javascript:;',1)">日本签证</a>
-              <a
-                href="javascript:;"
-                onclick="IndexSearch.target_link('马来西亚签证','javascript:;',1)"
-              >马来西亚签证</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('越南签证','javascript:;',1)">越南签证</a>
-              <a href="javascript:;" onclick="IndexSearch.target_link('英国签证','javascript:;',1)">英国签证</a>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div class="senior_search">
         <div class="line"></div>
@@ -341,17 +266,17 @@
           </a>
         </li>
         <li id="channel_8" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>出境游
             <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg8.png" />
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a" style="width: 1142px; left: 0px;">
             <div class="nav_item" style>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>金秋放价 满额立减￥300-￥1000/人</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>优严选 一价全含</span>
               </a>
               <a href="javascript:;">
@@ -379,45 +304,45 @@
           </div>
         </li>
         <li id="channel_17" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>国内游
             <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg3.png" />
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a" style="width: 1142px; left: 0px;">
             <div class="nav_item" style>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>国内游 满额立减￥400/人</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>国内游 送充电好礼</span>
               </a>
               <a href="javascript:;">
                 <span>西藏</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>福建</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>海南</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>云南</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>新疆</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>青海</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>长白山</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3058" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>主题游
             <i class="iconfont icon-zhankai"></i>
           </a>
@@ -426,17 +351,17 @@
               <a href="javascript:;">
                 <span>奇迹旅行</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>一家一团</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>众信游学</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3060" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>邮轮游
             <i class="iconfont icon-zhankai"></i>
           </a>
@@ -458,7 +383,7 @@
           </div>
         </li>
         <li id="channel_3072" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>自由行
             <i class="iconfont icon-zhankai"></i>
           </a>
@@ -477,7 +402,7 @@
           </div>
         </li>
         <li id="channel_3049" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>全球签证
             <img src="//r.uzaicdn.com/content/store/images/common/top_nav_bg4.png" />
             <i class="iconfont icon-zhankai"></i>
@@ -497,85 +422,85 @@
           </div>
         </li>
         <li id="channel_3066" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>定制旅行
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>私人订制</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>企业定制</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_3070" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>会员福利
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>免费抽奖</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>邀请好友领好礼</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>注册送￥5800优惠券</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>积分兑换</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>会员俱乐部</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_2048" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>大客户专区
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>银联优惠</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>浦发老友记专区</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>建行龙卡visa刷卡优惠</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>中信银行贵宾</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>民生银行贵宾</span>
               </a>
             </div>
           </div>
         </li>
         <li id="channel_1056" class="nav_more">
-          <a href="javascript:;" target="_blank">
+          <a href="javascript:;" >
             <i class="iconfont icon-yuandian"></i>全球景点攻略
             <i class="iconfont icon-zhankai"></i>
           </a>
           <div class="nav_a">
             <div class="nav_item">
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>全球景点</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>旅游攻略</span>
               </a>
-              <a href="javascript:;" target="_blank">
+              <a href="javascript:;" >
                 <span>全球旅讯</span>
               </a>
             </div>
@@ -593,8 +518,17 @@ export default {
     return {
       uid: "",
       uname: "",
-      
+      addr:"北京"
         
+    }
+  },
+  methods: {
+    quit(){
+      this.axios.get("user/quit").then(res=>{
+        if(res.data==222){
+          this.$router.go(0)
+        }
+      })
     }
   },
   mounted() {
@@ -967,7 +901,7 @@ a {
 }
 .top_m_l span.red {
   color: #fff;
-  background: linear-gradient(left bottom, #ea1a56, #ff8700);
+  background: linear-gradient( #ea1a56, #ff8700);
   font-size: 12px;
   padding: 0 7px;
   position: relative;

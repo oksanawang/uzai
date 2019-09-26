@@ -23,6 +23,10 @@ router.get("/reg",(req,res)=>{
     }
   })
 })
+router.get("/quit",(req,res)=>{
+  req.session.uid=null;
+  res.send("222")
+})
 router.get("/login",(req,res)=>{
   var obj = req.query;
 
