@@ -33,7 +33,7 @@
           </a>
           <span class="red">新用户送5800元抵用券</span>
         </div>
-        <div v-if="uid!=''&&$router.go(0)" class="top_m_l1">
+        <div v-if="uid!=''" class="top_m_l1">
           <a href="javascript:;" >
             <span>HI，{{uname}}</span>
           </a>
