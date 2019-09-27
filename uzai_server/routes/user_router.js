@@ -72,8 +72,9 @@ router.get("/load",(req,res)=>{
 router.get("/test",(req,res)=>{
 
 
-    var uid = req.session;
-    if(uid){
+    var uid = req.session.uid;
+    console.log(uid)
+    if(!uid){
       res.send("-100")
     }
 

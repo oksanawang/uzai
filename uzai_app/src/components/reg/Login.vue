@@ -133,7 +133,7 @@ export default {
       this.axios.get("user/login", { params: obj }).then(res => {
         // console.log(res.data)
         if (res.data == 1) {
-          console.log(333);
+          // console.log(333);
           this.$router.push("/");
         } else {
           this.uperr = "用户名或密码错误";

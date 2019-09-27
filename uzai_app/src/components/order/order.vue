@@ -46,8 +46,8 @@
         </ul>
         <div class="Acti_v clear">
           <ul class="clear Acti_v_nav">
-            <li class="fl on">全部订单(0)</li>
-            <li class="fl">待付款(0)</li>
+            <li class="fl on">全部订单(1)</li>
+            <li class="fl">待付款(1)</li>
             <li class="fl">待出行(0)</li>
           </ul>
           <div class="order_style">
@@ -125,8 +125,8 @@
                         </em>
                       </div>
                     </td>
-                    <td class="th02">2019-09-27</td>
-                    <td class="th03">¥4199.00</td>
+                    <td class="th02">{{gdata}}</td>
+                    <td class="th03">{{money}}</td>
 
                     <td class="th04">
                       订单取消
@@ -157,7 +157,7 @@
                       </div>
                     </td>
                     <td class="th05" servicetype="外采">
-                      <a class="channel" href>已取消</a>
+                      <a class="channel" href>代付款</a>
                     </td>
                   </tr>
                 </tbody>
@@ -252,6 +252,7 @@ export default {
 
     })
     this.axios.get("user/test").then(res=>{
+      console.log(res.data)
       if(res.data==-100){
         this.$router.push("login")
       }

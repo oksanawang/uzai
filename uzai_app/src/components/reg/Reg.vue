@@ -254,16 +254,19 @@ export default {
   beforeUpdate() {
     if(this.page==3){
       clearInterval(glogin)
+      clearInterval(this.glogin)
       var  glogin = setInterval(()=>{
         console.log(1)
         if(this.goLogin>0){
           this.goLogin--
+          clearInterval(glogin)
+          clearInterval(this.glogin)
         }else{
-          clearInterval(this.glogin);
-          
+
           this.goLogin=5;
           this.$router.push("/login");
         }
+
         
       },1000)
     }
