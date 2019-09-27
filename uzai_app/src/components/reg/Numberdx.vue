@@ -6,7 +6,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      result:0
+    };
   },
   methods: {
     randomNum(min, max) {
@@ -54,7 +56,7 @@ export default {
       var c3 = document.getElementById("canvas");
       var ctx = c3.getContext("2d");
 
-      var result;
+      let result ;
       if (ranNumber1 > ranNumber2) {
         ctx.clearRect(0, 0, 110, 28);
         ctx.fillStyle = "#9d4812";
@@ -76,7 +78,7 @@ export default {
         this.drawDot(ctx);
         result = ranNumber1 - ranNumber2;
         console.log(result);
-        return result;
+        this.result=result;
       } else if (ranNumber2 != ranNumber3) {
         //&& ranNumber3!=10
         // this.$refs.yanzheng.innerHTML=ranNumber2+`+`+ranNumber1+`=`+`?`
@@ -98,14 +100,14 @@ export default {
         ctx.fillText(sign4, x5, 22);
         this.drawDot(ctx);
         result = ranNumber2 + ranNumber3;
-        console.log(result);
-        return result;
+        // console.log(result);
+        this.result= result;
       }
     }
   },
-  mounted() {
-    this.change();
-  }
+  beforeUpdate() {
+    this.$emit("showpro", this.result);
+  },
 };
 </script>
 <style scoped>

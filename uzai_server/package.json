@@ -1,5 +1,35 @@
 {
+  "name": "uzai_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "dependencies": {
-    "express-session": "^1.16.2"
-  }
+    "_debug@2.6.9@debug": "^2.6.9",
+    "_depd@2.0.0@depd": "^2.0.0",
+    "_ms@2.0.0@ms": "^2.0.0",
+    "_cookie@0.3.1@cookie": "^0.3.1",
+    "_cookie-signature@1.0.6@cookie-signature": "^1.0.6",
+    "_on-headers@1.0.2@on-headers": "^1.0.2",
+    "_parseurl@1.3.3@parseurl": "^1.3.3",
+    "_random-bytes@1.0.0@random-bytes": "^1.0.0",
+    "_uid-safe@2.1.5@uid-safe": "^2.1.5",
+    "_express-session@1.16.2@express-session": "^1.16.2",
+    "_safe-buffer@5.1.2@safe-buffer": "^5.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "express-session~HEAD": "^1.16.2",
+    "mysql": "^2.17.1",
+    "on-headers~HEAD": "^1.0.2",
+    "random-bytes~HEAD": "^1.0.0",
+    "safe-buffer~HEAD": "^5.1.2",
+    "parseurl~HEAD": "^1.3.3",
+    "uid-safe~HEAD": "^2.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
