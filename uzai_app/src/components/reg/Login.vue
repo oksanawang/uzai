@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login-top">
-      <router-link to="javascript:;">
+      <router-link to="/">
         <img src="../../../public/images/reg_img/logo.png" />
       </router-link>
       <img src="../../../public/images/reg_img/telephone.png" />
@@ -22,7 +22,7 @@
               <input placeholder="请输入密码" type="password" v-model="upwd" maxlength="18" />
             </div>
             <div>
-              <input placeholder="图形验证码" type="text" maxlength="2" v-model="ureg" />
+              <input placeholder="图形验证码" type="text" maxlength="2" v-model="ureg" @blur="Regreg"/>
               <num class="num" title="看不清，换一张"></num>
             </div>
             <div class="login-rember">
@@ -95,6 +95,16 @@ export default {
     };
   },
   methods: {
+    Regreg(){
+      var number = this.ureg;
+      var regNumber = /^[0-9]{2}$/;
+      if (!regNumber.test(number)||number==7||number==12) {
+        this.uperr="验证码错误";
+        return;
+      } else {
+        this.uperr="";
+      }
+    },
     Login1() {
       var loginName = this.loginName;
       var pwd = this.upwd;

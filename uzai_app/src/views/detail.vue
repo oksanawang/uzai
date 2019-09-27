@@ -1059,42 +1059,7 @@ export default {
       
       // this.$router.push('/booking');
     }
-    // reserve(){
-    //   if(this.def_time==="请选择出团日期"){
-
-    //     this.msg = true;
-    //     window.alert("请选择出团日期");
-    //     return;
-    //   }
-    //   else{
-    //     this.msg = false;
-    //   }
-    //   let oid ='PD'+ new Date().getTime();
-    //   //console.log(oid)
-    //   let man_count = this.man_num ;
-    //   let child_count = this.child_num;
-    //   let man_price = this.man_price;
-    //   let child_price = this.man_price-200;
-    //   let mans_count = this.man_num + this.child_num;
-    //   let gtitle = this.gtitle;
-    //   let local = this.gmap;
-    //   let choosetime = this.def_time;
-
-    //   let obj ={
-    //     oid,
-    //     uid:3456,
-    //     man_count ,
-    //     child_count,
-    //     man_price,
-    //     child_price,
-    //     mans_count,
-    //     gtitle,
-    //     local,
-    //     choosetime
-    //   }
-    //   this.res_obj = obj;
-    //   this.$router.push('/booking');
-    // }
+   
   },
   components: {
     dHeader,

@@ -265,7 +265,7 @@
         <div class="left">
           <img
             onerror="nofind()"
-            src="javascript:;"
+            src="../../../public/images/banner_img/ATT0000436390.png"
             style="width:20px;height:27px"
           />
         </div>

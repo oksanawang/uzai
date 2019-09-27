@@ -70,11 +70,12 @@ router.get("/load",(req,res)=>{
   }
 })
 router.get("/test",(req,res)=>{
-  pool.query('select * from A',(err,result)=>{
-    if(err) throw err;
+
+
     var uid = req.session;
-    console.log(uid);
-    res.send(uid);
-  });
+    if(uid){
+      res.send("-100")
+    }
+
 })
 module.exports=router;

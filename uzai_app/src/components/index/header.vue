@@ -6,7 +6,7 @@
           <a href="javascript:;" >
             <i class="iconfont icon-vip"></i> 会员俱乐部
           </a>
-          <a href="javascript:;"  class="paddl26">我的订单</a>
+          <a href="#/order"  class="paddl26">我的订单</a>
           <a href="javascript:;"  class="paddl26 red">营业网点</a>
           <div class="top_server">
             <a href="#">
@@ -1546,6 +1546,7 @@ a {
   position: relative;
   border-bottom: 3px solid #ea1a56;
 }
+
 .common_nav ul {
   width: 1142px;
   margin: auto;
@@ -1567,6 +1568,9 @@ a {
 }
 .common_nav ul li {
   float: left;
+}
+.common_nav ul:hover~.ul{
+  display: block !important;
 }
 /* 这里是导航栏需要用js写的地方，现在先用css代写，并没有实现期望的样式，有需要再改 */
 .common_nav ul li .nav_a {

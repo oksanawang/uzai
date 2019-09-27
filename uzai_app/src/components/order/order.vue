@@ -251,6 +251,11 @@ export default {
       this.money=sj.total_price;
 
     })
+    this.axios.get("user/test").then(res=>{
+      if(res.data==-100){
+        this.$router.push("login")
+      }
+    })
   },
 };
 </script>

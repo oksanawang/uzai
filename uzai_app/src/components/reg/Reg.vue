@@ -1,7 +1,7 @@
 <template>
   <div class="reg_register">
     <div class="top">
-      <router-link to="javascript:;">
+      <router-link to="/">
         <img src="../../../public/images/reg_img/logo.png" />
       </router-link>
       <img src="../../../public/images/reg_img/telephone.png" />
@@ -169,7 +169,7 @@ export default {
     regNumber() {
       var number = this.loginNumber;
       var regNumber = /^[0-9]{2}$/;
-      if (!regNumber.test(number)) {
+      if (!regNumber.test(number)||number==7||number==12) {
         this.$refs.input222.innerHTML = "图形验证码错误!";
         this.isok.p = false;
         return;
